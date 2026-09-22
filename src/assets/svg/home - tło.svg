@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1980" height="1144.999" viewBox="0 0 1980 1144.999">
+  <defs>
+    <filter id="Subtraction_1" x="0" y="0" width="1980" height="1144.999" filterUnits="userSpaceOnUse">
+      <feOffset dx="-20" dy="20" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Subtraction_1)">
+    <path id="Subtraction_1-2" data-name="Subtraction 1" d="M1103.5,971.5H891.844V334.484h-.194c.128-3.378.194-6.818.194-10.225a268.2,268.2,0,0,0-5.424-53.729,264.956,264.956,0,0,0-40.17-95.33A267.695,267.695,0,0,0,728.793,78.608a265.867,265.867,0,0,0-50.112-15.535,269.924,269.924,0,0,0-107.6,0,265.7,265.7,0,0,0-95.459,40.115,267.429,267.429,0,0,0-96.722,117.3A264.968,264.968,0,0,0,363.34,270.53a268.2,268.2,0,0,0-5.424,53.729c0,3.394.065,6.834.193,10.225h-.193V971.5H-816.5v-1085h1920v1085Z" transform="translate(866.5 123.5)" fill="#bed0d2"/>
+  </g>
+</svg>

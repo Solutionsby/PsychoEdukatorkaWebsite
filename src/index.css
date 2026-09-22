@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/playfair-display';
+
+/* Tokeny z designu (Adobe): kolory, odstępy, fonty — do uzupełnienia. */
+@theme {
+  --font-serif: 'Playfair Display Variable', ui-serif, Georgia, serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-serif);
+  }
+}

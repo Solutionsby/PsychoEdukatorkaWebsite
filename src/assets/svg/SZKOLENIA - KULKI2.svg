@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Warstwa_1" data-name="Warstwa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.73 84.74">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #a06370;
+        isolation: isolate;
+        opacity: .35;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #ddc7cc;
+        stroke-dasharray: 10;
+      }
+    </style>
+  </defs>
+  <circle id="Ellipse_43" data-name="Ellipse 43" class="cls-1" cx="87.36" cy="32.95" r="22.58"/>
+  <circle id="Ellipse_44" data-name="Ellipse 44" class="cls-1" cx="41.59" cy="13.15" r="9.59"/>
+  <circle id="Ellipse_45" data-name="Ellipse 45" class="cls-1" cx="165.14" cy="39.55" r="9.59"/>
+  <circle id="Ellipse_46" data-name="Ellipse 46" class="cls-1" cx="9.59" cy="44.15" r="9.59"/>
+  <circle id="Ellipse_47" data-name="Ellipse 47" class="cls-1" cx="133.15" cy="9.59" r="9.59"/>
+  <circle id="Ellipse_48" data-name="Ellipse 48" class="cls-1" cx="54.41" cy="71.15" r="9.59"/>
+  <circle id="Ellipse_49" data-name="Ellipse 49" class="cls-1" cx="123.01" cy="75.15" r="9.59"/>
+  <path id="Path_70" data-name="Path 70" class="cls-2" d="M133.15,9.59c-30.96-6.66-58.77-5.61-90.46,3.41S6.37,45.67,6.37,45.67c0,0-8.54-4.63,3.52,1.91s15.35,16.52,44.72,24.24,44.78,14.66,72.77,6.62,37.72-21.58,39.16-38.78-2.43-23.39-33.39-30.05Z"/>
+</svg>

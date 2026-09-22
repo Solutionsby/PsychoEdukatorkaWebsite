@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Warstwa_1" data-name="Warstwa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240.19 294.81">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #bcc8cb;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #bcc8cb;
+        stroke-dasharray: 10;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <circle id="Ellipse_38" data-name="Ellipse 38" class="cls-1" cx="34.05" cy="271.22" r="23.59"/>
+  <path id="Path_69" data-name="Path 69" class="cls-2" d="M31.65,271.88s91.12-33.01,104.36-56.69,27.34-19.47-66.67-98.51S213.76,30.9,213.76,30.9"/>
+  <ellipse id="Ellipse_40" data-name="Ellipse 40" class="cls-1" cx="66.05" cy="116.32" rx="13.59" ry="14.59"/>
+  <ellipse id="Ellipse_41" data-name="Ellipse 41" class="cls-1" cx="136.2" cy="214.95" rx="9.59" ry="10.09"/>
+  <circle id="Ellipse_42" data-name="Ellipse 42" class="cls-1" cx="212.73" cy="27.46" r="27.46"/>
+  <path id="Path_72" data-name="Path 72" class="cls-2" d="M31.65,271.88S-26.64,113.86,18.88,53.61s194.87-22.71,194.87-22.71"/>
+  <path id="Path_73" data-name="Path 73" class="cls-2" d="M31.65,271.88s127.54,1.51,173.06-58.73,9.04-182.25,9.04-182.25"/>
+</svg>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Warstwa_1" data-name="Warstwa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305.19 479.32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #be98a2;
+        stroke-dasharray: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-2 {
+        fill: #be98a2;
+      }
+    </style>
+  </defs>
+  <circle id="Ellipse_30-2" data-name="Ellipse 30-2" class="cls-2" cx="281.59" cy="23.59" r="23.59"/>
+  <circle id="Ellipse_31-2" data-name="Ellipse 31-2" class="cls-2" cx="15.59" cy="463.72" r="15.59"/>
+  <path id="Path_40" data-name="Path 40" class="cls-1" d="M23.59,470.75s136.94,27.58,194.9-34.3,74.19-181.95,19.91-254.21,42.23-156.12,42.23-156.12"/>
+</svg>
