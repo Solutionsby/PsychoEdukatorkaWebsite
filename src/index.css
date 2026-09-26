@@ -4,6 +4,10 @@
 /* Tokeny z designu (Adobe): kolory, odstępy, fonty — do uzupełnienia. */
 @theme {
   --font-serif: 'Playfair Display Variable', ui-serif, Georgia, serif;
+
+  --color-mist: #bed0d2; /* tło hero */
+  --color-ink: #345163; /* tekst: nagłówki, karta */
+  --color-rose: #bf8591; /* akcent: kleks, przycisk */
 }
 
 @layer base {

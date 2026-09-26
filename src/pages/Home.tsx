@@ -1,3 +1,5 @@
 export function Home() {
-  return <h1>Home</h1>
+  // Hero (hasła + zdjęcie) pochodzi z `homeHero` w `content/hero.ts`.
+  // Tu trafia treść pod hero, np. karta z Agatą.
+  return null
 }

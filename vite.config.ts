@@ -11,4 +11,7 @@ export default defineConfig({
   resolve: {
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
   },
+  // Nasłuch w sieci lokalnej: podgląd na telefonie pod adresem z logu „Network”.
+  server: { host: true },
+  preview: { host: true },
 })

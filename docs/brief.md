@@ -24,7 +24,11 @@ Strona promująca markę osobistą **Agaty Hemmerling-Goc** (psycholożka, certy
 Menu (hamburger, overlay): O mnie, Psychoedukacja, Psychoterapia, Szkolenia, Współpraca, BLOG (kolor akcentowy).
 
 ## Wspólny układ strony (z designu)
-Falowany nagłówek z logo (kaligrafia, SVG) i hamburgerem → łuk z chmurami → wycięta postać na różowej plamie → rozstrzelony nagłówek nakładający się na łuk → biała karta z zaokrągleniem wychodzącym za krawędź. Łuk jest stały, zmieniają się zdjęcie, nagłówek i karta (`PageHero` sterowany danymi).
+Falowany nagłówek z logo (kaligrafia, SVG) i hamburgerem → łuk z chmurami → wycięta postać na różowej plamie → rozstrzelony nagłówek nakładający się na łuk → biała karta z zaokrągleniem wychodzącym za krawędź. Łuk jest stały, zmieniają się zdjęcie, nagłówek i karta (`MainHero` sterowany danymi z `src/content/hero.ts`).
+
+## Stan prac
+- Gotowe: menu (fala, fixed; bez logo, hamburgera i overlay), hero z łukiem, zdjęciem, kleksem, hasłami i białą kartą, animacja zmiany strony. Dane hero: pełne dla Home, pozostałe strony tylko nagłówek.
+- Brakuje: zdjęcie nieba do łuku, logo, hamburger + overlay (Radix Dialog), zdjęcia i karty dla pozostałych stron, stopka.
 
 ## Stack
 Vite, React 19, TypeScript, Tailwind v4, React Router 8 (prerender pod SEO — do ustalenia), Motion (animacje), Radix UI/Headless UI (menu), Fontsource Playfair Display (`latin-ext`), vite-plugin-svgr, vite-imagetools.
@@ -32,7 +36,7 @@ Vite, React 19, TypeScript, Tailwind v4, React Router 8 (prerender pod SEO — d
 ## Decyzje otwarte
 - Wersja desktop (układ łuk + karta).
 - Zachowanie Home: trzy hasła naraz — animacja/scroll?
-- Dokładne tokeny (kolory, odstępy) z Adobe.
+- Dokładne tokeny (kolory, odstępy) z Adobe; wstępne kolory `mist`/`ink`/`rose` w `src/index.css`.
 - Analityka, formularz kontaktowy, polityka prywatności/RODO.
 - Hosting (Netlify / Cloudflare Pages / Vercel).
 
