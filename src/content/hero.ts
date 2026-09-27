@@ -27,17 +27,9 @@ export type HeroData = {
   card?: HeroCardData // biała karta u dołu hero
 }
 
-/** Wpis trasy w nawigacji; trasa bez `nav` nie pojawia się w menu ani stopce. */
-export type NavEntry = {
-  label: string
-  in?: ('menu' | 'footer')[] // domyślnie oba miejsca
-  accent?: boolean // wyróżniony link (np. BLOG)
-}
-
-/** Dane przypinane do tras w `pageRoutes.tsx` przez `handle`. */
+/** Dane eksportowane przez moduł strony jako `handle`. */
 export type RouteHandle = {
   hero?: HeroData
-  nav?: NavEntry
 }
 
 export const homeHero: HeroData = {

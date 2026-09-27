@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "react-router dev",
+    "build": "react-router typegen && tsc -b && react-router build",
+    "typegen": "react-router typegen",
     "lint": "oxlint",
-    "preview": "vite preview",
+    "preview": "vite preview --outDir build/client",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -15,6 +16,7 @@
     "@fontsource-variable/playfair-display": "^5.3.0",
     "@radix-ui/react-dialog": "^1.1.23",
     "clsx": "^2.1.1",
+    "isbot": "^5",
     "motion": "^13.4.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
@@ -22,11 +24,11 @@
     "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
+    "@react-router/dev": "^8.4.0",
     "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
-    "@vitejs/plugin-react": "^6.1.1",
     "oxlint": "^1.81.0",
     "prettier": "^3.9.8",
     "prettier-plugin-tailwindcss": "^0.8.1",

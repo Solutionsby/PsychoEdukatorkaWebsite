@@ -1,12 +1,19 @@
 import { AnimatePresence, motion } from 'motion/react'
+import { useState } from 'react'
 import { useLocation } from 'react-router'
 import type { HeroData } from '@/content/hero'
+import { cn } from '@/lib/cn'
 import { HeroCard } from './HeroCard'
 import { HeroFigure } from './HeroFigure'
 import { HeroHeading } from './HeroHeading'
 
 export const MainHero = ({ hero }: { hero: HeroData }) => {
   const { pathname } = useLocation()
+  // pierwsze wejście animuje CSS (działa w HTML z prerenderu, zanim wczyta się JS);
+  // kolejne zmiany strony: Motion
+  const [initialPath] = useState(pathname)
+  const [navigated, setNavigated] = useState(false)
+  if (!navigated && pathname !== initialPath) setNavigated(true)
 
   return (
     <section className="relative min-h-svh overflow-hidden bg-mist">
@@ -17,10 +24,13 @@ export const MainHero = ({ hero }: { hero: HeroData }) => {
 
       {/* zmienna treść: scena (zdjęcie, kleks, nagłówek, wszystko absolute)
           + karta w normalnym przepływie, więc hero rośnie razem z jej treścią */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={pathname}
-          className="relative flex min-h-svh flex-col pb-6"
+          className={cn(
+            'relative flex min-h-svh flex-col pb-6',
+            !navigated && 'motion-safe:animate-hero-in',
+          )}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}

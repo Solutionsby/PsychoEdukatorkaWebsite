@@ -9,6 +9,15 @@
   --color-mist-deep: #abc2c5; /* fala menu, stopka */
   --color-ink: #345163; /* tekst: nagłówki, karta */
   --color-rose: #bf8591; /* akcent: kleks, przycisk */
+
+  --animate-hero-in: hero-in 0.4s ease-out both;
+
+  @keyframes hero-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
 }
 
 @layer base {
