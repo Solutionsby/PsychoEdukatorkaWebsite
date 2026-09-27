@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://psycho-edukatorka.pl/sitemap.xml

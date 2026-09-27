@@ -1,18 +1,21 @@
+type NavPlace = 'menu' | 'footer'
+
 /** Wpis w nawigacji; strona bez `nav` nie pojawia się w menu ani stopce. */
 export type NavEntry = {
   label: string
-  in?: ('menu' | 'footer')[] // domyślnie oba miejsca
+  in?: readonly NavPlace[] // domyślnie oba miejsca
   accent?: boolean // wyróżniony link (np. BLOG)
 }
 
-type Page = {
+export type Page = {
   path: string // pełny adres
   file: string // moduł strony, względem src/
   nav?: NavEntry
 }
 
-// Nowa strona: wpis tutaj + plik w pages/. Kolejność = kolejność w menu.
-export const pages: Page[] = [
+// Nowa strona: wpis tutaj + plik w pages/ + tytuł i opis w content/seo.ts.
+// Kolejność = kolejność w menu. `as const`: adresy znane typom (PagePath).
+export const pages = [
   { path: '/', file: 'pages/Home.tsx' },
   { path: '/o-mnie', file: 'pages/About.tsx', nav: { label: 'O mnie' } },
   {
@@ -40,4 +43,7 @@ export const pages: Page[] = [
     file: 'pages/Contact.tsx',
     nav: { label: 'Współpraca' },
   },
-]
+] as const satisfies readonly Page[]
+
+/** Adres dowolnej strony z listy, np. '/o-mnie'. */
+export type PagePath = (typeof pages)[number]['path']
