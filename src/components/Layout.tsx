@@ -1,6 +1,7 @@
 import { MotionConfig } from 'motion/react'
 import { Outlet, useMatches } from 'react-router'
 import type { RouteHandle } from '@/content/hero'
+import { Footer } from './Footer'
 import { MainHero } from './MainHero'
 import { Menu } from './Menu'
 
@@ -17,6 +18,7 @@ export function Layout() {
       <main>
         <Outlet />
       </main>
+      <Footer />
     </MotionConfig>
   )
 }
