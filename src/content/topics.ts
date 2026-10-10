@@ -12,5 +12,8 @@ export type Topic = {
   bulletClassName: string // kolor kropek, np. 'before:bg-rose-soft'
   // TODO: kuleczka z linią przerywaną: SVG z ?react (fill/stroke="currentColor")
   decor?: ComponentType<SVGProps<SVGSVGElement>>
-  decorClassName?: string // pozycja dekoracji w karcie (absolute)
+  // 'beside' (domyślnie): nałożona na kartę (absolute), nie zajmuje miejsca; pozycja: top-*, right-*.
+  // 'between': w przepływie między tytułem a listą, odsuwa listę w dół; pozycja: ml-*, -mt-*, w-*.
+  decorPlacement?: 'beside' | 'between'
+  decorClassName?: string // pozycja i rozmiar dekoracji
 }

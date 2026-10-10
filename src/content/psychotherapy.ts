@@ -1,5 +1,6 @@
 import type { PagePath } from './pages'
 import type { Topic } from './topics'
+import KulkaDwa from '@/assets/svg/KulkaPsychoterapiaDwa.svg?react'
 
 export const cooperation = {
   title: 'Współpraca',
@@ -61,6 +62,9 @@ export const kidsTopics: Topic[] = [
     title: 'Kryzysy i zmiany',
     toneClassName: 'text-rose-soft',
     bulletClassName: 'before:bg-rose-soft',
+    decor: KulkaDwa,
+    // łuk od lewej krawędzi pod tytułem do kulki na wysokości numeru
+    decorClassName: 'top-14 left-2 w-[calc(100%-3rem)] -rotate-10',
     items: [
       {
         term: 'Sytuacje trudne (strata, rozwód, choroba)',

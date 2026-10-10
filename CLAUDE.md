@@ -8,13 +8,13 @@ Marka osobista **Agaty Hemmerling-Goc**: psycholożka, certyfikowana psychoterap
 
 Strony: `/` (hasła Psychoterapia / Psychoedukacja / Szkolenia + karta z Agatą), `/o-mnie`, `/psychoedukacja`, `/psychoterapia` (hub → `/dzieci-i-mlodziez`, `/dorosli`), `/szkolenia`, `/wspolpraca` (kontakt), później `/blog`, `/blog/:slug` (headless WP). Menu: O mnie, Psychoedukacja, Psychoterapia, Szkolenia, Współpraca, BLOG (akcent `rose`).
 
-- **Stan:** wszystkie strony z mapy mają treść i układ (mobile). **Brakuje:** grafik (zdjęcia hero, kleksy, niebo w łuku, logo, ikony, kuleczki w kartach; miejsca oznaczone `TODO`, lista w `docs/TODO.md`), `og:image` 1200×630, JSON-LD.
+- **Stan:** wszystkie strony z mapy mają treść i układ (mobile); trwa wstawianie grafik (gałąź `grafiki`, z `dev`). Kolejność: grafiki → przegląd mobile na telefonie → desktop (najpierw wspólne: menu, hero, stopka, karty; potem strony). **Brakuje:** grafik (zdjęcia hero, kleksy, niebo w łuku, logo, ikony, kuleczki w kartach; miejsca oznaczone `TODO`, lista w `docs/TODO.md`), `og:image` 1200×630, JSON-LD.
 - **Otwarte:** desktop, animacja trzech haseł na Home, dokładne tokeny z Adobe, analityka, formularz kontaktowy, RODO, hosting (Netlify / Cloudflare Pages / Vercel).
 - **Uwagi do designu:** niski kontrast jasnego nagłówka na łuku („PSYCHOTERAPIA” dla dzieci), rozstrzelone nagłówki przez `clamp()` („PSYCHOEDUKACJA” prawie dotyka krawędzi).
 
 ## Sposób pracy
 
-Kod pisze użytkownik, Claude pomaga: doradza, sprawdza, podpowiada rozwiązania i pisze fragmenty na prośbę. Nie przebudowuj projektu ani nie dodawaj zależności bez uzgodnienia. Zmiany w małych krokach: najpierw pokaż, co zmienisz, wprowadź po akceptacji.
+Kod pisze użytkownik, Claude pomaga: doradza, sprawdza, podpowiada rozwiązania i pisze fragmenty na prośbę. Projekt zwykle przekazuje zrzuty designu do `docs/` (najnowszy plik = aktualna prośba); grafiki wstawia głównie użytkownik, Claude dostraja pozycje. Nie przebudowuj projektu ani nie dodawaj zależności bez uzgodnienia. Zmiany w małych krokach: najpierw pokaż, co zmienisz, wprowadź po akceptacji.
 
 ## Stack
 
@@ -39,7 +39,9 @@ Vite 8, React 19, TypeScript, Tailwind v4, React Router 8 w **framework mode** (
 - W modułach tras dozwolone eksporty obok komponentu: `meta`, `links`, `handle`, `loader`, `clientLoader`, `headers` (oxlint `only-export-components`).
 
 - SVG jako komponent: `import Logo from '@/assets/svg/logo.svg?react'` (bez `?react` import zwraca URL). Kolor przez `fill="currentColor"` w pliku + `text-*`; nie `bg-*` (koloruje prostokąt viewBoxa). Id w plikach SVG unikalne (np. `kleksHero-shadow`), bo eksporty z XD powtarzają `Path_2` itp.
-- Zdjęcia: `import foto from '@/assets/img/x.png?format=webp&as=metadata'` → `{ src, width, height }` (typy w `src/imagetools.d.ts`).
+- **SVG z XD/Illustratora:** SVGR nie ma SVGO, więc `<style>` z pliku trafia do HTML i działa globalnie: klasy `.cls-1`/`.cls-2` z różnych plików nadpisują się nawzajem. Eksport z _Styling: Presentation Attributes_ (bez `<style>`) albo ręcznie: usunąć `<style>`, `id`, `data-name`, kolor jako atrybut `currentColor`. Dekoracje eksportować osobno, w docelowym rozmiarze (`viewBox` w obrysie, nie 1785×226), wtedy grubość linii i przerwy są jak w designie; inaczej `vector-effect="non-scaling-stroke"`. Wzór oczyszczonego pliku: `assets/svg/KulkaPsychoterapiaDwa.svg`.
+- Zdjęcia: `import foto from '@/assets/img/x.png?format=webp&as=metadata'` → `{ src, width, height }` (typy w `src/imagetools.d.ts`). Duże pliki (zdjęcia `Agata*.png` ~4600×7000) z `?w=800&format=webp&as=metadata`. Pliki z grafiki mają przezroczyste marginesy: przycinać do treści (`sharp(f).trim({ threshold: 1 })`, skrypt node w projekcie, `sharp` jest z vite-imagetools), inaczej `w-*` i pozycje liczą się z pustym tłem. Przycięte już: `Agata3`, `Agata7`, `O MNIE - AGATA2`. Obraz poniżej pierwszego ekranu: `loading="lazy"`.
+- Zdjęcie szersze niż ekran bez poziomego scrolla: rodzic `overflow-hidden`, `img` `relative left-1/2 w-[108%] max-w-none -translate-x-1/2` (`max-w-none`, bo preflight daje `img` `max-width: 100%`). Nie `w-screen` (100vw wlicza pasek przewijania na desktopie).
 
 ## Layout i hero
 
@@ -56,11 +58,15 @@ Vite 8, React 19, TypeScript, Tailwind v4, React Router 8 w **framework mode** (
 ## Wspólne bloki treści (`components/`)
 
 - `LeadHeading`: rozstrzelony `<h2>` wersalikami, tytuł (`text-lead`) + podtytuł (`text-lead-sub`).
-- `TopicCard`: biała karta z numerem (dzieci, dorośli, szkolenia). Kształt rysuje tylko `inset-shadow-card` (dół prawie niewidoczny). `side` = krawędź, do której przylega (na liście: `index % 2 ? 'right' : 'left'`). Z danych (`Topic` w `content/topics.ts`): `toneClassName` (numer, tytuł), `bulletClassName` (kropki), `decor` + `decorClassName` (kuleczka SVG), `id` (kotwica). Animacja wejścia Motion `whileInView` od swojej krawędzi: rodzic strony ma `overflow-x-clip`.
+- `TopicCard`: biała karta z numerem (dzieci, dorośli, szkolenia). Kształt rysuje tylko `inset-shadow-card` (dół prawie niewidoczny). `side` = krawędź, do której przylega (na liście: `index % 2 ? 'right' : 'left'`). Z danych (`Topic` w `content/topics.ts`): `toneClassName` (numer, tytuł), `bulletClassName` (kropki), `decor` + `decorClassName` (kuleczka SVG), `decorPlacement` (`'beside'` domyślnie: `absolute`, nie zmienia układu, pozycja `top-*`/`left-*`; `'between'`: w przepływie między tytułem a listą, pozycja marginesami), `id` (kotwica). Karta przy prawej krawędzi + strona z `overflow-x-clip`: dekoracja z `-right-*` znika za ekranem. Animacja wejścia Motion `whileInView` od swojej krawędzi: rodzic strony ma `overflow-x-clip`.
 - `LinkPanel`: panel `mist` z różowymi pigułkami-linkami, `side` left/right; link `to: '#id'` = kotwica (`<a>`), `icon` po prawej, `linkClassName` nadpisuje odstępy.
 - `ContactCard` (szara karta: tytuł, tekst, opcjonalne zdjęcie, przycisk) i `ContactButton` (różowa pigułka „Skontaktuj się ze mną” → `/wspolpraca`).
 - Karty przylegające do krawędzi: jedna strona przy ekranie, zaokrąglenie (`rounded-*-card`) tylko po drugiej; odstęp od przeciwnej krawędzi `mr-edge` / `ml-edge` (`-mr-edge` znosi margines rodzica). Karty na zmianę: `odd:`/`even:` albo `side` z indeksu.
 - Panele `mist` z zaokrąglonym rogiem pod białą kartą hero: biel karty przechodzi w białe tło strony widoczne w wycięciu rogu („odwrócona fala”), dlatego strona nie ma tła na `<body>`.
+
+## Podgląd jak na telefonie (dla Claude)
+
+Headless Chrome z `--window-size=390,…` daje za szeroki układ (minimalna szerokość okna) i wysokie okno rozciąga hero (`min-h-svh`), więc takie zrzuty mylą. Używać `puppeteer-core` z systemowym Chrome (`/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`), instalowanego w katalogu tymczasowym (scratchpad), nie w projekcie: `setViewport({ width: 390, height: 844, deviceScaleFactor: 2, isMobile: true })`, `prefers-reduced-motion: reduce` (animacje wejścia od razu widoczne), `scrollIntoView` na element, potem zrzut; sprawdzać też `document.documentElement.scrollWidth === 390` (brak poziomego scrolla) i błędy konsoli. Dev server użytkownika zwykle działa na `localhost:5173`.
 
 ## Konwencje
 

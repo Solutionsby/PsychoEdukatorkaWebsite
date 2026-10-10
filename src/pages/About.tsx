@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import {
+  deskImage,
   workAreas,
   workSteps,
   type WorkArea,
@@ -25,7 +26,20 @@ export default function About() {
         </ol>
       </section>
 
-      {/* TODO: zdjęcie Agaty z książkami (O MNIE - AGATA2) */}
+      {/* zdjęcie szersze niż ekran (biurko od krawędzi do krawędzi), wyśrodkowane;
+          overflow-hidden obcina nadmiar, strona się nie poszerza.
+          max-w-none: preflight Tailwinda ogranicza img do 100% rodzica.
+          Dół zdjęcia (biurko) styka się z sekcją poniżej. */}
+      <div className="overflow-hidden">
+        <img
+          src={deskImage.image.src}
+          width={deskImage.image.width}
+          height={deskImage.image.height}
+          alt={deskImage.alt}
+          loading="lazy"
+          className="relative left-1/2 block h-auto w-[108%] max-w-none -translate-x-1/2"
+        />
+      </div>
 
       <section className="mr-5 rounded-r-card bg-mist py-10">
         <h2 className="px-10 text-section">Poznaj obszary mojej pracy</h2>

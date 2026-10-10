@@ -17,6 +17,7 @@ const sides = {
 // Rodzic musi mieć overflow-x-clip (przesunięcie wychodzi poza ekran).
 export const TopicCard = ({ topic, side }: TopicCardProps) => {
   const Decor = topic.decor
+  const placement = topic.decorPlacement ?? 'beside'
 
   return (
     <motion.article
@@ -31,7 +32,7 @@ export const TopicCard = ({ topic, side }: TopicCardProps) => {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      {Decor && (
+      {Decor && placement === 'beside' && (
         <Decor
           aria-hidden
           className={cn(
@@ -53,6 +54,16 @@ export const TopicCard = ({ topic, side }: TopicCardProps) => {
       <h2 className={cn('mt-3 w-2/3 text-card-title', topic.toneClassName)}>
         {topic.title}
       </h2>
+
+      {Decor && placement === 'between' && (
+        <Decor
+          aria-hidden
+          className={cn(
+            'pointer-events-none mt-4 block h-auto w-full text-rose-soft',
+            topic.decorClassName,
+          )}
+        />
+      )}
 
       <dl className="mt-6 space-y-5">
         {topic.items.map((item) => (

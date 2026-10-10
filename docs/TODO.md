@@ -1,6 +1,8 @@
 # TODO
 
-Stan na 2026-10-10. Wszystkie strony z mapy mają treść i układ z designu (mobile); brakuje głównie grafik. W kodzie miejsca oznaczone `// TODO`.
+Stan na 2026-10-10, gałąź `grafiki` (z `dev`). Wszystkie strony z mapy mają treść i układ z designu (mobile); trwa wstawianie grafik. W kodzie miejsca oznaczone `// TODO`.
+
+Plan: grafiki → przegląd mobile na telefonie → desktop (zrzuty desktopu od użytkownika; najpierw wspólne elementy, potem strony).
 
 ## Grafiki do wstawienia
 
@@ -9,11 +11,14 @@ Zdjęcia: `import x from '@/assets/img/….png?format=webp&as=metadata'`. SVG: `
 ### Wspólne
 - [ ] Logo SVG w menu (`components/Menu.tsx`) i stopce (`components/Footer.tsx`), na razie tekst.
 - [ ] Zdjęcie nieba w łuku hero (`components/MainHero.tsx`, zakomentowany `<img>`).
-- [ ] Kuleczki z przerywaną linią w kartach z numerami: pole `decor` + `decorClassName` w danych kart (`content/psychotherapy.ts`: `kidsTopics`, `adultsTopics`; `content/training.ts`: `trainingTopics`). Pliki: `PSYCHOTERAPIA - KULKA*.svg`, `SZKOLENIA - KULKI*.svg`.
+- [ ] Font logo Sacramento: decyzja Fontsource (`@fontsource/sacramento`, zgodnie z konwencją self-hosted) czy Google Fonts; potem token `--font-script` w `@theme` i `font-script` w logo (Menu, Footer), bez `italic`. Instrukcja była gotowa, czeka na zgodę na zależność.
+- [ ] Kuleczki z przerywaną linią w kartach z numerami: pole `decor` (+ `decorClassName`, `decorPlacement`) w danych kart (`content/psychotherapy.ts`: `kidsTopics`, `adultsTopics`; `content/training.ts`: `trainingTopics`).
+  - **Ustalone:** użytkownik eksportuje z XD osobny SVG dla każdej karty, w docelowym rozmiarze, *Presentation Attributes*, nazwy `kulka-dzieci-01.svg`, `kulka-dorosli-01.svg`, `kulka-szkolenia-01.svg`…, i podaje pozycję X/Y względem karty + szerokość. Claude czyści pliki i podpina.
+  - Na razie: karta 02 Dzieci ma roboczo `KulkaPsychoterapiaDwa.svg` (oczyszczony stary `PSYCHOTERAPIA - KULKA.svg`, obrócony `-rotate-10`); po eksporcie do usunięcia. Pozostałe stare pliki kulek (`PSYCHOTERAPIA- KULKA 2/3.svg`, `SZKOLENIA - KULKI*.svg`) mają `<style>` z `.cls-1`, nie używać bez czyszczenia.
 
 ### Hero (`content/hero.ts`: `image`, `imageAlt`, `imageClassName`, `decor`, `decorClassName`)
-- [ ] O mnie (`aboutHero`): zdjęcie + kleks (`O MNIE - KLEKS NA AGATE.svg`: nowy klucz w `HeroDecor` + komponent w `HeroFigure`).
-- [ ] Psychoedukacja (`psychoeducationHero`): zdjęcie + kleks.
+- [~] O mnie (`aboutHero`): roboczo zdjęcie z Home (`home - Agata.png`) + kleks z Home; w designie inne zdjęcie (Agata z okularami) i kleks `O MNIE - KLEKS NA AGATE.svg` (nowy klucz w `HeroDecor` + komponent w `HeroFigure`).
+- [x] Psychoedukacja (`psychoeducationHero`): `Agata3.png` + kleks. Pozycje ustawione przez użytkownika (`top-55`, kleks jak na Home); nagłówek zmieniony na `normal-case` z lewej, w designie wersaliki na środku: do potwierdzenia.
 - [ ] Psychoterapia hub (`psychotherapyHubHero`): zdjęcie + kleks.
 - [ ] Dzieci i młodzież (`psychotherapyKidsHero`): Agata przy biurku z książkami.
 - [ ] Dorośli (`psychotherapyAdultsHero`): zdjęcie.
@@ -21,8 +26,10 @@ Zdjęcia: `import x from '@/assets/img/….png?format=webp&as=metadata'`. SVG: `
 - [ ] Współpraca (`contactHero`): zdjęcie + kleks.
 
 ### Strony
-- [ ] O mnie (`pages/About.tsx`): tło z chmurami (`O MNIE - TŁO*.svg`), zdjęcie z książkami (`O MNIE - AGATA2.png`) między sekcjami.
-- [ ] Psychoedukacja: ikony w plamach (`content/psychoeducation.ts` → `benefits`, miejsce w `BenefitItem`), ilustracja w „Metafory…” (`stories[0].image`, `PSYCHOEDUKACJA - OBRAZ.png`), zdjęcie Agaty z misiem przed „Psychoedukacja w praktyce”.
+- [ ] O mnie (`pages/About.tsx`): tło z chmurami (`O MNIE - TŁO*.svg`).
+- [x] O mnie: zdjęcie przy biurku (`O MNIE - AGATA2.png`) między sekcjami.
+- [ ] Psychoedukacja: ikony w plamach (`content/psychoeducation.ts` → `benefits`, miejsce w `BenefitItem`).
+- [x] Psychoedukacja: ilustracja w „Metafory…” (`stories[0].image`), Agata z misiem (`Agata7.png`, `practicePhoto`, `-mt-6` wchodzi na kartę, stoi na panelu).
 - [ ] Szkolenia: ikony w pigułkach (`SZKOLENIA - IKONA 1/2/3.png`, pole `icon` w `trainingAreas.links`), zdjęcie w karcie „Współpraca” (`trainingContact.image`).
 
 ## Treści do potwierdzenia z Agatą
@@ -39,6 +46,8 @@ Zdjęcia: `import x from '@/assets/img/….png?format=webp&as=metadata'`. SVG: `
 - [ ] Dokładne tokeny kolorów i odstępów.
 
 ## Do sprawdzenia na telefonie
+- [ ] O mnie: odstęp nad zdjęciem przy biurku (`pb-10` sekcji „Jak pracuję?”), szerokość `w-[108%]`.
+- [ ] Psychoedukacja: podtytuł karty hero łamie się na 3 linie (w designie 2): rozmiar/rozstrzelenie `text-lead-sub`.
 - [ ] Nagłówek „PSYCHOEDUKACJA” w hero: czy mieści się na wąskim ekranie (ew. mniejszy `tracking` w `lineClassName`).
 - [ ] Przejścia białej karty hero w panele pod spodem (O mnie, Psychoedukacja, Szkolenia).
 - [ ] Animacje wejścia: ikony (Psychoedukacja), karty z numerami (Dzieci, Dorośli, Szkolenia).

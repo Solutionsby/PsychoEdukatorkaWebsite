@@ -1,3 +1,5 @@
+import agataTeddy from '@/assets/img/Agata7.png?w=800&format=webp&as=metadata'
+import metaphors from '@/assets/img/PSYCHOEDUKACJA - OBRAZ.png?format=webp&as=metadata'
 import type { HeroImage } from './hero'
 import type { PagePath } from './pages'
 
@@ -39,13 +41,21 @@ export const stories: Story[] = [
   {
     title: 'Metafory, obrazy i analogie',
     text: 'W swojej pracy szczególnie bliskie są mi metafory, obrazy i analogie. Inspiracji szukam zarówno w narzędziach terapeutycznych, jak i w codziennych, pozornie zwyczajnych przedmiotach, które okazują się dobrym pretekstem do wyjaśniania tego, co złożone.',
-    // TODO: image: ilustracja (PSYCHOEDUKACJA - OBRAZ), import z ?format=webp&as=metadata
+    image: metaphors,
+    imageAlt:
+      'Ilustracja: papierowe łódki na wodzie w trzech oknach połączonych linią',
   },
   {
     title: 'Merytoryka spotyka się z wyobraźnią',
     text: 'Psychoedukacja jest dla mnie także przestrzenią twórczą. Cenię momenty, w których mogę tworzyć spersonalizowane narzędzia dopasowane do doświadczeń i zainteresowań moich klientów. To właśnie wtedy merytoryka spotyka się z wyobraźnią, a złożone treści stają się naprawdę zrozumiałe, pozostają z nami na dłużej i stają się realnym wsparciem w codziennym życiu.',
   },
 ]
+
+// Agata z misiem: między „Merytoryka…” a „Psychoedukacja w praktyce”.
+export const practicePhoto: { image: HeroImage; alt: string } = {
+  image: agataTeddy,
+  alt: 'Agata Hemmerling-Goc z pluszowym misiem',
+}
 
 export const practice = {
   title: 'Psychoedukacja w praktyce',

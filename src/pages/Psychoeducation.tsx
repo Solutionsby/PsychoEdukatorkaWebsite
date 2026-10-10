@@ -6,6 +6,7 @@ import {
   benefits,
   intro,
   practice,
+  practicePhoto,
   stories,
   type Benefit,
   type Story,
@@ -39,14 +40,18 @@ export default function Psychoeducation() {
         ))}
       </div>
 
-      {/* TODO: zdjęcie Agaty z misiem, po prawej, nachodzi na panel poniżej */}
-
-      <LinkPanel
-        title={practice.title}
-        links={practice.links}
-        side="left"
-        className="mt-10"
+      {/* Agata z misiem: po prawej, lekko wchodzi na kartę powyżej (-mt-*, relative
+          = rysowana nad kartą), stopami stoi na panelu poniżej */}
+      <img
+        src={practicePhoto.image.src}
+        width={practicePhoto.image.width}
+        height={practicePhoto.image.height}
+        alt={practicePhoto.alt}
+        loading="lazy"
+        className="relative -mt-6 mr-14 ml-auto block h-auto w-2/5"
       />
+
+      <LinkPanel title={practice.title} links={practice.links} side="left" />
     </div>
   )
 }

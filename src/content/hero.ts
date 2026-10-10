@@ -1,4 +1,5 @@
 import { contact } from './contact'
+import agataArmsCrossed from '@/assets/img/Agata3.png?w=800&format=webp&as=metadata'
 import agataHome from '@/assets/img/home - Agata.png?format=webp&as=metadata'
 
 type HeroLink = { label: string; to: string }
@@ -73,11 +74,14 @@ export const homeHero: HeroData = {
 
 export const aboutHero: HeroData = {
   heading: ['Agata', 'Hemmerling-Goc'],
-  headingClassName: 'top-50 items-start pl-6 normal-case',
-  // TODO: image (zdjęcie Agaty) + decor (kleks na Agatę)
+  headingClassName: 'top-35 items-start pl-6 normal-case',
+  image: agataHome,
+  imageAlt: 'Agata Hemmerling-Goc',
+  imageClassName: 'left-2 w-[60%] top-50',
+  decor: 'kleks',
+  decorClassName: 'top-35 right-50 w-50 rotate-230 opacity-73',
+
   card: {
-    // -mb-6 znosi dolny odstęp hero: karta dotyka sekcji „Jak pracuję?”,
-    // a jej biel przechodzi w białe tło obok zaokrąglonego rogu sekcji
     className: '-mb-6',
     items: [
       {
@@ -97,8 +101,12 @@ export const aboutHero: HeroData = {
 }
 export const psychoeducationHero: HeroData = {
   heading: ['Psychoedukacja'],
-  headingClassName: 'top-50 items-center',
-  // TODO: image (zdjęcie Agaty) + decor (kleks na Agatę)
+  headingClassName: 'top-35 items-start pl-6 normal-case',
+  image: agataArmsCrossed,
+  imageAlt: 'Agata Hemmerling-Goc',
+  imageClassName: 'left-10 w-[50%] top-55',
+  decor: 'kleks',
+  decorClassName: 'top-35 right-50 w-50 rotate-230 opacity-73',
   card: {
     className: '-mb-6', // jak w O mnie: karta dotyka panelu pod hero
     title: 'Psychoedukacja',

@@ -1,3 +1,5 @@
+import deskPhoto from '@/assets/img/O MNIE - AGATA2.png?format=webp&as=metadata'
+import type { HeroImage } from './hero'
 import type { PagePath } from './pages'
 
 export type WorkStep = {
@@ -39,6 +41,12 @@ export const workSteps: WorkStep[] = [
     ],
   },
 ]
+
+// Zdjęcie między „Jak pracuję?” a „Poznaj obszary mojej pracy”, na całą szerokość.
+export const deskImage: { image: HeroImage; alt: string } = {
+  image: deskPhoto,
+  alt: 'Agata Hemmerling-Goc czyta książkę przy biurku z książkami i pluszowymi misiami',
+}
 
 // TODO: teksty to wypełniacz z designu, do podmiany
 export const workAreas: WorkArea[] = [
