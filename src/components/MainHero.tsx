@@ -16,7 +16,12 @@ export const MainHero = ({ hero }: { hero: HeroData }) => {
   if (!navigated && pathname !== initialPath) setNavigated(true)
 
   return (
-    <section className="relative min-h-svh overflow-hidden bg-mist">
+    <section
+      className={cn(
+        'relative min-h-svh overflow-hidden bg-mist',
+        hero.className,
+      )}
+    >
       {/* łuk z niebem: stały, nie animuje się przy zmianie strony */}
       <div className="absolute top-20 right-8 bottom-0 w-[60%] overflow-hidden rounded-t-full shadow-[inset_-20px_20px_20px_rgba(0,0,0,0.16)]">
         {/* <img src={niebo} alt="" className="h-full w-full object-cover" /> */}

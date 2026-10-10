@@ -27,9 +27,9 @@ Menu (hamburger, overlay): O mnie, Psychoedukacja, Psychoterapia, Szkolenia, Wsp
 Falowany nagłówek z logo (kaligrafia, SVG) i hamburgerem → łuk z chmurami → wycięta postać na różowej plamie → rozstrzelony nagłówek nakładający się na łuk → biała karta z zaokrągleniem wychodzącym za krawędź. Łuk jest stały, zmieniają się zdjęcie, nagłówek i karta (`MainHero` sterowany danymi z `src/content/hero.ts`).
 
 ## Stan prac
-- Gotowe: menu (fala, fixed; bez logo, hamburgera i overlay), hero z łukiem, zdjęciem, kleksem, hasłami i białą kartą, animacja zmiany strony, stopka (linki z listy stron, kontakt). Dane hero: pełne dla Home, pozostałe strony tylko nagłówek.
+- Gotowe (mobile): menu (fala, fixed, hamburger + panel na Radix Dialog), hero z łukiem i animacją zmiany strony, stopka, oraz treść i układ wszystkich stron z mapy: Home, O mnie, Psychoedukacja, Psychoterapia (hub, dzieci i młodzież, dorośli), Szkolenia, Współpraca. Wspólne bloki: karty z numerami (animowane przy wejściu), panele z linkami, karta kontaktowa.
 - SEO: prerender każdej strony do HTML, tytuły/opisy (szkice, do akceptacji), canonical, Open Graph, `sitemap.xml`, `robots.txt`, `404.html`. Domena: `psycho-edukatorka.pl`.
-- Brakuje: zdjęcie nieba do łuku, logo, hamburger + overlay (Radix Dialog), zdjęcia i karty dla pozostałych stron, `og:image` (grafika 1200×630), dane strukturalne JSON-LD.
+- Brakuje: grafik (zdjęcia hero, kleksy, niebo w łuku, logo, ikony, kuleczki w kartach), części treści do potwierdzenia z Agatą, `og:image` (grafika 1200×630), dane strukturalne JSON-LD. Szczegóły: `docs/TODO.md`.
 
 ## Stack
 Vite, React 19, TypeScript, Tailwind v4, React Router 8 (framework mode, prerender do statycznego HTML), Motion (animacje), Radix UI/Headless UI (menu), Fontsource Playfair Display (`latin-ext`), vite-plugin-svgr, vite-imagetools.

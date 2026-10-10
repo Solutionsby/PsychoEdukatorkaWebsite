@@ -10,6 +10,26 @@
   --color-ink: #345163; /* tekst: nagłówki, karta */
   --color-ink-soft: #3c5e73; /* tekst: linki w menu */
   --color-rose: #bf8591; /* akcent: kleks, przycisk */
+  --color-rose-soft: #be98a2; /* tekst w kartach: numery, tytuły, linki */
+  --color-rose-light: #ead8d9; /* różowe karty */
+  --color-mist-light: #e5e9e7; /* szare karty */
+
+  /* Typografia płynna: minimum = wartość z XD (ekran 375px), dalej rośnie z vw
+     w tych samych proporcjach (24 : 50 : 16 : 12), do maksimum. */
+  --text-section: clamp(1.5rem, 6.4vw, 2.25rem); /* 24px: tytuł sekcji */
+  --text-number: clamp(3.125rem, 13.33vw, 4.6875rem); /* 50px: numer karty */
+  --text-card-title: clamp(1rem, 4.27vw, 1.5rem); /* 16px: tytuł karty */
+  --text-card: clamp(0.75rem, 3.2vw, 1.125rem); /* 12px: tekst karty */
+  --text-card--line-height: 1.6;
+  /* nagłówek rozstrzelony (tytuł + podtytuł, np. Psychoedukacja); wartości szacowane ze zrzutu */
+  --text-lead: clamp(1.625rem, 6.93vw, 2.5rem); /* ~26px */
+  --text-lead-sub: clamp(0.875rem, 3.73vw, 1.25rem); /* ~14px */
+
+  /* odstęp kart od krawędzi ekranu: mr-edge, -mr-edge, ml-edge */
+  --spacing-edge: 1rem;
+
+  --radius-card: clamp(4.0625rem, 17.33vw, 6rem); /* 65px */
+  --inset-shadow-card: inset 0 3px 6px #00000029;
 
   --animate-hero-in: hero-in 0.4s ease-out both;
 
