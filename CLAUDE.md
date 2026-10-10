@@ -78,5 +78,5 @@ Headless Chrome z `--window-size=390,…` daje za szeroki układ (minimalna szer
 - Kod renderowany też przy buildzie (prerender): bez `window`/`document` podczas renderu.
 - Animacje zawsze z uwzględnieniem `prefers-reduced-motion` (`MotionConfig reducedMotion="user"` wyłącza ruch, zostaje przezroczystość). Animacje wejścia poniżej pierwszego ekranu (`whileInView`) startują z `opacity: 0` także w HTML z prerenderu; w hero tego unikamy.
 - Zdjęcia: WebP/AVIF z kanałem alfa. SVG od grafiki importowane przez SVGR.
-- Fonty self-hosted (Fontsource), z podzbiorem `latin-ext`.
+- Fonty self-hosted (Fontsource), z podzbiorem `latin-ext`: `font-serif` (Playfair Display, cała strona), `font-script` (Sacramento, logo w Menu i Footer; bez `italic`).
 - Blog: headless WordPress (REST API), osobny etap.

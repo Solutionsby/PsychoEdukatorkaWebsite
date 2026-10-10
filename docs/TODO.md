@@ -11,7 +11,7 @@ Zdjęcia: `import x from '@/assets/img/….png?format=webp&as=metadata'`. SVG: `
 ### Wspólne
 - [ ] Logo SVG w menu (`components/Menu.tsx`) i stopce (`components/Footer.tsx`), na razie tekst.
 - [ ] Zdjęcie nieba w łuku hero (`components/MainHero.tsx`, zakomentowany `<img>`).
-- [ ] Font logo Sacramento: decyzja Fontsource (`@fontsource/sacramento`, zgodnie z konwencją self-hosted) czy Google Fonts; potem token `--font-script` w `@theme` i `font-script` w logo (Menu, Footer), bez `italic`. Instrukcja była gotowa, czeka na zgodę na zależność.
+- [x] Font logo Sacramento (`@fontsource/sacramento`, token `--font-script`, klasa `font-script` w Menu i Footer); samo logo SVG nadal do decyzji.
 - [ ] Kuleczki z przerywaną linią w kartach z numerami: pole `decor` (+ `decorClassName`, `decorPlacement`) w danych kart (`content/psychotherapy.ts`: `kidsTopics`, `adultsTopics`; `content/training.ts`: `trainingTopics`).
   - **Ustalone:** użytkownik eksportuje z XD osobny SVG dla każdej karty, w docelowym rozmiarze, *Presentation Attributes*, nazwy `kulka-dzieci-01.svg`, `kulka-dorosli-01.svg`, `kulka-szkolenia-01.svg`…, i podaje pozycję X/Y względem karty + szerokość. Claude czyści pliki i podpina.
   - Na razie: karta 02 Dzieci ma roboczo `KulkaPsychoterapiaDwa.svg` (oczyszczony stary `PSYCHOTERAPIA - KULKA.svg`, obrócony `-rotate-10`); po eksporcie do usunięcia. Pozostałe stare pliki kulek (`PSYCHOTERAPIA- KULKA 2/3.svg`, `SZKOLENIA - KULKI*.svg`) mają `<style>` z `.cls-1`, nie używać bez czyszczenia.
