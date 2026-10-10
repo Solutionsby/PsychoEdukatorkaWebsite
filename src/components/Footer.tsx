@@ -11,7 +11,7 @@ export const Footer = () => {
     <footer className="text-sm">
       <div className="bg-mist-deep px-8 pt-8 pb-5 text-white">
         {/* TODO: logo SVG od grafika zamiast tekstu */}
-        <Link to="/" className="text-3xl italic">
+        <Link to="/" className="font-script text-4xl tracking-wide">
           psychoedukatorka
         </Link>
 

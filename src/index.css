@@ -1,9 +1,11 @@
 @import 'tailwindcss';
 @import '@fontsource-variable/playfair-display';
+@import '@fontsource/sacramento';
 
 /* Tokeny z designu (Adobe): kolory, odstępy, fonty — do uzupełnienia. */
 @theme {
   --font-serif: 'Playfair Display Variable', ui-serif, Georgia, serif;
+  --font-script: 'Sacramento', cursive;
 
   --color-mist: #bed0d2; /* tło hero */
   --color-mist-deep: #abc2c5; /* fala menu, stopka */

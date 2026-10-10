@@ -23,9 +23,15 @@ export const Menu = () => {
         {/* z-20: logo i przycisk zawsze nad panelem (z-10) */}
         <div className="relative z-20 flex h-full items-center justify-between px-8">
           {/* TODO: logo to napis we właściwym foncie (do podmiany) */}
-          <Link to="/" onClick={close} className="text-2xl text-ink italic">
+
+          <Link
+            to="/"
+            onClick={close}
+            className="font-script text-4xl text-ink"
+          >
             psychoedukatorka
           </Link>
+
           <Dialog.Trigger
             aria-label={open ? 'Zamknij menu' : 'Otwórz menu'}
             className="-m-1 p-1"
