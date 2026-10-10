@@ -8,6 +8,7 @@
   --color-mist: #bed0d2; /* tło hero */
   --color-mist-deep: #abc2c5; /* fala menu, stopka */
   --color-ink: #345163; /* tekst: nagłówki, karta */
+  --color-ink-soft: #3c5e73; /* tekst: linki w menu */
   --color-rose: #bf8591; /* akcent: kleks, przycisk */
 
   --animate-hero-in: hero-in 0.4s ease-out both;
