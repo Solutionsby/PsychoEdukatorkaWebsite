@@ -6,6 +6,11 @@ type TopicCardProps = {
   topic: Topic
   side: 'left' | 'right' // krawędź ekranu, do której przylega karta
   wide?: boolean // desktop: lista w dwóch kolumnach pod tytułem (domyślnie: tytuł z lewej, lista z prawej)
+  // desktop: nadpisania szerokości ze strony (kolumna tytułu, lista, punkty, opisy)
+  headClassName?: string
+  listClassName?: string
+  termClassName?: string
+  textClassName?: string
 }
 
 const sides = {
@@ -17,7 +22,15 @@ const sides = {
 // Wejście: wjeżdża od swojej krawędzi, raz, gdy pojawi się na ekranie.
 // Rodzic musi mieć overflow-x-clip (przesunięcie wychodzi poza ekran).
 // Desktop (projekt 1920): bez karty, tekst na tle strony; numer z kreską pod spodem.
-export const TopicCard = ({ topic, side, wide }: TopicCardProps) => {
+export const TopicCard = ({
+  topic,
+  side,
+  wide,
+  headClassName,
+  listClassName,
+  termClassName,
+  textClassName,
+}: TopicCardProps) => {
   const Decor = topic.decor
   const placement = topic.decorPlacement ?? 'beside'
 
@@ -46,7 +59,7 @@ export const TopicCard = ({ topic, side, wide }: TopicCardProps) => {
         />
       )}
 
-      <div className={cn(!wide && 'lg:w-[32.2vw] lg:shrink-0')}>
+      <div className={cn(!wide && 'lg:w-[32.2vw] lg:shrink-0', headClassName)}>
         <p
           aria-hidden
           className={cn(
@@ -84,6 +97,7 @@ export const TopicCard = ({ topic, side, wide }: TopicCardProps) => {
             ? // dwie niezależne kolumny (bez wspólnych wierszy), druga od 4. punktu
               'lg:mt-[2vw] lg:columns-2 lg:space-y-0 lg:gap-x-[8.9vw] lg:[&>div]:mb-[1.6vw] lg:[&>div]:break-inside-avoid lg:[&>div:nth-child(4)]:break-before-column'
             : 'lg:mt-0 lg:flex-1 lg:space-y-[1.6vw]',
+          listClassName,
         )}
       >
         {topic.items.map((item) => (
@@ -94,6 +108,7 @@ export const TopicCard = ({ topic, side, wide }: TopicCardProps) => {
                 'lg:gap-[1vw] lg:text-[1.5vw] lg:leading-[1.38] lg:before:mt-[0.5vw] lg:before:size-[1vw]',
                 // szerokość z projektu: łamanie jak w XD
                 wide ? 'lg:max-w-[34.5vw]' : 'lg:max-w-[42vw]',
+                termClassName,
                 topic.bulletClassName,
               )}
             >
@@ -104,6 +119,7 @@ export const TopicCard = ({ topic, side, wide }: TopicCardProps) => {
                 className={cn(
                   'mt-1 pl-5.5 text-card lg:mt-[0.2vw] lg:pl-[2vw] lg:text-[1.48vw] lg:leading-[1.55]',
                   wide ? 'lg:max-w-[37.5vw]' : 'lg:max-w-[42vw]',
+                  textClassName,
                 )}
               >
                 {item.text}

@@ -2,6 +2,7 @@ import type { PagePath } from './pages'
 import type { Topic } from './topics'
 import armchairPhoto from '@/assets/img/Agata4.png?w=800&format=webp&as=metadata'
 import KulkaCztery from '@/assets/svg/KulkaPsychoterapiaCztery.svg?react'
+import KulkaDorosli from '@/assets/svg/KulkaPsychoterapiaDorosli.svg?react'
 import KulkaDwa from '@/assets/svg/KulkaPsychoterapiaDwa.svg?react'
 import KulkaTrzy from '@/assets/svg/KulkaPsychoterapiaTrzy.svg?react'
 import type { HeroData } from './hero'
@@ -187,6 +188,10 @@ export const adultsTopics: Topic[] = typo([
     title: 'Kryzysy i zmiany',
     toneClassName: 'text-rose-soft',
     bulletClassName: 'before:bg-rose-soft',
+    // desktop: linia z dwiema kulkami nad kartą (rysunek wg zrzutu, do podmiany na plik od grafika)
+    decor: KulkaDorosli,
+    decorClassName:
+      'hidden lg:block lg:-top-[7.3vw] lg:left-[2.08vw] lg:w-[58.3vw] lg:text-rose',
     items: [
       {
         term: 'Wyjście z relacji przemocowych',
@@ -201,9 +206,13 @@ export const adultsTopics: Topic[] = typo([
   {
     id: 'rozwoj',
     number: '03',
-    title: 'Rozwój potencjału i dobrostan',
+    title: 'Rozwój potencjału i dobrostanu',
+    short: 'Rozwój potencjału i dobrostan',
     toneClassName: 'text-ink',
     bulletClassName: 'before:bg-ink',
+    decor: KulkaCztery,
+    decorClassName:
+      'hidden lg:block lg:-top-[8.1vw] lg:left-[19.2vw] lg:w-[15.9vw] lg:text-mist-deep',
     items: [
       {
         term: 'Neuroróżnorodność',
@@ -280,11 +289,24 @@ export const psychotherapyKidsHero: HeroData = typo({
   },
 })
 export const psychotherapyAdultsHero: HeroData = typo({
+  // desktop (projekt 1920): jak Dzieci, zdjęcie stoi przy lewej krawędzi łuku
+  className: 'lg:h-[64vw]',
+  arcClassName: 'lg:bottom-[2.8vw]',
   heading: ['Psychoterapia', 'dorośli'],
-  headingClassName: 'top-45 items-center text-center',
-  lineClassName: 'not-first:text-xl',
+  headingClassName:
+    'top-45 items-center text-center lg:top-[16.4vw] lg:items-start lg:text-left',
+  lineClassName:
+    'not-first:text-xl lg:ml-[10.1vw] lg:text-[6.35vw] lg:leading-none lg:tracking-[0.267em] lg:not-first:hidden',
   ...photos.armsCrossed,
+  imageClassName: `${photos.armsCrossed.imageClassName} lg:-bottom-[1vw] lg:left-[39.2vw] lg:w-[22.1vw]`,
   card: {
+    className:
+      'lg:top-[24.9vw] lg:left-[9.9vw] lg:h-auto lg:w-[32.5vw] lg:rounded-none lg:bg-transparent lg:p-0',
+    title: 'Dorośli', // tylko desktop
+    titleClassName:
+      'max-lg:hidden lg:mb-[1.3vw] lg:text-[2.5vw] lg:leading-[1.2] lg:tracking-[0.03em]',
+    paragraphsClassName:
+      'lg:space-y-0 lg:text-[max(0.875rem,1.38vw)] lg:leading-[1.5] lg:text-ink',
     paragraphs: [
       'Wspieram osoby dorosłe w procesie zdrowienia oraz radzenia sobie z trudnościami dnia codziennego. Pomagam rozwijać umiejętności, które pozwalają budować bardziej satysfakcjonujące życie — w zgodzie z własnymi wartościami i potrzebami.',
     ],
