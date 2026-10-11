@@ -1,6 +1,9 @@
 import type { PagePath } from './pages'
 import type { Topic } from './topics'
+import armchairPhoto from '@/assets/img/Agata4.png?w=800&format=webp&as=metadata'
+import KulkaCztery from '@/assets/svg/KulkaPsychoterapiaCztery.svg?react'
 import KulkaDwa from '@/assets/svg/KulkaPsychoterapiaDwa.svg?react'
+import KulkaTrzy from '@/assets/svg/KulkaPsychoterapiaTrzy.svg?react'
 import type { HeroData } from './hero'
 import { photos } from './heroPhotos'
 import { typo } from '@/lib/typography'
@@ -26,11 +29,13 @@ export const supportAreas = typo({
 })
 
 // Dzieci i młodzież
+// Desktop: nawigacja 01–04 nad kartami (id, short), linie z kulkami między kartami.
 export const kidsTopics: Topic[] = typo([
   {
+    id: 'zdrowie-psychiczne',
     number: '01',
     title: 'Odzyskiwanie zdrowia psychicznego',
-    toneClassName: 'text-rose-soft',
+    toneClassName: 'text-rose-soft lg:text-mist-deep',
     bulletClassName: 'before:bg-ink/60',
     items: [
       {
@@ -55,24 +60,26 @@ export const kidsTopics: Topic[] = typo([
       },
       {
         term: 'Osobowość nieprawidłowo kształtująca się',
-        // TODO: dalsza część tekstu ucięta na zrzucie
-        text: 'nauka konstruktywnych sposobów przeżywania…',
+        text: 'nauka konstruktywnych sposobów przeżywania siebie i innych',
       },
     ],
   },
   {
+    id: 'kryzysy-i-zmiany',
     number: '02',
     title: 'Kryzysy i zmiany',
+    short: 'Wsparcie w sytuacjach kryzysowych i zmianach',
     toneClassName: 'text-rose-soft',
     bulletClassName: 'before:bg-rose-soft',
     decor: KulkaDwa,
-    // łuk od lewej krawędzi pod tytułem do kulki na wysokości numeru
-    decorClassName: 'top-14 left-2 w-[calc(100%-3rem)] -rotate-10',
+    // telefon: łuk od lewej krawędzi pod tytułem do kulki na wysokości numeru;
+    // desktop: linia nad kartą, od lewej krawędzi ekranu
+    decorClassName:
+      'top-14 left-2 w-[calc(100%-3rem)] -rotate-10 lg:-top-[10.2vw] lg:left-0 lg:w-[90.8vw] lg:rotate-0',
     items: [
       {
         term: 'Sytuacje trudne (strata, rozwód, choroba)',
-        // TODO: na zrzucie ten sam tekst co „Zaburzenia nastroju”, pewnie wypełniacz
-        text: 'wsparcie w stanach obniżonego samopoczucia oraz w procesie leczenia depresji',
+        text: 'pomoc w przeżywaniu i radzeniu sobie z wymagającymi doświadczeniami',
       },
       { term: 'Adaptacja do nowych etapów (przedszkole, szkoła, dojrzewanie)' },
       {
@@ -82,10 +89,14 @@ export const kidsTopics: Topic[] = typo([
     ],
   },
   {
+    id: 'regulacja-emocji',
     number: '03',
     title: 'Regulacja emocji',
     toneClassName: 'text-ink',
     bulletClassName: 'before:bg-ink/60',
+    decor: KulkaTrzy,
+    decorClassName:
+      'hidden lg:block lg:-top-[6vw] lg:left-[19.1vw] lg:w-[14.2vw] lg:text-mist-deep',
     items: [
       {
         term: 'Dysregulacja emocji',
@@ -102,10 +113,14 @@ export const kidsTopics: Topic[] = typo([
     ],
   },
   {
+    id: 'rozwoj-i-dobrostan',
     number: '04',
     title: 'Rozwój potencjału i dobrostan',
     toneClassName: 'text-rose-soft',
     bulletClassName: 'before:bg-rose-soft',
+    decor: KulkaCztery,
+    decorClassName:
+      'hidden lg:block lg:-top-[7.5vw] lg:left-[19.1vw] lg:w-[15.9vw]',
     items: [
       {
         term: 'Neuroróżnorodność',
@@ -125,6 +140,9 @@ export const kidsTopics: Topic[] = typo([
 
 export const parents = typo({
   title: 'Rodzice i opiekunowie',
+  // desktop: zdjęcie na fotelu obok tekstu
+  image: armchairPhoto,
+  imageAlt: 'Agata Hemmerling-Goc na fotelu z notesem',
   text: 'Wsparcie rodziców traktuję jako ważny element pracy z dzieckiem. To przestrzeń, w której można na chwilę się zatrzymać, przyjrzeć trudnym sytuacjom i lepiej zrozumieć, co stoi za zachowaniem dziecka. Podczas konsultacji wspólnie szukamy sposobów reagowania, które są wspierające i adekwatne do potrzeb oraz etapu rozwoju dziecka. To również miejsce, w którym można zadbać o siebie w roli rodzica — z większą łagodnością i zrozumieniem.',
 })
 
@@ -236,12 +254,25 @@ export const psychotherapyHubHero: HeroData = typo({
   },
 })
 export const psychotherapyKidsHero: HeroData = typo({
+  // desktop (projekt 1920): nagłówek i łuk jak na hubie, zdjęcie przy biurku na dole
+  // po lewej, jego dół zakrywa jasny pas strony (pages/psychotherapy/Kids.tsx)
+  className: 'lg:h-[64vw]',
+  arcClassName: 'lg:bottom-[2.8vw]',
   heading: ['Psychoterapia', 'dzieci i młodzież,', 'rodzice i opiekunowie.'],
-  headingClassName: 'top-45 items-center text-center',
-  lineClassName: 'not-first:text-xl',
+  headingClassName:
+    'top-45 items-center text-center lg:top-[16.4vw] lg:items-start lg:text-left',
+  lineClassName:
+    'not-first:text-xl lg:ml-[10.1vw] lg:text-[6.35vw] lg:leading-none lg:tracking-[0.267em] lg:not-first:hidden',
   ...photos.desk,
+  imageClassName: `${photos.desk.imageClassName} lg:bottom-[1.5vw] lg:left-[-1vw] lg:w-[44vw] lg:translate-none`,
   card: {
-    className: '-mb-6',
+    className:
+      '-mb-6 lg:top-[23.6vw] lg:left-[9.9vw] lg:h-auto lg:w-[48vw] lg:rounded-none lg:bg-transparent lg:p-0',
+    title: 'Dzieci i młodzież', // tylko desktop
+    titleClassName:
+      'max-lg:hidden lg:mb-[1.3vw] lg:text-[2.5vw] lg:leading-[1.2] lg:tracking-[0.03em]',
+    paragraphsClassName:
+      'lg:space-y-0 lg:text-[max(0.875rem,1.38vw)] lg:leading-[1.5] lg:text-ink',
     paragraphs: [
       'Wspieram dzieci i młodzież w lepszym rozumieniu ich świata wewnętrznego, bezpiecznym przechodzeniu przez wyzwania rozwojowe oraz budowaniu umiejętności, które wzmacniają odporność i elastyczność psychologiczną.',
       'W pracy ważna jest dla mnie relacja oparta na szacunku i uważności. Korzystam z kreatywnych form pracy, które pomagają zaciekawić i zaangażować moich małych i większych pacjentów.',
