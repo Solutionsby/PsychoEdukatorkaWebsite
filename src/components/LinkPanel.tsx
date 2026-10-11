@@ -16,6 +16,7 @@ type LinkPanelProps = {
   titleClassName?: string
   listClassName?: string
   linkClassName?: string // nadpisuje odstępy pigułek (np. ml-0)
+  iconClassName?: string // np. desktop: ikona w białym kształcie nad etykietą (Szkolenia)
   arrow?: boolean // desktop: strzałka z kresek za tekstem linku
 }
 
@@ -41,6 +42,7 @@ export const LinkPanel = ({
   titleClassName,
   listClassName,
   linkClassName,
+  iconClassName,
   arrow,
 }: LinkPanelProps) => (
   <section className={cn('bg-mist py-10', sides[side].panel, className)}>
@@ -71,7 +73,7 @@ export const LinkPanel = ({
                 height={link.icon.height}
                 alt=""
                 loading="lazy"
-                className="h-auto w-14 shrink-0"
+                className={cn('h-auto w-14 shrink-0', iconClassName)}
               />
             )}
           </>

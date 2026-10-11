@@ -8,6 +8,7 @@ export type Topic = {
   short?: string // etykieta w nawigacji nad kartami (desktop), domyślnie title
   number: string
   title: string
+  subtitle?: string // desktop: dopisek pod tytułem, np. „(Warsztaty dla uczniów)”
   items: TopicItem[]
   toneClassName: string // kolor numeru i tytułu, np. 'text-rose-soft'
   bulletClassName: string // kolor kropek, np. 'before:bg-rose-soft'

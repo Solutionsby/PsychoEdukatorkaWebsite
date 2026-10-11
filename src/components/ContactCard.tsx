@@ -9,6 +9,7 @@ type ContactCardProps = {
   imageAlt?: string
   imageClassName?: string // np. desktop: zdjęcie obok (absolute), na telefonie ukryte
   className?: string
+  titleClassName?: string // np. desktop bez kreski nad tytułem (Szkolenia)
   buttonClassName?: string // pozycja przycisku (desktop)
 }
 
@@ -21,6 +22,7 @@ export const ContactCard = ({
   imageAlt,
   imageClassName,
   className,
+  titleClassName,
   buttonClassName,
 }: ContactCardProps) => (
   <section
@@ -29,7 +31,12 @@ export const ContactCard = ({
       className,
     )}
   >
-    <h2 className="w-2/3 px-10 text-section text-rose-soft lg:w-auto lg:px-0 lg:text-[2.28vw] lg:leading-[1.2] lg:before:mb-[0.5vw] lg:before:block lg:before:h-[0.16vw] lg:before:w-[1.7vw] lg:before:bg-current">
+    <h2
+      className={cn(
+        'w-2/3 px-10 text-section text-rose-soft lg:w-auto lg:px-0 lg:text-[2.28vw] lg:leading-[1.2] lg:before:mb-[0.5vw] lg:before:block lg:before:h-[0.16vw] lg:before:w-[1.7vw] lg:before:bg-current',
+        titleClassName,
+      )}
+    >
       {title}
     </h2>
     <div className="mt-6 flex items-end gap-4 px-10 lg:mt-[0.8vw] lg:block lg:px-0">

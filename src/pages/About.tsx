@@ -2,7 +2,6 @@ import { Link } from 'react-router'
 import stepBlob from '@/assets/svg/O MNIE - CHMURKA2.svg'
 import areasLine from '@/assets/svg/O MNIE - LINIE.svg'
 import areasBranch from '@/assets/svg/O MNIE - LINIE 2.svg'
-import habitsChart from '@/assets/svg/O MNIE - SCHEMAT 1.svg'
 import waveLight from '@/assets/svg/O MNIE - TŁO 2.svg'
 import waveMist from '@/assets/svg/O MNIE - TŁO 3.svg'
 import {
@@ -13,6 +12,7 @@ import {
   type WorkStep,
 } from '@/content/about'
 import type { RouteHandle } from '@/content/hero'
+import { HabitsCircle } from '@/components/HabitsCircle'
 import { cn } from '@/lib/cn'
 
 export const handle = { hero: aboutHero } satisfies RouteHandle
@@ -38,10 +38,10 @@ export default function About() {
           alt=""
           className={cn(
             decor,
-            '-top-[10.8vw] -left-[12.1vw] -z-20 w-[126.1vw]',
+            'top-[-10.8vw] left-[-12.1vw] -z-20 w-[126.1vw]',
           )}
         />
-        <h2 className="rounded-tr-card bg-mist px-14 pt-10 pb-6 text-section lg:-mt-[0.57vw] lg:ml-[11.4vw] lg:w-fit lg:rounded-none lg:bg-transparent lg:p-0 lg:text-[3.1vw] lg:leading-[1.2] lg:before:block lg:before:h-[0.2vw] lg:before:w-[2vw] lg:before:bg-current">
+        <h2 className="rounded-tr-card bg-mist px-14 pt-10 pb-6 text-section lg:mt-[-0.57vw] lg:ml-[11.4vw] lg:w-fit lg:rounded-none lg:bg-transparent lg:p-0 lg:text-[3.1vw] lg:leading-[1.2] lg:before:block lg:before:h-[0.2vw] lg:before:w-[2vw] lg:before:bg-current">
           Jak pracuję?
         </h2>
         <ol className="space-y-8 lg:mt-[3.4vw] lg:space-y-0">
@@ -56,7 +56,7 @@ export default function About() {
         <img
           src={areasLine}
           alt=""
-          className={cn(decor, '-top-[16.3vw] -left-[4.87vw] w-[106.5vw]')}
+          className={cn(decor, 'top-[-16.3vw] left-[-4.87vw] w-[106.5vw]')}
         />
         <img
           src={areasBranch}
@@ -95,7 +95,7 @@ const WorkStepCard = ({ step, index }: { step: WorkStep; index: number }) => (
       <img
         src={waveMist}
         alt=""
-        className={cn(decor, '-top-[28.75vw] -left-[12.1vw] -z-30 w-[126.1vw]')}
+        className={cn(decor, 'top-[-28.75vw] left-[-12.1vw] -z-30 w-[126.1vw]')}
       />
     )}
 
@@ -129,10 +129,8 @@ const WorkStepCard = ({ step, index }: { step: WorkStep; index: number }) => (
     </article>
 
     {step.tags && (
-      <img
-        src={habitsChart}
-        alt={step.tags.join(', ')}
-        className={cn(decor, '-top-[2.9vw] left-[57.35vw] w-[35.7vw]')}
+      <HabitsCircle
+        className={cn(decor, 'top-[-2.9vw] left-[57.35vw] h-auto w-[35.7vw]')}
       />
     )}
 
@@ -149,7 +147,7 @@ const WorkStepCard = ({ step, index }: { step: WorkStep; index: number }) => (
           height={step.image.image.height}
           alt={step.image.alt}
           loading="lazy"
-          className="relative left-1/2 block h-auto w-[108%] max-w-none -translate-x-1/2 lg:left-0 lg:w-full lg:translate-none lg:[mask-image:linear-gradient(to_right,transparent,black_8%)] lg:[clip-path:ellipse(65.3%_113.5%_at_48.9%_-26.8%)]"
+          className="relative left-1/2 block h-auto w-[108%] max-w-none -translate-x-1/2 lg:left-0 lg:w-full lg:translate-none lg:mask-[linear-gradient(to_right,transparent,black_8%)] lg:[clip-path:ellipse(65.3%_113.5%_at_48.9%_-26.8%)]"
         />
       </div>
     )}
@@ -164,7 +162,7 @@ const WorkAreaCard = ({ area }: { area: WorkArea }) => (
       alt=""
       className={cn(
         decor,
-        '-z-10 lg:-left-[5.57vw] lg:group-odd:-top-[11.25vw] lg:group-odd:w-[46.25vw] lg:group-even:-top-[13.3vw] lg:group-even:w-[50.4vw]',
+        '-z-10 lg:left-[-5.57vw] lg:group-odd:top-[-11.25vw] lg:group-odd:w-[46.25vw] lg:group-even:top-[-13.3vw] lg:group-even:w-[50.4vw]',
       )}
     />
     <h3 className="text-card-title text-rose-soft lg:text-[2.27vw] lg:leading-[1.2] lg:group-odd:text-white">

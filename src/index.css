@@ -14,6 +14,8 @@
   --color-rose: #bf8591; /* akcent: kleks, przycisk */
   --color-rose-soft: #be98a2; /* tekst w kartach: numery, tytuły, linki */
   --color-rose-light: #ead8d9; /* różowe karty */
+  --color-rose-deep: #a06370; /* desktop: karta 02 w Szkoleniach (kolor kuleczek) */
+  --color-rose-ink: #746263; /* desktop: tytuł „Współpraca” w Szkoleniach */
   --color-mist-light: #e5e9e7; /* szare karty */
 
   /* Typografia płynna: minimum = wartość z XD (ekran 375px), dalej rośnie z vw
@@ -42,6 +44,28 @@
     from {
       opacity: 0;
       transform: translateY(20px);
+    }
+  }
+
+  /* koło nawyków (O mnie): kreski płyną wzdłuż ścieżki (okres = suma dasharray 9 6.5),
+     kropki rozbłyskują po kolei (6 kropek × 1 s opóźnienia = jeden obieg) */
+  --animate-dash-flow: dash-flow 1.2s linear infinite;
+  --animate-dot-pulse: dot-pulse 6s ease-in-out infinite;
+
+  @keyframes dash-flow {
+    to {
+      stroke-dashoffset: -15.5;
+    }
+  }
+
+  @keyframes dot-pulse {
+    0%,
+    30%,
+    100% {
+      transform: scale(1);
+    }
+    12% {
+      transform: scale(1.45);
     }
   }
 }

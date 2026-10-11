@@ -6,7 +6,8 @@ type TopicCardProps = {
   topic: Topic
   side: 'left' | 'right' // krawędź ekranu, do której przylega karta
   wide?: boolean // desktop: lista w dwóch kolumnach pod tytułem (domyślnie: tytuł z lewej, lista z prawej)
-  // desktop: nadpisania szerokości ze strony (kolumna tytułu, lista, punkty, opisy)
+  // desktop: nadpisania ze strony (karta, kolumna tytułu, lista, punkty, opisy)
+  className?: string
   headClassName?: string
   listClassName?: string
   termClassName?: string
@@ -26,6 +27,7 @@ export const TopicCard = ({
   topic,
   side,
   wide,
+  className,
   headClassName,
   listClassName,
   termClassName,
@@ -43,6 +45,7 @@ export const TopicCard = ({
         sides[side],
         'lg:m-0 lg:scroll-mt-[11vw] lg:rounded-none lg:bg-transparent lg:py-0 lg:pr-[6vw] lg:pl-[9.9vw] lg:inset-shadow-none',
         !wide && 'lg:flex lg:items-start',
+        className,
       )}
       initial={{ opacity: 0, x: side === 'left' ? -40 : 40 }}
       whileInView={{ opacity: 1, x: 0 }}
@@ -78,6 +81,16 @@ export const TopicCard = ({
         >
           {topic.title}
         </h2>
+        {topic.subtitle && (
+          <p
+            className={cn(
+              'hidden lg:mt-[1.4vw] lg:block lg:text-[max(0.75rem,1.3vw)] lg:tracking-[0.03em]',
+              topic.toneClassName,
+            )}
+          >
+            {topic.subtitle}
+          </p>
+        )}
 
         {Decor && placement === 'between' && (
           <Decor
