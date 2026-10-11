@@ -1,5 +1,5 @@
 import { motion, type Variants } from 'motion/react'
-import bridgeImage from '@/assets/svg/PSYCHOEDUKACJA - SCHEMAT 1.svg'
+import bridgeImage from '@/assets/svg/psychoeducation-bridge.svg'
 import { LeadHeading } from '@/components/LeadHeading'
 import { LinkPanel } from '@/components/LinkPanel'
 import type { RouteHandle } from '@/content/hero'

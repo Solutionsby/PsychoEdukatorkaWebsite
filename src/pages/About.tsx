@@ -1,9 +1,9 @@
 import { Link } from 'react-router'
-import stepBlob from '@/assets/svg/O MNIE - CHMURKA2.svg'
-import areasLine from '@/assets/svg/O MNIE - LINIE.svg'
-import areasBranch from '@/assets/svg/O MNIE - LINIE 2.svg'
-import waveLight from '@/assets/svg/O MNIE - TŁO 2.svg'
-import waveMist from '@/assets/svg/O MNIE - TŁO 3.svg'
+import stepBlob from '@/assets/svg/about-step-cloud.svg'
+import areasLine from '@/assets/svg/about-areas-line.svg'
+import areasBranch from '@/assets/svg/about-areas-branch.svg'
+import waveLight from '@/assets/svg/wave-light.svg'
+import waveMist from '@/assets/svg/about-wave-mist.svg'
 import {
   aboutHero,
   workAreas,

@@ -1,8 +1,8 @@
-import agataGlasses from '@/assets/img/Agata1.png?w=800&format=webp&as=metadata'
-import agataArmsCrossed from '@/assets/img/Agata3.png?w=800&format=webp&as=metadata'
-import agataHome from '@/assets/img/home - Agata.png?format=webp&as=metadata'
-import agataPsychoterapy from '@/assets/img/Agata5.png?w=800&format=webp&as=metadata'
-import agataDesk from '@/assets/img/O MNIE - AGATA2.png?w=800&format=webp&as=metadata'
+import agataGlasses from '@/assets/img/agata-glasses.png?w=800&format=webp&as=metadata'
+import agataArmsCrossed from '@/assets/img/agata-arms-crossed.png?w=800&format=webp&as=metadata'
+import agataHome from '@/assets/img/agata-home.png?format=webp&as=metadata'
+import agataPsychoterapy from '@/assets/img/agata-lapels.png?w=800&format=webp&as=metadata'
+import agataDesk from '@/assets/img/agata-desk.png?w=800&format=webp&as=metadata'
 import type { HeroData } from './hero'
 
 /**

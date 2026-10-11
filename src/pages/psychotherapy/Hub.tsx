@@ -1,4 +1,4 @@
-import waveLight from '@/assets/svg/O MNIE - TŁO 2.svg'
+import waveLight from '@/assets/svg/wave-light.svg'
 import { LinkPanel } from '@/components/LinkPanel'
 import type { RouteHandle } from '@/content/hero'
 import { photos } from '@/content/heroPhotos'

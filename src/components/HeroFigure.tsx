@@ -1,5 +1,5 @@
 import type { ComponentType, SVGProps } from 'react'
-import Kleks from '@/assets/svg/kleksHero.svg?react'
+import Kleks from '@/assets/svg/hero-blob.svg?react'
 import type { HeroData, HeroDecor } from '@/content/hero'
 import { cn } from '@/lib/cn'
 

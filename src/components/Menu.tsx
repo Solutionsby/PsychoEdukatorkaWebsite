@@ -2,7 +2,7 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { AnimatePresence, motion } from 'motion/react'
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router'
-import MenuTlo from '@/assets/svg/menuTlo.svg?react'
+import MenuTlo from '@/assets/svg/menu-wave.svg?react'
 import { cn } from '@/lib/cn'
 import { navLinks } from '@/lib/nav'
 
