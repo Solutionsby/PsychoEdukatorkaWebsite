@@ -4,6 +4,7 @@ type LeadHeadingProps = {
   title: string
   subtitle: string // dokończenie zdania tytułu, mniejsze
   className?: string
+  titleClassName?: string
   subtitleClassName?: string // np. normal-case: podtytuł bez wersalików
 }
 
@@ -12,10 +13,11 @@ export const LeadHeading = ({
   title,
   subtitle,
   className,
+  titleClassName,
   subtitleClassName,
 }: LeadHeadingProps) => (
   <h2 className={cn('tracking-[0.2em] text-ink uppercase', className)}>
-    <span className="block text-lead">{title}</span>
+    <span className={cn('block text-lead', titleClassName)}>{title}</span>
     <span className={cn('block text-lead-sub', subtitleClassName)}>
       {subtitle}
     </span>

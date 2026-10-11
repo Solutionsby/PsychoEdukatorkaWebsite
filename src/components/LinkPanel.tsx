@@ -13,7 +13,10 @@ type LinkPanelProps = {
   links: PanelLink[]
   side: 'left' | 'right' // krawędź ekranu, do której przylega panel i linki
   className?: string
+  titleClassName?: string
+  listClassName?: string
   linkClassName?: string // nadpisuje odstępy pigułek (np. ml-0)
+  arrow?: boolean // desktop: strzałka z kresek za tekstem linku
 }
 
 const sides = {
@@ -35,11 +38,16 @@ export const LinkPanel = ({
   links,
   side,
   className,
+  titleClassName,
+  listClassName,
   linkClassName,
+  arrow,
 }: LinkPanelProps) => (
   <section className={cn('bg-mist py-10', sides[side].panel, className)}>
-    <h2 className={cn('text-card-title', sides[side].title)}>{title}</h2>
-    <ul className="mt-6 space-y-3">
+    <h2 className={cn('text-card-title', sides[side].title, titleClassName)}>
+      {title}
+    </h2>
+    <ul className={cn('mt-6 space-y-3', listClassName)}>
       {links.map((link) => {
         const className = cn(
           'flex items-center justify-between gap-4 bg-rose-light py-2 pr-6 text-card-title tracking-wide text-rose-soft uppercase inset-shadow-card',
@@ -48,7 +56,14 @@ export const LinkPanel = ({
         )
         const content = (
           <>
-            {link.label}
+            {arrow ? (
+              <span>
+                {link.label}
+                <DashedArrow />
+              </span>
+            ) : (
+              link.label
+            )}
             {link.icon && (
               <img
                 src={link.icon.src}
@@ -79,4 +94,19 @@ export const LinkPanel = ({
       })}
     </ul>
   </section>
+)
+
+// Strzałka z kresek (desktop, np. karty „Obszary wsparcia” na Psychoterapii).
+const DashedArrow = () => (
+  <svg
+    aria-hidden
+    viewBox="0 0 84 14"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1"
+    className="ml-[1.4vw] hidden w-[4.4vw] align-middle lg:inline-block"
+  >
+    <path d="M0 7h76" strokeDasharray="5 3" />
+    <path d="M71 1l7 6-7 6M76 1l7 6-7 6" />
+  </svg>
 )

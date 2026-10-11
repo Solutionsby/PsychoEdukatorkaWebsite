@@ -2,8 +2,9 @@
 import { contact } from './contact'
 import type { HeroData } from './hero'
 import { photos } from './heroPhotos'
+import { typo } from '@/lib/typography'
 
-export const contactHero: HeroData = {
+export const contactHero: HeroData = typo({
   heading: ['Współpraca'],
   headingClassName: 'top-40 pr-10',
   lineClassName: 'text-[8.5vw] tracking-[0.2em]',
@@ -32,4 +33,4 @@ export const contactHero: HeroData = {
       ],
     ],
   },
-}
+})

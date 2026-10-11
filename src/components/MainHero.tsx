@@ -25,9 +25,22 @@ export const MainHero = ({ hero }: { hero: HeroData }) => {
     >
       {/* łuk z niebem: stały, nie animuje się przy zmianie strony */}
       {/* desktop: wymiary z home.svg (otwór 534 px od x=1174, y=171 w projekcie 1920) */}
-      <div className="absolute top-20 right-8 bottom-0 w-[60%] overflow-hidden rounded-t-full shadow-[inset_-20px_20px_20px_rgba(0,0,0,0.16)] lg:top-[8.9vw] lg:right-auto lg:left-[61.15vw] lg:w-[27.8vw] lg:shadow-[inset_-1.04vw_1.04vw_1.04vw_rgba(0,0,0,0.16)]">
+      <div
+        className={cn(
+          'absolute top-20 right-8 bottom-0 w-[60%] overflow-hidden rounded-t-full shadow-[inset_-20px_20px_20px_rgba(0,0,0,0.16)] lg:top-[8.9vw] lg:right-auto lg:left-[61.15vw] lg:w-[27.8vw] lg:shadow-[inset_-1.04vw_1.04vw_1.04vw_rgba(0,0,0,0.16)]',
+          hero.arcClassName,
+        )}
+      >
         {/* <img src={niebo} alt="" className="h-full w-full object-cover" /> */}
       </div>
+
+      {/* desktop: pionowy napis przy prawej krawędzi (czytany od dołu), stały */}
+      <p
+        aria-hidden
+        className="pointer-events-none absolute top-[45.8vw] right-[1.1vw] hidden rotate-180 font-script text-[1.78vw] leading-none text-rose [writing-mode:vertical-rl] lg:block"
+      >
+        psychoedukatorka
+      </p>
 
       {/* zmienna treść: scena (zdjęcie, kleks, nagłówek, wszystko absolute)
           + karta w normalnym przepływie, więc hero rośnie razem z jej treścią */}

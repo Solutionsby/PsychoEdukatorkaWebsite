@@ -2,8 +2,9 @@
 import type { HeroData } from './hero'
 import { credentials } from './about'
 import { photos } from './heroPhotos'
+import { typo } from '@/lib/typography'
 
-export const homeHero: HeroData = {
+export const homeHero: HeroData = typo({
   heading: ['Psychoterapia', 'Psychoedukacja', 'Szkolenia'],
   lineClassName: [
     'odd:pr-8 odd:opacity-66 even:tracking-[0.3em]',
@@ -24,4 +25,4 @@ export const homeHero: HeroData = {
     cta: { label: 'Poznaj Agatę', to: '/o-mnie' },
     link: { label: 'Psychoterapia', to: '/psychoterapia' },
   },
-}
+})

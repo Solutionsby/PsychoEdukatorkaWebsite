@@ -3,17 +3,18 @@ import type { Topic } from './topics'
 import KulkaDwa from '@/assets/svg/KulkaPsychoterapiaDwa.svg?react'
 import type { HeroData } from './hero'
 import { photos } from './heroPhotos'
+import { typo } from '@/lib/typography'
 
-export const cooperation = {
+export const cooperation = typo({
   title: 'Współpraca',
   paragraphs: [
     'Współpracę rozpoczynamy od 1 do 3 spotkań konsultacyjnych. To czas na poznanie się oraz przyjrzenie się zgłaszanym trudnościom. Wspólnie określamy możliwe kierunki pracy i wybieramy formę wsparcia najlepiej dopasowaną do potrzeb.',
     'W przypadku psychoterapii dzieci i młodzieży pierwsze spotkanie odbywa się wyłącznie z opiekunami.',
   ],
   note: 'Sesje trwają 50 minut, a ich koszt wynosi 250 zł.',
-}
+})
 
-export const supportAreas = {
+export const supportAreas = typo({
   title: 'Obszary wsparcia psychoterapeutycznego',
   links: [
     {
@@ -22,10 +23,10 @@ export const supportAreas = {
     },
     { label: 'Dorośli', to: '/psychoterapia/dorosli' },
   ] satisfies { label: string; to: PagePath }[],
-}
+})
 
 // Dzieci i młodzież
-export const kidsTopics: Topic[] = [
+export const kidsTopics: Topic[] = typo([
   {
     number: '01',
     title: 'Odzyskiwanie zdrowia psychicznego',
@@ -120,15 +121,15 @@ export const kidsTopics: Topic[] = [
       },
     ],
   },
-]
+])
 
-export const parents = {
+export const parents = typo({
   title: 'Rodzice i opiekunowie',
   text: 'Wsparcie rodziców traktuję jako ważny element pracy z dzieckiem. To przestrzeń, w której można na chwilę się zatrzymać, przyjrzeć trudnym sytuacjom i lepiej zrozumieć, co stoi za zachowaniem dziecka. Podczas konsultacji wspólnie szukamy sposobów reagowania, które są wspierające i adekwatne do potrzeb oraz etapu rozwoju dziecka. To również miejsce, w którym można zadbać o siebie w roli rodzica — z większą łagodnością i zrozumieniem.',
-}
+})
 
 // Dorośli
-export const adultsTopics: Topic[] = [
+export const adultsTopics: Topic[] = typo([
   {
     id: 'zdrowie-psychiczne',
     number: '01',
@@ -200,20 +201,32 @@ export const adultsTopics: Topic[] = [
       },
     ],
   },
-]
+])
 
-export const psychotherapyHero: HeroData = { heading: ['Psychoterapia'] }
-export const psychotherapyHubHero: HeroData = {
+export const psychotherapyHero: HeroData = typo({ heading: ['Psychoterapia'] })
+export const psychotherapyHubHero: HeroData = typo({
   ...psychotherapyHero,
-  className: 'rounded-bl-[67px]', // tło hero: zaokrąglony lewy dolny róg
-  headingClassName: 'top-35 items-center',
+  // desktop (projekt 1920): hero 1230px, łuk kończy się wcześniej (1176px),
+  // pod nim jasna fala sekcji „Współpraca”; zdjęcie w tej sekcji, nie w hero
+  className: 'rounded-bl-[67px] lg:h-[64vw] lg:rounded-none', // telefon: zaokrąglony lewy dolny róg
+  arcClassName: 'lg:bottom-[2.8vw]',
+  headingClassName: 'top-35 items-center lg:top-[16.4vw] lg:items-start',
+  lineClassName:
+    'lg:ml-[10.1vw] lg:text-[6.35vw] lg:leading-none lg:tracking-[0.267em]',
   ...photos.lapels,
+  imageClassName: `${photos.lapels.imageClassName} lg:hidden`,
   decor: 'kleks',
   card: {
-    className: '-mb-6', // karta dotyka dołu hero, pod nią białe tło strony
+    className:
+      '-mb-6 lg:top-[25.15vw] lg:left-[9.9vw] lg:h-auto lg:w-[45vw] lg:rounded-none lg:bg-transparent lg:p-0', // telefon: karta dotyka dołu hero, pod nią białe tło strony
     title: 'Psychoterapia',
+    titleClassName: 'lg:hidden', // desktop: tytułem jest nagłówek hero
     subtitle: 'Z troski o zdrowie psychiczne',
-    subtitleClassName: 'normal-case tracking-widest',
+    subtitleClassName:
+      'normal-case tracking-widest lg:flex lg:items-center lg:gap-[0.5vw] lg:text-[2.5vw] lg:leading-[1.2] lg:tracking-[0.03em] lg:before:block lg:before:h-[0.2vw] lg:before:w-[2.1vw] lg:before:bg-current',
+    // desktop: akapity bez odstępów, 2. i 3. w jednym ciągu, ostatni po pustej linii
+    paragraphsClassName:
+      'lg:mt-[0.45vw] lg:space-y-0 lg:text-[max(0.875rem,1.38vw)] lg:leading-[1.35] lg:text-ink lg:[&>p:last-child]:mt-[1.9vw] lg:[&>p:nth-child(2)]:inline lg:[&>p:nth-child(3)]:inline lg:[&>p:nth-child(3)]:before:content-["_"]',
     paragraphs: [
       'Prowadzę konsultacje psychologiczne oraz psychoterapię indywidualną dla dzieci, młodzieży i ich opiekunów, a także dla osób dorosłych.',
       'W swojej pracy łączę podejście poznawczo-behawioralne (CBT) z metodami tzw. trzeciej fali, tak aby jak najlepiej odpowiadać na indywidualne potrzeby osób, z którymi współpracuję.',
@@ -221,8 +234,8 @@ export const psychotherapyHubHero: HeroData = {
       'Jestem członkinią Polskiego Towarzystwa Psychoterapii Poznawczo-Behawioralnej, regularnie korzystam z superwizji oraz stale rozwijam swoje kompetencje, uczestnicząc w szkoleniach i konferencjach naukowych.',
     ],
   },
-}
-export const psychotherapyKidsHero: HeroData = {
+})
+export const psychotherapyKidsHero: HeroData = typo({
   heading: ['Psychoterapia', 'dzieci i młodzież,', 'rodzice i opiekunowie.'],
   headingClassName: 'top-45 items-center text-center',
   lineClassName: 'not-first:text-xl',
@@ -234,8 +247,8 @@ export const psychotherapyKidsHero: HeroData = {
       'W pracy ważna jest dla mnie relacja oparta na szacunku i uważności. Korzystam z kreatywnych form pracy, które pomagają zaciekawić i zaangażować moich małych i większych pacjentów.',
     ],
   },
-}
-export const psychotherapyAdultsHero: HeroData = {
+})
+export const psychotherapyAdultsHero: HeroData = typo({
   heading: ['Psychoterapia', 'dorośli'],
   headingClassName: 'top-45 items-center text-center',
   lineClassName: 'not-first:text-xl',
@@ -245,4 +258,4 @@ export const psychotherapyAdultsHero: HeroData = {
       'Wspieram osoby dorosłe w procesie zdrowienia oraz radzenia sobie z trudnościami dnia codziennego. Pomagam rozwijać umiejętności, które pozwalają budować bardziej satysfakcjonujące życie — w zgodzie z własnymi wartościami i potrzebami.',
     ],
   },
-}
+})

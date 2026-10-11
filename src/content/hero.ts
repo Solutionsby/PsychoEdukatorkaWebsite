@@ -18,11 +18,12 @@ export type HeroCardDetail = {
 
 export type HeroCardData = {
   title?: string
-  titleClassName?: string // tytuł bez podtytułu (styl jak na Home): nadpisanie klas
+  titleClassName?: string // klasy tytułu (bez podtytułu: <h2> z kreską; z podtytułem: duży tytuł)
   subtitle?: string // z podtytułem tytuł jest rozstrzelony (LeadHeading)
   subtitleClassName?: string
   lines?: string[] // krótkie linie bez odstępów (np. Home)
   paragraphs?: string[] // akapity z odstępami
+  paragraphsClassName?: string // np. inne odstępy na desktopie
   items?: HeroCardItem[] // punkty z kropką (np. O mnie)
   details?: HeroCardDetail[][] // dane kontaktowe w grupach (odstęp między grupami)
   cta?: HeroLink // różowy przycisk ze strzałką ('#id' = kotwica na stronie)
@@ -34,6 +35,7 @@ export type HeroCardData = {
 
 export type HeroData = {
   className?: string // klasy całej sekcji hero (np. zaokrąglenie tła)
+  arcClassName?: string // klasy łuku (np. desktop: krótszy niż hero)
   heading: string[]
   headingClassName?: string // klasy dla <h1> (pozycja, układ)
   lineClassName?: string // klasy dla każdej linii (też odd:/even:)

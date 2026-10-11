@@ -5,6 +5,7 @@ import trainingBlob from '@/assets/svg/O MNIE - KLEKS 2.svg'
 import type { HeroData, HeroImage } from './hero'
 import type { PagePath } from './pages'
 import { photos } from './heroPhotos'
+import { typo } from '@/lib/typography'
 
 export type WorkStep = {
   number: string
@@ -23,13 +24,13 @@ export type WorkArea = {
 }
 
 /** Tytuły zawodowe: karta hero na Home, linia pod nagłówkiem O mnie (desktop). */
-export const credentials = [
+export const credentials = typo([
   'psycholożka',
   'certyfikowana psychoterapeutka poznawczo-behawioralna (Nr certyfikatu PTTPB: 1819)',
   'psychodietetyczka',
-]
+])
 
-export const workSteps: WorkStep[] = [
+export const workSteps: WorkStep[] = typo([
   {
     number: '01',
     title: 'Całościowe spojrzenie na zdrowie psychiczne',
@@ -58,10 +59,10 @@ export const workSteps: WorkStep[] = [
       alt: 'Agata Hemmerling-Goc czyta książkę przy biurku z książkami i pluszowymi misiami',
     },
   },
-]
+])
 
 // Teksty z projektu desktop (2026-10-11).
-export const workAreas: WorkArea[] = [
+export const workAreas: WorkArea[] = typo([
   {
     title: 'Psychoterapia',
     subtitle: 'Z troski o zdrowie psychiczne.',
@@ -79,9 +80,9 @@ export const workAreas: WorkArea[] = [
     },
     blob: trainingBlob,
   },
-]
+])
 
-export const aboutHero: HeroData = {
+export const aboutHero: HeroData = typo({
   // desktop (projekt 1920): hero wyższe (1248px), bo fala „Jak pracuję?” zachodzi na jego dół
   className: 'lg:h-[65vw]',
   heading: ['Agata', 'Hemmerling-Goc'],
@@ -118,4 +119,4 @@ export const aboutHero: HeroData = {
       },
     ],
   },
-}
+})

@@ -28,6 +28,7 @@ export const HeroCard = ({ card }: { card: HeroCardData }) => {
           <LeadHeading
             title={card.title}
             subtitle={card.subtitle}
+            titleClassName={card.titleClassName}
             subtitleClassName={card.subtitleClassName}
             className="mb-2"
           />
@@ -59,7 +60,12 @@ export const HeroCard = ({ card }: { card: HeroCardData }) => {
       )}
 
       {card.paragraphs && (
-        <div className="space-y-4 text-card text-ink-soft">
+        <div
+          className={cn(
+            'space-y-4 text-card text-ink-soft',
+            card.paragraphsClassName,
+          )}
+        >
           {card.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
