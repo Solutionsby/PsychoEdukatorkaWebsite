@@ -25,7 +25,7 @@ Zdjęcia: `import x from '@/assets/img/….png?format=webp&as=metadata'`. SVG: `
 - [ ] Szkolenia: ~~ikony w pigułkach~~ (zrobione), zdjęcie w karcie „Współpraca” (`trainingContact.image`).
 
 ## Treści do potwierdzenia z Agatą
-- [ ] O mnie: teksty kart „Poznaj obszary mojej pracy” (`content/about.ts`), wypełniacz z designu.
+- [x] O mnie: teksty kart „Poznaj obszary mojej pracy” (`content/about.ts`): wzięte z projektu desktop (2026-10-11).
 - [ ] Dzieci: opis „Osobowość nieprawidłowo kształtująca się” (ucięty na zrzucie), opis „Sytuacje trudne” (powtórzony z „Zaburzenia nastroju”), brak opisu „Adaptacja do nowych etapów”.
 - [ ] Psychoterapia hub: dokończenie 2. akapitu karty hero („…z którymi współpracuję.”); nazwa towarzystwa (na zrzucie „Polskiego Towarzystwa Psychoterapii Poznawczo-Behawioralnej”, oficjalnie PTTPB: Polskie Towarzystwo Terapii Poznawczej i Behawioralnej).
 - [ ] Dorośli: podtytuł „dorośli” w nagłówku hero (brak w designie).

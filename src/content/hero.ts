@@ -25,8 +25,10 @@ export type HeroCardData = {
   paragraphs?: string[] // akapity z odstępami
   items?: HeroCardItem[] // punkty z kropką (np. O mnie)
   details?: HeroCardDetail[][] // dane kontaktowe w grupach (odstęp między grupami)
-  cta?: HeroLink // różowy przycisk ze strzałką
+  cta?: HeroLink // różowy przycisk ze strzałką ('#id' = kotwica na stronie)
   link?: HeroLink // podkreślony link obok
+  actionsClassName?: string // wiersz z przyciskiem i linkiem (np. 'max-lg:hidden')
+  blob?: string // desktop: kształt karty (adres SVG) zamiast elipsy
   className?: string
 }
 
@@ -35,6 +37,8 @@ export type HeroData = {
   heading: string[]
   headingClassName?: string // klasy dla <h1> (pozycja, układ)
   lineClassName?: string // klasy dla każdej linii (też odd:/even:)
+  subheading?: string[] // desktop: linie pod nagłówkiem, rozdzielone kropką (np. tytuły zawodowe)
+  subheadingClassName?: string // pozycja linii pod nagłówkiem
   image?: HeroImage
   imageAlt?: string // domyślnie „Agata Hemmerling-Goc”
   imageClassName?: string // pozycja/rozmiar zdjęcia z kleksem (pojemnik na dole sceny)

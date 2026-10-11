@@ -13,28 +13,53 @@ export const Menu = () => {
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen} modal={false}>
-      <header className="fixed inset-x-0 top-0 z-50 h-20">
+      <header className="fixed inset-x-0 top-0 z-50 h-20 lg:h-[9.5vw]">
         <MenuTlo
           aria-hidden
           preserveAspectRatio="none"
-          className="absolute top-0 left-1/2 -z-40 h-30 w-[120%] -translate-x-1/2"
+          // desktop: naturalne proporcje fali (plik 2014 px, ścieżka od x=53)
+          className="absolute top-0 left-1/2 -z-40 h-30 w-[120%] -translate-x-1/2 lg:left-0 lg:h-auto lg:w-[104.9vw] lg:-translate-x-[2.63%]"
         />
 
         {/* z-20: logo i przycisk zawsze nad panelem (z-10) */}
-        <div className="relative z-20 flex h-full items-center justify-between px-8">
+        <div className="relative z-20 flex h-full items-center justify-between px-8 lg:items-start lg:pr-[4vw] lg:pl-[5.4vw]">
           {/* TODO: logo to napis we właściwym foncie (do podmiany) */}
 
           <Link
             to="/"
             onClick={close}
-            className="font-script text-4xl text-ink"
+            className="font-script text-4xl text-ink lg:mt-[1.9vw] lg:text-[4.75vw]"
           >
             psychoedukatorka
           </Link>
 
+          {/* desktop: linki w poziomie, aktywna strona podkreślona kreską */}
+          <nav
+            aria-label="Menu"
+            className="hidden lg:mt-[1.6vw] lg:flex lg:items-center lg:gap-[4.27vw]"
+          >
+            {navLinks('menu').map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                className={({ isActive }) =>
+                  cn(
+                    'text-[max(0.875rem,1.35vw)] tracking-wide text-ink-soft',
+                    link.pill
+                      ? 'rounded-full border border-current px-[1.9vw] py-[0.05vw]'
+                      : 'relative after:absolute after:top-full after:left-0 after:mt-[0.3vw] after:h-[0.26vw] after:w-[2.2vw] after:bg-ink after:opacity-0',
+                    isActive && 'after:opacity-100',
+                  )
+                }
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </nav>
+
           <Dialog.Trigger
             aria-label={open ? 'Zamknij menu' : 'Otwórz menu'}
-            className="-m-1 p-1"
+            className="-m-1 p-1 lg:hidden"
           >
             <MenuIcon open={open} />
           </Dialog.Trigger>
@@ -45,7 +70,7 @@ export const Menu = () => {
             <Dialog.Content forceMount asChild aria-describedby={undefined}>
               <motion.nav
                 aria-label="Menu"
-                className="fixed inset-x-4 top-4 z-10 rounded-[30px] bg-white/97 pt-20 pb-8 outline-none"
+                className="fixed inset-x-4 top-4 z-10 rounded-[30px] bg-white/97 pt-20 pb-8 outline-none lg:hidden"
                 initial={{ y: '-110%' }}
                 animate={{ y: 0 }}
                 exit={{ y: '-110%' }}

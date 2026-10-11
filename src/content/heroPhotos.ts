@@ -15,8 +15,10 @@ export const photos = {
   // ręka z okularami (Home, O mnie)
   home: {
     image: agataHome,
-    imageClassName: 'left-0 w-[55%] translate-y-[5%]',
-    decorClassName: '-top-[24%] -left-[5%] w-[93%]',
+    imageClassName:
+      'left-0 w-[55%] translate-y-[5%] lg:-bottom-[0.6vw] lg:left-[44.3vw] lg:w-[21.5vw]',
+    decorClassName:
+      '-top-[24%] -left-[5%] w-[93%] lg:top-[8%] lg:-left-[83%] lg:w-[128%] lg:rotate-0 lg:opacity-45',
   },
   // ręce skrzyżowane (Psychoedukacja, Dorośli, Współpraca)
   armsCrossed: {

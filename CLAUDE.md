@@ -8,7 +8,7 @@ Marka osobista **Agaty Hemmerling-Goc**: psycholożka, certyfikowana psychoterap
 
 Strony: `/` (hasła Psychoterapia / Psychoedukacja / Szkolenia + karta z Agatą), `/o-mnie`, `/psychoedukacja`, `/psychoterapia` (hub → `/dzieci-i-mlodziez`, `/dorosli`), `/szkolenia`, `/wspolpraca` (kontakt), później `/blog`, `/blog/:slug` (headless WP). Menu: O mnie, Psychoedukacja, Psychoterapia, Szkolenia, Współpraca, BLOG (akcent `rose`).
 
-- **Stan:** wszystkie strony z mapy mają treść i układ (mobile); trwa wstawianie grafik (gałąź `grafiki`, z `dev`). Kolejność: grafiki → przegląd mobile na telefonie → desktop (najpierw wspólne: menu, hero, stopka, karty; potem strony). **Brakuje:** grafik (zdjęcia hero, kleksy, niebo w łuku, logo, ikony, kuleczki w kartach; miejsca oznaczone `TODO`, lista w `docs/TODO.md`), `og:image` 1200×630, JSON-LD.
+- **Stan:** wszystkie strony z mapy mają treść i układ (mobile); trwa wstawianie grafik (gałąź `grafiki`, z `dev`). Kolejność: grafiki → przegląd mobile na telefonie → desktop (najpierw wspólne: menu, hero, stopka, karty; potem strony). **Desktop:** w toku (gałąź `claude/Desktop`): menu, stopka, Home (hero) i O mnie zrobione wg projektu; brakuje nieba w łuku, wartości z XD (kolory, fonty), pozostałych stron. **Brakuje:** grafik (zdjęcia hero, kleksy, niebo w łuku, logo, ikony, kuleczki w kartach; miejsca oznaczone `TODO`, lista w `docs/TODO.md`), `og:image` 1200×630, JSON-LD.
 - **Otwarte:** desktop, animacja trzech haseł na Home, dokładne tokeny z Adobe, analityka, formularz kontaktowy, RODO, hosting (Netlify / Cloudflare Pages / Vercel).
 - **Uwagi do designu:** niski kontrast jasnego nagłówka na łuku („PSYCHOTERAPIA” dla dzieci), rozstrzelone nagłówki przez `clamp()` („PSYCHOEDUKACJA” prawie dotyka krawędzi).
 
@@ -54,6 +54,17 @@ Vite 8, React 19, TypeScript, Tailwind v4, React Router 8 w **framework mode** (
 - Części: `HeroFigure` (zdjęcie + dekoracja z mapy `decors` w jednym pojemniku przypiętym do dołu sceny: dół zdjęcia chowa się pod kartą, kleks pozycjonowany w % zdjęcia jedzie z nim; nowa dekoracja = klucz w `HeroDecor` + komponent w mapie; `imageAlt` domyślnie „Agata Hemmerling-Goc”), `HeroHeading` (`<h1>`, linie), `HeroCard` (biała karta w przepływie, rośnie z treścią, `inset-shadow-card`). Pola karty (wszystkie opcjonalne): `title` (`<h2>` z kreską, styl z `titleClassName`) albo `title` + `subtitle` (`LeadHeading`, `subtitleClassName`), `lines` (krótkie linie, Home), `paragraphs` (akapity), `items` (punkty z kropką, O mnie), `details` (dane kontaktowe w `<address>`, Współpraca), `cta` + `link`. `card.className: '-mb-6'` = karta dotyka dołu hero (przejście w panel pod spodem).
 - `HeroData.className`: klasy całej sekcji hero (np. `rounded-bl-[67px]` na hubie psychoterapii).
 - Style z danych: `headingClassName`, `lineClassName` (warianty `odd:`/`even:`), `imageClassName`, `decorClassName`, `card.className`, sklejane przez `cn()` (tailwind-merge: dane nadpisują domyślne). Klasy tylko jako pełne stringi. Zdjęcia: ustawienia raz na zdjęcie w `photos` (`content/heroPhotos.ts`), strona robi `...photos.x`, żeby Agata stała tak samo na każdej stronie; wartości w % (`left-[5%] w-[50%]`), `translate-y-[%]` wyrównuje głowę między kadrami, bez `top-*`. Nagłówek: `absolute` z `top-*`; karta w przepływie: przesuwanie marginesami (`-mt-*`).
+
+## Desktop
+
+- Od `lg:` (1024px); tablet = układ mobilny. Projekt: artboard 1920 (viewport 1920×1080), zrzuty w `docs/`. Gałąź `claude/Desktop`.
+- Wymiary w `vw` z projektu: px z XD / 19.2 (np. 122px → `6.35vw`), więc kompozycja jest ta sama na 1024–1920. Tekst ciągły z minimum: `text-[max(0.875rem,1.15vw)]`.
+- Klasy desktopowe obok mobilnych (`lg:*`), w komponentach (wspólny układ) i w danych stron (pozycje), jak na telefonie.
+- Menu: linki w poziomie (`NavLink`, aktywna = kreska pod spodem), `nav.pill` = pigułka z obrysem (Współpraca); hamburger i panel tylko poniżej `lg`.
+- Hero: wysokość `56.25vw`, scena `absolute inset-0`, łuk z wymiarów `assets/svg/home.svg` (otwór 534px od x=1174, y=171), karta = półprzezroczysty blob (`bg-white/50`) pozycjonowany z `card.className`. Warstwy: kleks < blob (karta `z-30`) < zdjęcie (`lg:z-40`).
+- Tła stron z SVG (fale, chmurki, linie, schemat): `<img>` z adresem pliku (import bez `?react`), nie SVGR: stałe kolory, filtry cieni, `<style>` zostaje w obrazku. Strona z tłami wychodzącymi poza ekran: `lg:overflow-x-clip lg:isolate`, warstwy `-z-*` (wzór: `pages/About.tsx`).
+- Hero per strona: `className: 'lg:h-[…]'` (wyższe hero, np. O mnie), `subheading` (linie pod nagłówkiem), `card.blob` (kształt karty z SVG), `card.actionsClassName` (np. przycisk tylko na desktopie). Zdjęcie Agaty w tym samym miejscu na każdej stronie: przy wyższym hero `lg:bottom-[…]`.
+- Porównanie z projektem: zrzut 1920×1080 i nałożony zrzut z XD (50%); zrzut z XD 11.13.26 ma skalę 1.918 px projektu na px i początek artboardu w (17, 21).
 
 ## Wspólne bloki treści (`components/`)
 

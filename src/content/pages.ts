@@ -5,6 +5,7 @@ export type NavEntry = {
   label: string
   in?: readonly NavPlace[] // domyślnie oba miejsca
   accent?: boolean // wyróżniony link (np. BLOG)
+  pill?: boolean // desktop: link jako pigułka z obrysem (Współpraca)
 }
 
 export type Page = {
@@ -41,7 +42,7 @@ export const pages = [
   {
     path: '/wspolpraca',
     file: 'pages/Contact.tsx',
-    nav: { label: 'Współpraca' },
+    nav: { label: 'Współpraca', pill: true },
   },
 ] as const satisfies readonly Page[]
 

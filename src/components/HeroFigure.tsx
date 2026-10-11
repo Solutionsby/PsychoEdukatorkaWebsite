@@ -27,7 +27,14 @@ export const HeroFigure = ({
   // ze zdjęciem na każdym ekranie; pojemnik stoi na dole sceny, dół zdjęcia chowa się
   // pod kartą, więc na wysokim ekranie zdjęcie nie wisi nad kartą
   return (
-    <div className={cn('absolute bottom-0 z-20', imageClassName)}>
+    // desktop: pojemnik bez z-index i przesunięcia (bez kontekstu warstw), żeby
+    // kleks był pod kartą (blobem), a zdjęcie nad nią
+    <div
+      className={cn(
+        'absolute bottom-0 z-20 lg:z-auto lg:translate-none',
+        imageClassName,
+      )}
+    >
       {Decor && (
         <Decor
           aria-hidden
@@ -44,7 +51,7 @@ export const HeroFigure = ({
         alt={imageAlt ?? 'Agata Hemmerling-Goc'}
         // największy element na ekranie: ładuj go przed resztą (LCP)
         fetchPriority="high"
-        className="relative h-auto w-full"
+        className="relative h-auto w-full lg:z-40"
       />
     </div>
   )

@@ -1,4 +1,7 @@
 import deskPhoto from '@/assets/img/O MNIE - AGATA2.png?format=webp&as=metadata'
+import heroBlob from '@/assets/svg/O MNIE - CHMURKA.svg'
+import therapyBlob from '@/assets/svg/O MNIE - KLEKS 1.svg'
+import trainingBlob from '@/assets/svg/O MNIE - KLEKS 2.svg'
 import type { HeroData, HeroImage } from './hero'
 import type { PagePath } from './pages'
 import { photos } from './heroPhotos'
@@ -7,7 +10,8 @@ export type WorkStep = {
   number: string
   title: string
   paragraphs: string[]
-  tags?: string[] // pasek pod kartą: RELACJE • SEN • …
+  tags?: string[] // pasek pod kartą: RELACJE • SEN • …; desktop: schemat (kółko)
+  image?: { image: HeroImage; alt: string } // zdjęcie pod kartą; desktop: obok
 }
 
 export type WorkArea = {
@@ -15,7 +19,15 @@ export type WorkArea = {
   subtitle: string
   text: string
   link: { label: string; to: PagePath }
+  blob: string // desktop: kształt karty (adres SVG)
 }
+
+/** Tytuły zawodowe: karta hero na Home, linia pod nagłówkiem O mnie (desktop). */
+export const credentials = [
+  'psycholożka',
+  'certyfikowana psychoterapeutka poznawczo-behawioralna (Nr certyfikatu PTTPB: 1819)',
+  'psychodietetyczka',
+]
 
 export const workSteps: WorkStep[] = [
   {
@@ -40,39 +52,57 @@ export const workSteps: WorkStep[] = [
     paragraphs: [
       'Wyjątkowo ważnym aspektem mojej praktyki jest wspieranie dzieci i młodzieży w rozumieniu ich świata wewnętrznego oraz bezpiecznym przeprowadzaniu ich przez wyzwania rozwojowe.',
     ],
+    // telefon: na całą szerokość pod kartą; desktop: obok tekstu
+    image: {
+      image: deskPhoto,
+      alt: 'Agata Hemmerling-Goc czyta książkę przy biurku z książkami i pluszowymi misiami',
+    },
   },
 ]
 
-// Zdjęcie między „Jak pracuję?” a „Poznaj obszary mojej pracy”, na całą szerokość.
-export const deskImage: { image: HeroImage; alt: string } = {
-  image: deskPhoto,
-  alt: 'Agata Hemmerling-Goc czyta książkę przy biurku z książkami i pluszowymi misiami',
-}
-
-// TODO: teksty to wypełniacz z designu, do podmiany
+// Teksty z projektu desktop (2026-10-11).
 export const workAreas: WorkArea[] = [
   {
     title: 'Psychoterapia',
     subtitle: 'Z troski o zdrowie psychiczne.',
     text: 'Prowadzę konsultacje psychologiczne oraz psychoterapię indywidualną dla dzieci, młodzieży i ich opiekunów, a także dla osób dorosłych.',
     link: { label: 'Zobacz, jak wygląda psychoterapia', to: '/psychoterapia' },
+    blob: therapyBlob,
   },
   {
     title: 'Szkolenia i warsztaty',
     subtitle: 'Z miłości do rezyliencji.',
-    text: 'Prowadzę konsultacje psychologiczne oraz psychoterapię indywidualną dla dzieci, młodzieży i ich opiekunów, a także dla osób dorosłych.',
-    link: { label: 'Poznaj szkolenia i warsztaty', to: '/szkolenia' },
+    text: 'Prowadzę szkolenia, warsztaty oraz prelekcje dla różnorodnych grup odbiorców — od placówek oświatowych i instytucji publicznych po sektor biznesowy. W swojej pracy łączę wiedzę naukową z doświadczeniem klinicznym oraz wieloletnią praktyką w działaniach profilaktycznych.',
+    link: {
+      label: 'Poznaj szkolenia i możliwości współpracy',
+      to: '/szkolenia',
+    },
+    blob: trainingBlob,
   },
 ]
 
 export const aboutHero: HeroData = {
+  // desktop (projekt 1920): hero wyższe (1248px), bo fala „Jak pracuję?” zachodzi na jego dół
+  className: 'lg:h-[65vw]',
   heading: ['Agata', 'Hemmerling-Goc'],
-  headingClassName: 'top-35 items-start pl-6 normal-case',
+  headingClassName:
+    'top-35 items-start pl-6 normal-case lg:top-[12.1vw] lg:flex-row lg:gap-[0.3em] lg:pl-[11.2vw] lg:tracking-normal',
+  lineClassName: 'lg:text-[1.6vw] lg:leading-[1.2]',
+  subheading: credentials,
+  subheadingClassName: 'lg:top-[14.4vw] lg:left-[11.2vw] lg:w-[38vw]',
   ...photos.home,
+  // zdjęcie w tym samym miejscu co na Home (hero wyższe o 168px), bez kleksa
+  imageClassName: `${photos.home.imageClassName} lg:bottom-[8.2vw]`,
+  decorClassName: `${photos.home.decorClassName} lg:hidden`,
   decor: 'kleks',
 
   card: {
-    className: '-mb-6',
+    className:
+      '-mb-6 lg:top-[21.2vw] lg:left-[2.7vw] lg:h-[34.5vw] lg:w-[47.1vw] lg:pt-[4.6vw] lg:pr-[6vw] lg:pl-[5.6vw]',
+    blob: heroBlob,
+    // przycisk tylko na desktopie (na telefonie „Jak pracuję?” jest tuż pod hero)
+    cta: { label: 'Jak pracuję?', to: '#jak-pracuje' },
+    actionsClassName: 'max-lg:hidden lg:mt-[3.5vw] lg:pl-[5.9vw]',
     items: [
       {
         title: 'Praktyka kliniczna',

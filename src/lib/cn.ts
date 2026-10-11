@@ -7,7 +7,15 @@ import { extendTailwindMerge } from 'tailwind-merge'
 const twMerge = extendTailwindMerge({
   extend: {
     theme: {
-      text: ['section', 'number', 'card-title', 'card', 'lead', 'lead-sub', 'hero'],
+      text: [
+        'section',
+        'number',
+        'card-title',
+        'card',
+        'lead',
+        'lead-sub',
+        'hero',
+      ],
     },
   },
 })
