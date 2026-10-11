@@ -61,7 +61,6 @@ export const workSteps: WorkStep[] = typo([
   },
 ])
 
-// Teksty z projektu desktop (2026-10-11).
 export const workAreas: WorkArea[] = typo([
   {
     title: 'Psychoterapia',
@@ -83,7 +82,7 @@ export const workAreas: WorkArea[] = typo([
 ])
 
 export const aboutHero: HeroData = typo({
-  // desktop (projekt 1920): hero wyższe (1248px), bo fala „Jak pracuję?” zachodzi na jego dół
+  // desktop: hero wyższe (1248px), bo fala „Jak pracuję?” zachodzi na jego dół
   className: 'lg:h-[65vw]',
   heading: ['Agata', 'Hemmerling-Goc'],
   headingClassName:

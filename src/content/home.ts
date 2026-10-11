@@ -1,4 +1,4 @@
-// Treść strony głównej (na razie tylko hero).
+// Treść strony głównej (całość w hero).
 import type { HeroData } from './hero'
 import { credentials } from './about'
 import { photos } from './heroPhotos'
@@ -8,7 +8,7 @@ export const homeHero: HeroData = typo({
   heading: ['Psychoterapia', 'Psychoedukacja', 'Szkolenia'],
   lineClassName: [
     'odd:pr-8 odd:opacity-66 even:tracking-[0.3em]',
-    // desktop (projekt 1920): 85 / 122 / 58 px, każda linia od swojego x
+    // desktop: 85 / 122 / 58 px, każda linia od swojego x
     'lg:not-first:mt-[0.94vw] lg:odd:pr-0 lg:leading-none',
     'lg:first:ml-[23.85vw] lg:first:text-[4.43vw] lg:first:tracking-[0.227em]',
     'lg:even:ml-[10vw] lg:even:text-[6.35vw] lg:even:tracking-[0.265em]',

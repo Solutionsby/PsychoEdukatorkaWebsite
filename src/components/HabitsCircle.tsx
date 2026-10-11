@@ -1,6 +1,6 @@
 import { cn } from '@/lib/cn'
 
-// Koło nawyków z „Jak pracuję?” (O mnie, desktop), rozłożone z `O MNIE - SCHEMAT 1.svg`:
+// Koło nawyków z „Jak pracuję?” (O mnie, desktop), rozłożone z SVG z projektu:
 // przerywana ścieżka (z przerwami przy etykietach), kropki i etykiety jako tekst.
 // Animacja: kreski płyną zgodnie z ruchem wskazówek zegara, kropki rozbłyskują po kolei
 // w tym samym kierunku (keyframes w index.css; motion-safe = bez ruchu przy reduced motion).

@@ -9,7 +9,7 @@ export const Footer = () => {
 
   return (
     <footer className="text-sm">
-      {/* desktop (projekt 1920): jeden pas, trzy kolumny: logo, dane kontaktowe, linki */}
+      {/* desktop: jeden pas, trzy kolumny: logo, dane kontaktowe, linki */}
       <div className="bg-mist-deep px-8 pt-8 pb-5 text-white lg:flex lg:h-[13vw] lg:items-center lg:py-0 lg:pr-[4vw] lg:pl-[4.5vw]">
         {/* TODO: logo SVG od grafika zamiast tekstu */}
         <Link

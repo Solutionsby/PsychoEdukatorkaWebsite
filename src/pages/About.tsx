@@ -17,7 +17,7 @@ import { cn } from '@/lib/cn'
 
 export const handle = { hero: aboutHero } satisfies RouteHandle
 
-// Desktop (projekt 1920): wymiary w vw = px / 19.2. Tła (fale, chmurki, linie) to <img>
+// Desktop: tła (fale, chmurki, linie) to <img>
 // z SVG w stałych kolorach: wychodzą poza ekran (overflow-x-clip), a isolate trzyma je
 // (-z-*) pod treścią, ale nad hero, bo fala „Jak pracuję?” zachodzi na dół hero.
 // Kolejność warstw: fala mist (02) < fala jasna (01) < chmurka karty 01.
@@ -154,7 +154,7 @@ const WorkStepCard = ({ step, index }: { step: WorkStep; index: number }) => (
   </li>
 )
 
-// Desktop: dwie karty obok siebie na kształtach z SVG (KLEKS 1 / 2), pozycje z projektu.
+// Desktop: dwie karty obok siebie na kształtach z SVG, pozycje z projektu.
 const WorkAreaCard = ({ area }: { area: WorkArea }) => (
   <li className="group mr-4 rounded-r-card bg-rose-light py-8 pr-8 pl-10 inset-shadow-card lg:relative lg:m-0 lg:rounded-none lg:bg-transparent lg:inset-shadow-none lg:odd:ml-[6.77vw] lg:odd:min-h-[20.6vw] lg:odd:w-[36.6vw] lg:odd:pt-[2.5vw] lg:odd:pr-[0.6vw] lg:odd:pl-[2.6vw] lg:even:mt-[1.15vw] lg:even:ml-[9.32vw] lg:even:min-h-[23.9vw] lg:even:w-[42vw] lg:even:pt-[1.25vw] lg:even:pr-0 lg:even:pl-[4.9vw]">
     <img

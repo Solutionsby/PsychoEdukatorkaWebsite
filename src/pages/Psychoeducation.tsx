@@ -19,7 +19,7 @@ import { cn } from '@/lib/cn'
 
 export const handle = { hero: psychoeducationHero } satisfies RouteHandle
 
-// Desktop (projekt 1920, wymiary w vw = px / 19.2): jasny pas „Między nauką…” zachodzi
+// Desktop: jasny pas „Między nauką…” zachodzi
 // na dół hero, zdjęcia w oknach w kształcie kleksa (HoleWindow), rząd ikon połączony
 // linią, „Metafory…” na fali mist. Fale i okna wychodzą poza swoje sekcje:
 // overflow-x-clip, isolate (warstwy -z-10 pod treścią, ale nad hero).

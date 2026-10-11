@@ -33,7 +33,7 @@ export const meta = ({ location }: Route.MetaArgs) => {
   ]
 }
 
-// Szkielet dokumentu HTML: to, co było w index.html.
+// Szkielet dokumentu HTML.
 export function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="pl">
@@ -52,7 +52,6 @@ export function Layout({ children }: { children: ReactNode }) {
   )
 }
 
-// Aplikacja: nasz dotychczasowy Layout (Menu, hero, <Outlet/>, stopka).
 export default function App() {
   return <SiteLayout />
 }

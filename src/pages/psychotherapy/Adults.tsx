@@ -6,7 +6,7 @@ import { adultsTopics, psychotherapyAdultsHero } from '@/content/psychotherapy'
 
 export const handle = { hero: psychotherapyAdultsHero } satisfies RouteHandle
 
-// Desktop (projekt 1920, wymiary w vw = px / 19.2): układ jak Dzieci (TopicNav + TopicCard),
+// Desktop: układ jak Dzieci (TopicNav + TopicCard),
 // trzy obszary, kolumna tytułu szersza (lista od x=994), lista 01 w dwóch równych kolumnach.
 // TODO: pasy z niebem między kartami (czekają na zdjęcie nieba)
 export default function PsychotherapyAdults() {

@@ -10,7 +10,7 @@ import {
 
 export const handle = { hero: psychotherapyHubHero } satisfies RouteHandle
 
-// Desktop (projekt 1920): jasna fala zachodzi na dół hero (-mt), zdjęcie Agaty stoi
+// Desktop: jasna fala zachodzi na dół hero (-mt), zdjęcie Agaty stoi
 // na stopce po lewej, tekst i karty „Obszary wsparcia” po prawej.
 // Fala to <img> wychodzący poza ekran: overflow-x-clip, isolate (warstwa -z-10 nad hero).
 export default function PsychotherapyHub() {

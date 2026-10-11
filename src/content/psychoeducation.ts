@@ -46,8 +46,8 @@ export const bridge = { alt: 'Między nauką a codziennością' }
 
 export type Benefit = {
   label: string
-  icon: HeroImage // plama z ikoną (wyciągnięte z PSYCHOEDUKACJA - SCHEMAT.svg)
-  className: string // desktop: pozycja w rzędzie (left/top w vw, projekt 1920)
+  icon: HeroImage // plama z ikoną
+  className: string // desktop: pozycja w rzędzie (left/top w vw)
 }
 
 // Telefon: dwie kolumny, ostatnia pozycja na środku; desktop: rząd połączony linią.

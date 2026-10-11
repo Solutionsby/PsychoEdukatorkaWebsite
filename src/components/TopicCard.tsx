@@ -22,7 +22,7 @@ const sides = {
 // Biała karta na białym tle: kształt rysuje tylko cień wewnętrzny (u góry), dół prawie niewidoczny.
 // Wejście: wjeżdża od swojej krawędzi, raz, gdy pojawi się na ekranie.
 // Rodzic musi mieć overflow-x-clip (przesunięcie wychodzi poza ekran).
-// Desktop (projekt 1920): bez karty, tekst na tle strony; numer z kreską pod spodem.
+// Desktop: bez karty, tekst na tle strony; numer z kreską pod spodem.
 export const TopicCard = ({
   topic,
   side,

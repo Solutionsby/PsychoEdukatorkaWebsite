@@ -23,7 +23,7 @@ export const trainingTopics: Topic[] = typo([
     number: '01',
     title: 'Rezyliencja\nw edukacji',
     subtitle: '(Szkolenia dla kadry pedagogicznej)',
-    // desktop: 01 w jasnym mist (projekt 1920)
+    // desktop: 01 w jasnym mist
     toneClassName: 'text-rose-soft lg:text-mist-deep',
     bulletClassName: 'before:bg-ink/60 lg:before:bg-mist-light',
     items: [
@@ -101,13 +101,12 @@ export const trainingAreas = typo({
 export const trainingContact = typo({
   title: 'Współpraca',
   text: 'Powyższe tematy stanowią punkt wyjścia. Każde szkolenie przygotowuję w oparciu o realne potrzeby danej placówki lub organizacji. Ceny szkoleń ustalane są indywidualnie — zależą od formy spotkania, liczby uczestników oraz terminu realizacji. Zapraszam do kontaktu, abyśmy mogli wspólnie zaplanować działania najlepiej dopasowane do Państwa potrzeb.',
-  // TODO: image: zdjęcie Agaty w kraciastej koszuli (desktop: obok tekstu, projekt 1920),
-  // import z ?format=webp&as=metadata; na telefonie ukryte (imageClassName na stronie)
+  // TODO: image: zdjęcie Agaty w kraciastej koszuli (desktop: obok tekstu, na telefonie ukryte)
 })
 
 export const trainingHero: HeroData = typo({
   heading: ['Szkolenia'],
-  // desktop (projekt 1920): jak Współpraca, sam tekst po lewej i łuk; zdjęcie niżej (Obszary).
+  // desktop: jak Współpraca, sam tekst po lewej i łuk; zdjęcie niżej (Obszary).
   // Wyższe hero: fala „Dlaczego rezyliencja?” zaczyna się przy dole pierwszego ekranu.
   className: 'lg:h-[66.7vw]',
   headingClassName: 'top-45 pr-10 lg:top-[14.6vw] lg:items-start lg:pr-0',

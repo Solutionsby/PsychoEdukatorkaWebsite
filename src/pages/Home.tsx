@@ -4,7 +4,6 @@ import { homeHero } from '@/content/home'
 export const handle = { hero: homeHero } satisfies RouteHandle
 
 export default function Home() {
-  // Hero (hasła + zdjęcie) pochodzi z `homeHero` w `content/home.ts`.
-  // Tu trafia treść pod hero, np. karta z Agatą.
+  // cała treść strony głównej jest w hero (`homeHero`)
   return null
 }

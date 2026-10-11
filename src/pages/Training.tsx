@@ -21,7 +21,7 @@ import { cn } from '@/lib/cn'
 
 export const handle = { hero: trainingHero } satisfies RouteHandle
 
-// Desktop (projekt 1920, wymiary w vw = px / 19.2): tła z SVG pozycjonowane względem
+// Desktop: tła z SVG pozycjonowane względem
 // całej strony (fale wychodzą poza ekran): jasna fala „Dlaczego rezyliencja?” zachodzi
 // na dół hero, mist pod „Obszarami”, trzy białe pasy pod kartami 01–03 (między nimi
 // prześwituje niebo), różowa fala pod „Współpracą”. Kolejność warstw = kolejność w DOM.
@@ -101,7 +101,7 @@ export default function Training() {
           desktop: tytuł na środku, dwa akapity obok siebie na jasnej fali */}
       <section
         id="dlaczego-rezyliencja"
-        className="mr-edge scroll-mt-24 rounded-tr-card bg-mist pt-10 lg:-mt-[9.875vw] lg:scroll-mt-[11vw] lg:mr-0 lg:rounded-none lg:bg-transparent lg:pt-0"
+        className="mr-edge scroll-mt-24 rounded-tr-card bg-mist pt-10 lg:-mt-[9.875vw] lg:mr-0 lg:scroll-mt-[11vw] lg:rounded-none lg:bg-transparent lg:pt-0"
       >
         <h2 className="px-14 text-section lg:px-0 lg:text-center lg:text-[2.75vw] lg:leading-[1.2] lg:tracking-[0.03em] lg:text-rose-soft">
           {resilience.title}

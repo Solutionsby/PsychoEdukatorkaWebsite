@@ -10,7 +10,7 @@ export const contactNote = typo(
 )
 
 export const contactHero: HeroData = typo({
-  // desktop (projekt 1920): jeden ekran, sam tekst po lewej i łuk, bez zdjęcia
+  // desktop: jeden ekran, sam tekst po lewej i łuk, bez zdjęcia
   heading: ['Współpraca'],
   headingClassName: 'top-40 pr-10 lg:top-[16.4vw] lg:pr-0 lg:items-start',
   lineClassName:

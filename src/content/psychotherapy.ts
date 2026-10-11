@@ -233,7 +233,7 @@ export const adultsTopics: Topic[] = typo([
 export const psychotherapyHero: HeroData = typo({ heading: ['Psychoterapia'] })
 export const psychotherapyHubHero: HeroData = typo({
   ...psychotherapyHero,
-  // desktop (projekt 1920): hero 1230px, łuk kończy się wcześniej (1176px),
+  // desktop: hero 1230px, łuk kończy się wcześniej (1176px),
   // pod nim jasna fala sekcji „Współpraca”; zdjęcie w tej sekcji, nie w hero
   className: 'rounded-bl-[67px] lg:h-[64vw] lg:rounded-none', // telefon: zaokrąglony lewy dolny róg
   arcClassName: 'lg:bottom-[2.8vw]',
@@ -263,7 +263,7 @@ export const psychotherapyHubHero: HeroData = typo({
   },
 })
 export const psychotherapyKidsHero: HeroData = typo({
-  // desktop (projekt 1920): nagłówek i łuk jak na hubie, zdjęcie przy biurku na dole
+  // desktop: nagłówek i łuk jak na hubie, zdjęcie przy biurku na dole
   // po lewej, jego dół zakrywa jasny pas strony (pages/psychotherapy/Kids.tsx)
   className: 'lg:h-[64vw]',
   arcClassName: 'lg:bottom-[2.8vw]',
@@ -289,7 +289,7 @@ export const psychotherapyKidsHero: HeroData = typo({
   },
 })
 export const psychotherapyAdultsHero: HeroData = typo({
-  // desktop (projekt 1920): jak Dzieci, zdjęcie stoi przy lewej krawędzi łuku
+  // desktop: jak Dzieci, zdjęcie stoi przy lewej krawędzi łuku
   className: 'lg:h-[64vw]',
   arcClassName: 'lg:bottom-[2.8vw]',
   heading: ['Psychoterapia', 'dorośli'],

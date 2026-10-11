@@ -11,7 +11,7 @@ import { cn } from '@/lib/cn'
 
 export const handle = { hero: psychotherapyKidsHero } satisfies RouteHandle
 
-// Desktop (projekt 1920, wymiary w vw = px / 19.2): jasny pas z nawigacją 01–04 (TopicNav),
+// Desktop: jasny pas z nawigacją 01–04 (TopicNav),
 // karty bez tła (TopicCard), „Rodzice i opiekunowie” na różowej fali (ścieżka SVG).
 // TODO: pasy z niebem między kartami (czekają na zdjęcie nieba)
 const wave = 'pointer-events-none absolute left-0 -z-10 hidden w-full lg:block'

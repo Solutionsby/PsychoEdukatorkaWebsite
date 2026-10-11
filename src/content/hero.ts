@@ -6,10 +6,10 @@ export type HeroImage = { src: string; width: number; height: number }
 /** Dostępne dekoracje; komponenty SVG przypisuje `HeroFigure`. */
 export type HeroDecor = 'kleks'
 
-export type HeroCardItem = { title: string; text: string }
+type HeroCardItem = { title: string; text: string }
 
 /** Wiersz danych kontaktowych: „Telefon: 519…”; `stacked` = etykieta w osobnej linii. */
-export type HeroCardDetail = {
+type HeroCardDetail = {
   label: string
   lines: string[]
   href?: string // tel:, mailto:

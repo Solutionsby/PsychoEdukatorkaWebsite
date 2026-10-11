@@ -23,7 +23,7 @@ export const Menu = () => {
 
         {/* z-20: logo i przycisk zawsze nad panelem (z-10) */}
         <div className="relative z-20 flex h-full items-center justify-between px-8 lg:items-start lg:pr-[4vw] lg:pl-[5.4vw]">
-          {/* TODO: logo to napis we właściwym foncie (do podmiany) */}
+          {/* TODO: logo SVG od grafika */}
 
           <Link
             to="/"
