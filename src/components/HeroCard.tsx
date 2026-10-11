@@ -72,22 +72,45 @@ export const HeroCard = ({ card }: { card: HeroCardData }) => {
         </div>
       )}
 
+      {/* tylko desktop: na telefonie ta treść jest na stronie pod hero */}
+      {card.sections && (
+        <div className="hidden lg:mt-[2.55vw] lg:block">
+          {card.sections.map((section) => (
+            <section key={section.title}>
+              <h3 className="text-[max(0.875rem,1.4vw)] leading-[1.5] tracking-[0.12em] uppercase">
+                {section.title}
+              </h3>
+              <p className="text-[max(0.875rem,1.38vw)] leading-[1.5]">
+                {section.text}
+              </p>
+            </section>
+          ))}
+        </div>
+      )}
+
       {card.details && (
-        <address className="space-y-4 text-card not-italic">
+        <address className="space-y-4 text-card not-italic lg:space-y-[2.1vw] lg:text-[max(0.875rem,1.38vw)] lg:leading-[1.5]">
           {card.details.map((group) => (
             <div key={group[0].label}>
               {group.map((detail) => {
+                // desktop: etykieta i pierwsza linia w jednym wierszu, dalsze linie z wcięciem
                 const value = detail.lines.map((line) => (
-                  <span key={line} className="block">
+                  <span
+                    key={line}
+                    className="block lg:pl-[0.6vw] lg:nth-2:inline lg:nth-2:pl-[0.3em]"
+                  >
                     {line}
                   </span>
                 ))
                 return (
                   <div
                     key={detail.label}
-                    className={cn(!detail.stacked && 'flex gap-1')}
+                    className={cn(
+                      !detail.stacked && 'flex gap-1 lg:pl-[0.6vw]',
+                      'lg:gap-[0.3em]',
+                    )}
                   >
-                    <span className="block">{detail.label}:</span>
+                    <span className="block lg:inline">{detail.label}:</span>
                     {detail.href ? <a href={detail.href}>{value}</a> : value}
                   </div>
                 )

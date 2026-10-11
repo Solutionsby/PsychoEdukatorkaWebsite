@@ -34,14 +34,6 @@ export const MainHero = ({ hero }: { hero: HeroData }) => {
         {/* <img src={niebo} alt="" className="h-full w-full object-cover" /> */}
       </div>
 
-      {/* desktop: pionowy napis przy prawej krawędzi (czytany od dołu), stały */}
-      <p
-        aria-hidden
-        className="pointer-events-none absolute top-[45.8vw] right-[1.1vw] hidden rotate-180 font-script text-[1.78vw] leading-none text-rose [writing-mode:vertical-rl] lg:block"
-      >
-        psychoedukatorka
-      </p>
-
       {/* zmienna treść: scena (zdjęcie, kleks, nagłówek, wszystko absolute)
           + karta w normalnym przepływie, więc hero rośnie razem z jej treścią */}
       <AnimatePresence mode="wait" initial={false}>

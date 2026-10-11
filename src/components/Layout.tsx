@@ -19,6 +19,14 @@ export function Layout() {
         <Outlet />
       </main>
       <Footer />
+      {/* desktop: pionowy napis przy prawej krawędzi ekranu (czytany od dołu),
+          fixed: jedzie razem z przewijaniem */}
+      <p
+        aria-hidden
+        className="pointer-events-none fixed right-[1.1vw] bottom-[1.6vw] z-40 hidden rotate-180 font-script text-[1.78vw] leading-none text-rose [writing-mode:vertical-rl] lg:block"
+      >
+        psychoedukatorka
+      </p>
     </MotionConfig>
   )
 }

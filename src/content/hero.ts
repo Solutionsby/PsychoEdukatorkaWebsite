@@ -24,6 +24,7 @@ export type HeroCardData = {
   lines?: string[] // krótkie linie bez odstępów (np. Home)
   paragraphs?: string[] // akapity z odstępami
   paragraphsClassName?: string // np. inne odstępy na desktopie
+  sections?: { title: string; text: string }[] // desktop: bloki pod akapitami (tytuł wersalikami + tekst)
   items?: HeroCardItem[] // punkty z kropką (np. O mnie)
   details?: HeroCardDetail[][] // dane kontaktowe w grupach (odstęp między grupami)
   cta?: HeroLink // różowy przycisk ze strzałką ('#id' = kotwica na stronie)
