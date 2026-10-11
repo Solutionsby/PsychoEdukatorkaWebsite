@@ -1,7 +1,8 @@
 import agataTeddy from '@/assets/img/Agata7.png?w=800&format=webp&as=metadata'
 import metaphors from '@/assets/img/PSYCHOEDUKACJA - OBRAZ.png?format=webp&as=metadata'
-import type { HeroImage } from './hero'
+import type { HeroData, HeroImage } from './hero'
 import type { PagePath } from './pages'
+import { photos } from './heroPhotos'
 
 export const intro = {
   title: 'Psychoedukacja',
@@ -64,4 +65,20 @@ export const practice = {
     { label: 'Szkolenia i warsztaty', to: '/szkolenia' },
     { label: 'Blog', to: '/blog' }, // blog to osobny etap: do tego czasu 404
   ] satisfies { label: string; to: PagePath | '/blog' }[],
+}
+
+export const psychoeducationHero: HeroData = {
+  heading: ['Psychoedukacja'],
+  headingClassName: 'top-35 items-center',
+  lineClassName: 'text-[8.5vw] tracking-[0.2em] -mr-[0.2em]',
+  ...photos.armsCrossed,
+  decor: 'kleks',
+  card: {
+    className: '-mb-6', // jak w O mnie: karta dotyka panelu pod hero
+    title: 'Psychoedukacja',
+    subtitle: 'jest jednym z najważniejszych filarów mojej pracy',
+    paragraphs: [
+      'Postrzegam ją jako most między nauką a codziennością — narzędzie, które nie tylko wyjaśnia teoretyczne zagadnienia, ale przede wszystkim realnie wspiera w życiu. Zależy mi na tym, aby wiedza psychologiczna była rzetelna i oparta na badaniach, a jednocześnie bliska, zrozumiała i użyteczna.',
+    ],
+  },
 }

@@ -1,7 +1,7 @@
 import { motion, type Variants } from 'motion/react'
 import { LeadHeading } from '@/components/LeadHeading'
 import { LinkPanel } from '@/components/LinkPanel'
-import { psychoeducationHero, type RouteHandle } from '@/content/hero'
+import type { RouteHandle } from '@/content/hero'
 import {
   benefits,
   intro,
@@ -10,6 +10,7 @@ import {
   stories,
   type Benefit,
   type Story,
+  psychoeducationHero,
 } from '@/content/psychoeducation'
 import { cn } from '@/lib/cn'
 

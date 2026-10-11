@@ -21,7 +21,7 @@ export const HeroHeading = ({
       {heading.map((line) => (
         <span
           key={line}
-          className={cn('block text-3xl text-ink', lineClassName)}
+          className={cn('block text-hero text-ink', lineClassName)}
         >
           {line}
         </span>

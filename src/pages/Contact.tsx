@@ -1,4 +1,5 @@
-import { contactHero, type RouteHandle } from '@/content/hero'
+import type { RouteHandle } from '@/content/hero'
+import { contactHero } from '@/content/cooperation'
 
 export const handle = { hero: contactHero } satisfies RouteHandle
 

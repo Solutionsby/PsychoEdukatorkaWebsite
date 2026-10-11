@@ -1,6 +1,7 @@
 import deskPhoto from '@/assets/img/O MNIE - AGATA2.png?format=webp&as=metadata'
-import type { HeroImage } from './hero'
+import type { HeroData, HeroImage } from './hero'
 import type { PagePath } from './pages'
+import { photos } from './heroPhotos'
 
 export type WorkStep = {
   number: string
@@ -63,3 +64,28 @@ export const workAreas: WorkArea[] = [
     link: { label: 'Poznaj szkolenia i warsztaty', to: '/szkolenia' },
   },
 ]
+
+export const aboutHero: HeroData = {
+  heading: ['Agata', 'Hemmerling-Goc'],
+  headingClassName: 'top-35 items-start pl-6 normal-case',
+  ...photos.home,
+  decor: 'kleks',
+
+  card: {
+    className: '-mb-6',
+    items: [
+      {
+        title: 'Praktyka kliniczna',
+        text: 'Psychoterapia i konsultacje dla dzieci, młodzieży, rodziców oraz osób dorosłych.',
+      },
+      {
+        title: 'Psychoedukacja i szkolenia',
+        text: 'Warsztaty dla placówek oświatowych, uczelni wyższych, organizacji pozarządowych oraz firm.',
+      },
+      {
+        title: 'Doświadczenie i współprace',
+        text: 'Wojewódzki Szpital Psychiatryczny w Gdańsku, Fundacja Praesterno, WSB Merito, SKN Psychologii GUMed, Uniwersytet Gdański, NAMI (Grupa INVICTA), Psycho Academy.',
+      },
+    ],
+  },
+}

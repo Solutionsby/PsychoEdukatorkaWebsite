@@ -26,6 +26,9 @@
   /* nagłówek rozstrzelony (tytuł + podtytuł, np. Psychoedukacja); wartości szacowane ze zrzutu */
   --text-lead: clamp(1.625rem, 6.93vw, 2.5rem); /* ~26px */
   --text-lead-sub: clamp(0.875rem, 3.73vw, 1.25rem); /* ~14px */
+  /* nagłówek hero (<h1>): 7.5vw, żeby „PSYCHOEDUKACJA” z Home mieściła się od 320px */
+  --text-hero: clamp(1.5rem, 7.5vw, 2.5rem); /* ~29px przy 390px */
+  --text-hero--line-height: 1.2;
 
   /* odstęp kart od krawędzi ekranu: mr-edge, -mr-edge, ml-edge */
   --spacing-edge: 1rem;

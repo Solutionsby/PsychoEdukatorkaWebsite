@@ -5,8 +5,9 @@ import {
   workSteps,
   type WorkArea,
   type WorkStep,
+  aboutHero,
 } from '@/content/about'
-import { aboutHero, type RouteHandle } from '@/content/hero'
+import type { RouteHandle } from '@/content/hero'
 
 export const handle = { hero: aboutHero } satisfies RouteHandle
 

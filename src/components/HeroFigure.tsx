@@ -21,26 +21,31 @@ export const HeroFigure = ({
   decorClassName,
 }: HeroFigureProps) => {
   const Decor = decor && decors[decor]
+  if (!image) return null
 
+  // zdjęcie i kleks w jednym pojemniku: kleks (pozycja w % pojemnika) jedzie razem
+  // ze zdjęciem na każdym ekranie; pojemnik stoi na dole sceny, dół zdjęcia chowa się
+  // pod kartą, więc na wysokim ekranie zdjęcie nie wisi nad kartą
   return (
-    <>
+    <div className={cn('absolute bottom-0 z-20', imageClassName)}>
       {Decor && (
         <Decor
           aria-hidden
-          className={cn('absolute z-10 text-rose', decorClassName)}
+          className={cn(
+            'absolute rotate-230 text-rose opacity-73',
+            decorClassName,
+          )}
         />
       )}
-      {image && (
-        <img
-          src={image.src}
-          width={image.width}
-          height={image.height}
-          alt={imageAlt ?? ''}
-          // największy element na ekranie: ładuj go przed resztą (LCP)
-          fetchPriority="high"
-          className={cn('absolute bottom-0 z-20 h-auto', imageClassName)}
-        />
-      )}
-    </>
+      <img
+        src={image.src}
+        width={image.width}
+        height={image.height}
+        alt={imageAlt ?? 'Agata Hemmerling-Goc'}
+        // największy element na ekranie: ładuj go przed resztą (LCP)
+        fetchPriority="high"
+        className="relative h-auto w-full"
+      />
+    </div>
   )
 }

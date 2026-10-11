@@ -1,7 +1,7 @@
 import { ContactButton } from '@/components/ContactButton'
 import { TopicCard } from '@/components/TopicCard'
-import { psychotherapyAdultsHero, type RouteHandle } from '@/content/hero'
-import { adultsTopics } from '@/content/psychotherapy'
+import type { RouteHandle } from '@/content/hero'
+import { adultsTopics, psychotherapyAdultsHero } from '@/content/psychotherapy'
 
 export const handle = { hero: psychotherapyAdultsHero } satisfies RouteHandle
 

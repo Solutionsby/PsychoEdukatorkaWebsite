@@ -1,12 +1,13 @@
 import { ContactCard } from '@/components/ContactCard'
 import { LinkPanel } from '@/components/LinkPanel'
 import { TopicCard } from '@/components/TopicCard'
-import { trainingHero, type RouteHandle } from '@/content/hero'
+import type { RouteHandle } from '@/content/hero'
 import {
   resilience,
   trainingAreas,
   trainingContact,
   trainingTopics,
+  trainingHero,
 } from '@/content/training'
 
 export const handle = { hero: trainingHero } satisfies RouteHandle

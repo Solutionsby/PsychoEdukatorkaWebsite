@@ -1,6 +1,10 @@
 import { LinkPanel } from '@/components/LinkPanel'
-import { psychotherapyHubHero, type RouteHandle } from '@/content/hero'
-import { cooperation, supportAreas } from '@/content/psychotherapy'
+import type { RouteHandle } from '@/content/hero'
+import {
+  cooperation,
+  supportAreas,
+  psychotherapyHubHero,
+} from '@/content/psychotherapy'
 
 export const handle = { hero: psychotherapyHubHero } satisfies RouteHandle
 

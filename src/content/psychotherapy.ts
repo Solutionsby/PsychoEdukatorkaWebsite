@@ -1,6 +1,8 @@
 import type { PagePath } from './pages'
 import type { Topic } from './topics'
 import KulkaDwa from '@/assets/svg/KulkaPsychoterapiaDwa.svg?react'
+import type { HeroData } from './hero'
+import { photos } from './heroPhotos'
 
 export const cooperation = {
   title: 'Współpraca',
@@ -8,7 +10,7 @@ export const cooperation = {
     'Współpracę rozpoczynamy od 1 do 3 spotkań konsultacyjnych. To czas na poznanie się oraz przyjrzenie się zgłaszanym trudnościom. Wspólnie określamy możliwe kierunki pracy i wybieramy formę wsparcia najlepiej dopasowaną do potrzeb.',
     'W przypadku psychoterapii dzieci i młodzieży pierwsze spotkanie odbywa się wyłącznie z opiekunami.',
   ],
-  note: 'Sesje trwają 50 minut, a ich koszt wynosi 200 zł.',
+  note: 'Sesje trwają 50 minut, a ich koszt wynosi 250 zł.',
 }
 
 export const supportAreas = {
@@ -199,3 +201,48 @@ export const adultsTopics: Topic[] = [
     ],
   },
 ]
+
+export const psychotherapyHero: HeroData = { heading: ['Psychoterapia'] }
+export const psychotherapyHubHero: HeroData = {
+  ...psychotherapyHero,
+  className: 'rounded-bl-[67px]', // tło hero: zaokrąglony lewy dolny róg
+  headingClassName: 'top-35 items-center',
+  ...photos.lapels,
+  decor: 'kleks',
+  card: {
+    className: '-mb-6', // karta dotyka dołu hero, pod nią białe tło strony
+    title: 'Psychoterapia',
+    subtitle: 'Z troski o zdrowie psychiczne',
+    subtitleClassName: 'normal-case tracking-widest',
+    paragraphs: [
+      'Prowadzę konsultacje psychologiczne oraz psychoterapię indywidualną dla dzieci, młodzieży i ich opiekunów, a także dla osób dorosłych.',
+      'W swojej pracy łączę podejście poznawczo-behawioralne (CBT) z metodami tzw. trzeciej fali, tak aby jak najlepiej odpowiadać na indywidualne potrzeby osób, z którymi współpracuję.',
+      'W swojej praktyce kieruję się zasadami podejścia opartego na dowodach naukowych (evidence-based practice), wzbogacając je o elementy medycyny stylu życia.',
+      'Jestem członkinią Polskiego Towarzystwa Psychoterapii Poznawczo-Behawioralnej, regularnie korzystam z superwizji oraz stale rozwijam swoje kompetencje, uczestnicząc w szkoleniach i konferencjach naukowych.',
+    ],
+  },
+}
+export const psychotherapyKidsHero: HeroData = {
+  heading: ['Psychoterapia', 'dzieci i młodzież,', 'rodzice i opiekunowie.'],
+  headingClassName: 'top-45 items-center text-center',
+  lineClassName: 'not-first:text-xl',
+  ...photos.desk,
+  card: {
+    className: '-mb-6',
+    paragraphs: [
+      'Wspieram dzieci i młodzież w lepszym rozumieniu ich świata wewnętrznego, bezpiecznym przechodzeniu przez wyzwania rozwojowe oraz budowaniu umiejętności, które wzmacniają odporność i elastyczność psychologiczną.',
+      'W pracy ważna jest dla mnie relacja oparta na szacunku i uważności. Korzystam z kreatywnych form pracy, które pomagają zaciekawić i zaangażować moich małych i większych pacjentów.',
+    ],
+  },
+}
+export const psychotherapyAdultsHero: HeroData = {
+  heading: ['Psychoterapia', 'dorośli'],
+  headingClassName: 'top-45 items-center text-center',
+  lineClassName: 'not-first:text-xl',
+  ...photos.armsCrossed,
+  card: {
+    paragraphs: [
+      'Wspieram osoby dorosłe w procesie zdrowienia oraz radzenia sobie z trudnościami dnia codziennego. Pomagam rozwijać umiejętności, które pozwalają budować bardziej satysfakcjonujące życie — w zgodzie z własnymi wartościami i potrzebami.',
+    ],
+  },
+}
