@@ -1,20 +1,20 @@
 import { ContactCard } from '@/components/ContactCard'
 import { TopicCard } from '@/components/TopicCard'
 import { TopicNav } from '@/components/TopicNav'
+import { Wave } from '@/components/ui/Wave'
 import type { RouteHandle } from '@/content/hero'
 import {
   kidsTopics,
   parents,
   psychotherapyKidsHero,
 } from '@/content/psychotherapy'
-import { cn } from '@/lib/cn'
+import { alternateSide } from '@/lib/side'
 
 export const handle = { hero: psychotherapyKidsHero } satisfies RouteHandle
 
 // Desktop: jasny pas z nawigacją 01–04 (TopicNav),
-// karty bez tła (TopicCard), „Rodzice i opiekunowie” na różowej fali (ścieżka SVG).
+// karty bez tła (TopicCard), „Rodzice i opiekunowie” na różowej fali (Wave).
 // TODO: pasy z niebem między kartami (czekają na zdjęcie nieba)
-const wave = 'pointer-events-none absolute left-0 -z-10 hidden w-full lg:block'
 
 export default function PsychotherapyKids() {
   return (
@@ -36,7 +36,7 @@ export default function PsychotherapyKids() {
           >
             <TopicCard
               topic={topic}
-              side={index % 2 ? 'right' : 'left'}
+              side={alternateSide(index)}
               wide={index === 0}
             />
           </li>
@@ -44,14 +44,11 @@ export default function PsychotherapyKids() {
       </ol>
 
       <div className="mt-6 mb-4 lg:relative lg:mt-[1.65vw] lg:mb-0 lg:pt-[7.5vw] lg:pb-[10.2vw]">
-        <svg
-          aria-hidden
+        <Wave
           viewBox="0 0 1920 760"
-          preserveAspectRatio="none"
-          className={cn(wave, 'top-0 h-[39.6vw] fill-rose-light')}
-        >
-          <path d="M0,50 C500,10 1100,0 1920,30 L1920,570 C1650,690 1350,760 1050,750 C650,740 300,660 0,518 Z" />
-        </svg>
+          d="M0,50 C500,10 1100,0 1920,30 L1920,570 C1650,690 1350,760 1050,750 C650,740 300,660 0,518 Z"
+          className="top-0 h-[39.6vw] fill-rose-light"
+        />
         <ContactCard
           title={parents.title}
           text={parents.text}

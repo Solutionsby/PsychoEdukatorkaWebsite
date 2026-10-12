@@ -13,16 +13,17 @@ import {
 } from '@/content/about'
 import type { RouteHandle } from '@/content/hero'
 import { HabitsCircle } from '@/components/HabitsCircle'
+import { DecorImage } from '@/components/ui/DecorImage'
+import { Image } from '@/components/ui/Image'
+import { Paragraphs } from '@/components/ui/Paragraphs'
 import { cn } from '@/lib/cn'
 
 export const handle = { hero: aboutHero } satisfies RouteHandle
 
-// Desktop: tła (fale, chmurki, linie) to <img>
+// Desktop: tła (fale, chmurki, linie) to DecorImage (<img>)
 // z SVG w stałych kolorach: wychodzą poza ekran (overflow-x-clip), a isolate trzyma je
 // (-z-*) pod treścią, ale nad hero, bo fala „Jak pracuję?” zachodzi na dół hero.
 // Kolejność warstw: fala mist (02) < fala jasna (01) < chmurka karty 01.
-const decor = 'pointer-events-none absolute hidden max-w-none lg:block'
-
 export default function About() {
   return (
     <div className="text-ink lg:isolate lg:overflow-x-clip">
@@ -33,13 +34,9 @@ export default function About() {
         // scroll-mt: przy skoku z przycisku w hero nagłówek nie chowa się pod menu
         className="mr-4 scroll-mt-20 lg:relative lg:mr-0 lg:scroll-mt-[9.5vw]"
       >
-        <img
+        <DecorImage
           src={waveLight}
-          alt=""
-          className={cn(
-            decor,
-            'top-[-10.8vw] left-[-12.1vw] -z-20 w-[126.1vw]',
-          )}
+          className="top-[-10.8vw] left-[-12.1vw] -z-20 w-[126.1vw]"
         />
         <h2 className="max-w-176 rounded-tr-card bg-mist px-14 pt-10 pb-6 text-section lg:mt-[-0.57vw] lg:ml-[11.4vw] lg:w-fit lg:max-w-none lg:rounded-none lg:bg-transparent lg:p-0 lg:text-[3.1vw] lg:leading-[1.2] lg:before:block lg:before:h-[0.2vw] lg:before:w-[2vw] lg:before:bg-current">
           Jak pracuję?
@@ -53,15 +50,13 @@ export default function About() {
 
       <section className="mr-5 rounded-r-card bg-mist py-10 md:mr-edge lg:relative lg:mt-[12.5vw] lg:mr-0 lg:rounded-none lg:bg-transparent lg:pt-0 lg:pb-[1.6vw]">
         {/* linia nad nagłówkiem (z dołkiem nad nim) i rozgałęzienie do kart */}
-        <img
+        <DecorImage
           src={areasLine}
-          alt=""
-          className={cn(decor, 'top-[-16.3vw] left-[-4.87vw] w-[106.5vw]')}
+          className="top-[-16.3vw] left-[-4.87vw] w-[106.5vw]"
         />
-        <img
+        <DecorImage
           src={areasBranch}
-          alt=""
-          className={cn(decor, 'top-[4.53vw] left-[40.9vw] w-[14.27vw]')}
+          className="top-[4.53vw] left-[40.9vw] w-[14.27vw]"
         />
         <h2 className="px-10 text-section lg:pr-0 lg:pl-[30.1vw] lg:text-[3.1vw] lg:leading-[1.2]">
           Poznaj obszary mojej pracy
@@ -86,17 +81,15 @@ export default function About() {
 const WorkStepCard = ({ step, index }: { step: WorkStep; index: number }) => (
   <li className="group first:bg-linear-to-b first:from-mist first:to-white first:to-70% odd:max-w-176 even:-mr-4 even:ml-edge lg:relative lg:m-0 lg:max-w-none! lg:pl-[14.2vw] lg:first:bg-none lg:even:mx-0 lg:nth-2:mt-[8.4vw] lg:nth-3:mt-[12.5vw]">
     {index === 0 && (
-      <img
+      <DecorImage
         src={stepBlob}
-        alt=""
-        className={cn(decor, '-top-[12.4vw] left-[0.63vw] -z-10 w-[54.95vw]')}
+        className="-top-[12.4vw] left-[0.63vw] -z-10 w-[54.95vw]"
       />
     )}
     {index === 1 && (
-      <img
+      <DecorImage
         src={waveMist}
-        alt=""
-        className={cn(decor, 'top-[-28.75vw] left-[-12.1vw] -z-30 w-[126.1vw]')}
+        className="top-[-28.75vw] left-[-12.1vw] -z-30 w-[126.1vw]"
       />
     )}
 
@@ -110,17 +103,14 @@ const WorkStepCard = ({ step, index }: { step: WorkStep; index: number }) => (
       <h3 className="mt-3 text-card-title text-rose-soft lg:mt-[0.6vw] lg:max-w-[33.2vw] lg:text-[1.73vw] lg:leading-[1.27]">
         {step.title}
       </h3>
-      <div
+      <Paragraphs
+        items={step.paragraphs}
         className={cn(
-          'mt-3 space-y-4 text-card lg:mt-[1.4vw] lg:space-y-[2.1vw] lg:text-[max(0.8125rem,1.27vw)] lg:leading-[1.6]',
+          'mt-3 lg:mt-[1.4vw] lg:space-y-[2.1vw] lg:text-[max(0.8125rem,1.27vw)] lg:leading-[1.6]',
           // szerokość tekstu z projektu: 02 na całą szerokość, 01 i 03 obok grafiki
           index === 1 ? 'lg:max-w-[76vw]' : 'lg:max-w-[33.2vw]',
         )}
-      >
-        {step.paragraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
-      </div>
+      />
 
       {step.tags && (
         <p className="mt-6 text-card tracking-widest text-ink/40 uppercase lg:hidden">
@@ -130,9 +120,7 @@ const WorkStepCard = ({ step, index }: { step: WorkStep; index: number }) => (
     </article>
 
     {step.tags && (
-      <HabitsCircle
-        className={cn(decor, 'top-[-2.9vw] left-[57.35vw] h-auto w-[35.7vw]')}
-      />
+      <HabitsCircle className="pointer-events-none absolute top-[-2.9vw] left-[57.35vw] hidden h-auto w-[35.7vw] max-w-none lg:block" />
     )}
 
     {/* telefon: zdjęcie szersze niż ekran (biurko od krawędzi do krawędzi), wyśrodkowane;
@@ -142,12 +130,9 @@ const WorkStepCard = ({ step, index }: { step: WorkStep; index: number }) => (
         lewa krawędź rozmyta (mask) */}
     {step.image && (
       <div className="mt-10 -mr-edge overflow-hidden lg:absolute lg:-top-[1vw] lg:right-0 lg:mt-0 lg:mr-0 lg:w-[47.9vw] lg:overflow-visible">
-        <img
-          src={step.image.image.src}
-          width={step.image.image.width}
-          height={step.image.image.height}
+        <Image
+          image={step.image.image}
           alt={step.image.alt}
-          loading="lazy"
           className="relative left-1/2 block h-auto w-[108%] max-w-none -translate-x-1/2 lg:left-0 lg:w-full lg:translate-none lg:mask-[linear-gradient(to_right,transparent,black_8%)] lg:[clip-path:ellipse(65.3%_113.5%_at_48.9%_-26.8%)]"
         />
       </div>
@@ -158,13 +143,9 @@ const WorkStepCard = ({ step, index }: { step: WorkStep; index: number }) => (
 // Desktop: dwie karty obok siebie na kształtach z SVG, pozycje z projektu.
 const WorkAreaCard = ({ area }: { area: WorkArea }) => (
   <li className="group mr-edge rounded-r-card bg-rose-light py-8 pr-8 pl-10 inset-shadow-card lg:relative lg:m-0 lg:rounded-none lg:bg-transparent lg:inset-shadow-none lg:odd:ml-[6.77vw] lg:odd:min-h-[20.6vw] lg:odd:w-[36.6vw] lg:odd:pt-[2.5vw] lg:odd:pr-[0.6vw] lg:odd:pl-[2.6vw] lg:even:mt-[1.15vw] lg:even:ml-[9.32vw] lg:even:min-h-[23.9vw] lg:even:w-[42vw] lg:even:pt-[1.25vw] lg:even:pr-0 lg:even:pl-[4.9vw]">
-    <img
+    <DecorImage
       src={area.blob}
-      alt=""
-      className={cn(
-        decor,
-        '-z-10 lg:left-[-5.57vw] lg:group-odd:top-[-11.25vw] lg:group-odd:w-[46.25vw] lg:group-even:top-[-13.3vw] lg:group-even:w-[50.4vw]',
-      )}
+      className="-z-10 lg:left-[-5.57vw] lg:group-odd:top-[-11.25vw] lg:group-odd:w-[46.25vw] lg:group-even:top-[-13.3vw] lg:group-even:w-[50.4vw]"
     />
     <h3 className="text-card-title text-rose-soft lg:text-[2.27vw] lg:leading-[1.2] lg:group-odd:text-white">
       {area.title}

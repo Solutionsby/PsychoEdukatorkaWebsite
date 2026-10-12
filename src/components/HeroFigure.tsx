@@ -2,6 +2,7 @@ import type { ComponentType, SVGProps } from 'react'
 import Kleks from '@/assets/svg/hero-blob.svg?react'
 import type { HeroData, HeroDecor } from '@/content/hero'
 import { cn } from '@/lib/cn'
+import { Image } from './ui/Image'
 
 // Nowa dekoracja: dopisz klucz do `HeroDecor` w content/hero.ts i komponent tutaj.
 const decors: Record<HeroDecor, ComponentType<SVGProps<SVGSVGElement>>> = {
@@ -44,12 +45,11 @@ export const HeroFigure = ({
           )}
         />
       )}
-      <img
-        src={image.src}
-        width={image.width}
-        height={image.height}
+      <Image
+        image={image}
         alt={imageAlt ?? 'Agata Hemmerling-Goc'}
-        // największy element na ekranie: ładuj go przed resztą (LCP)
+        // największy element na ekranie: ładuj go od razu, przed resztą (LCP)
+        loading="eager"
         fetchPriority="high"
         className="relative h-auto w-full lg:z-40"
       />

@@ -1,5 +1,6 @@
 import type { Topic } from '@/content/topics'
 import { cn } from '@/lib/cn'
+import { Wave } from './ui/Wave'
 
 type TopicNavProps = {
   topics: Topic[]
@@ -9,19 +10,15 @@ type TopicNavProps = {
 
 /**
  * Desktop: jasny pas zachodzący na dół hero ze skrótami 01–04 do kart (Dzieci, Dorośli).
- * Fala to ścieżka SVG rozciągana na szerokość ekranu (preserveAspectRatio="none");
- * rodzic strony: lg:relative lg:isolate (fala -z-10 pod treścią, ale nad hero).
+ * Fala: `Wave` (rodzic strony: lg:relative lg:isolate).
  */
 export const TopicNav = ({ topics, label, gridClassName }: TopicNavProps) => (
   <>
-    <svg
-      aria-hidden
+    <Wave
       viewBox="0 0 1920 560"
-      preserveAspectRatio="none"
-      className="pointer-events-none absolute -top-[9.3vw] left-0 -z-10 hidden h-[29.2vw] w-full fill-mist-light lg:block"
-    >
-      <path d="M0,150 C250,95 500,20 1000,0 C1350,-5 1650,110 1920,185 L1920,455 C1750,490 1450,470 1200,440 C950,410 700,370 450,395 C250,415 100,470 0,510 Z" />
-    </svg>
+      d="M0,150 C250,95 500,20 1000,0 C1350,-5 1650,110 1920,185 L1920,455 C1750,490 1450,470 1200,440 C950,410 700,370 450,395 C250,415 100,470 0,510 Z"
+      className="-top-[9.3vw] h-[29.2vw] fill-mist-light"
+    />
 
     <nav
       aria-label={label}

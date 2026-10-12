@@ -1,17 +1,19 @@
-import { Link } from 'react-router'
-import type { HeroImage } from '@/content/hero'
+import type { ImageAsset } from '@/content/image'
 import { cn } from '@/lib/cn'
+import type { Side } from '@/lib/side'
+import { Image } from './ui/Image'
+import { SmartLink } from './ui/SmartLink'
 
 export type PanelLink = {
   label: string
   to: string // adres strony albo kotwica na tej samej stronie ('#id')
-  icon?: HeroImage // ikona po prawej stronie pigułki (np. Szkolenia)
+  icon?: ImageAsset // ikona po prawej stronie pigułki (np. Szkolenia)
 }
 
 type LinkPanelProps = {
   title: string
   links: PanelLink[]
-  side: 'left' | 'right' // krawędź ekranu, do której przylega panel i linki
+  side: Side // krawędź ekranu, do której przylega panel i linki
   className?: string
   titleClassName?: string
   listClassName?: string
@@ -31,7 +33,7 @@ const sides = {
     title: 'px-12',
     link: 'ml-14 rounded-l-full pl-8',
   },
-}
+} satisfies Record<Side, { panel: string; title: string; link: string }>
 
 /** Panel mist z tytułem i różowymi linkami-pigułkami (np. „Psychoedukacja w praktyce”). */
 export const LinkPanel = ({
@@ -67,12 +69,9 @@ export const LinkPanel = ({
               link.label
             )}
             {link.icon && (
-              <img
-                src={link.icon.src}
-                width={link.icon.width}
-                height={link.icon.height}
+              <Image
+                image={link.icon}
                 alt=""
-                loading="lazy"
                 className={cn('h-auto w-14 shrink-0', iconClassName)}
               />
             )}
@@ -81,16 +80,9 @@ export const LinkPanel = ({
 
         return (
           <li key={link.to}>
-            {/* kotwica: zwykły <a>, przeglądarka sama przewinie do #id */}
-            {link.to.startsWith('#') ? (
-              <a href={link.to} className={className}>
-                {content}
-              </a>
-            ) : (
-              <Link to={link.to} className={className}>
-                {content}
-              </Link>
-            )}
+            <SmartLink to={link.to} className={className}>
+              {content}
+            </SmartLink>
           </li>
         )
       })}

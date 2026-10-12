@@ -2,7 +2,8 @@ import deskPhoto from '@/assets/img/agata-desk.png?format=webp&as=metadata'
 import heroBlob from '@/assets/svg/about-hero-cloud.svg'
 import therapyBlob from '@/assets/svg/about-therapy-blob.svg'
 import trainingBlob from '@/assets/svg/about-training-blob.svg'
-import type { HeroData, HeroImage } from './hero'
+import type { HeroData } from './hero'
+import type { ImageAsset } from './image'
 import type { PagePath } from './pages'
 import { photos } from './heroPhotos'
 import { typo } from '@/lib/typography'
@@ -12,7 +13,7 @@ export type WorkStep = {
   title: string
   paragraphs: string[]
   tags?: string[] // pasek pod kartą: RELACJE • SEN • …; desktop: schemat (kółko)
-  image?: { image: HeroImage; alt: string } // zdjęcie pod kartą; desktop: obok
+  image?: { image: ImageAsset; alt: string } // zdjęcie pod kartą; desktop: obok
 }
 
 export type WorkArea = {

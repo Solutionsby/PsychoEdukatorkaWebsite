@@ -1,5 +1,7 @@
 import waveLight from '@/assets/svg/wave-light.svg'
 import { LinkPanel } from '@/components/LinkPanel'
+import { Image } from '@/components/ui/Image'
+import { Paragraphs } from '@/components/ui/Paragraphs'
 import type { RouteHandle } from '@/content/hero'
 import { photos } from '@/content/heroPhotos'
 import {
@@ -24,12 +26,9 @@ export default function PsychotherapyHub() {
           className="absolute top-0 -left-[9.3vw] w-[126.1vw] max-w-none"
         />
       </div>
-      <img
-        src={photos.lapels.image.src}
-        width={photos.lapels.image.width}
-        height={photos.lapels.image.height}
+      <Image
+        image={photos.lapels.image}
         alt="Agata Hemmerling-Goc"
-        loading="lazy"
         className="absolute bottom-0 left-[9.27vw] hidden h-auto w-[17.7vw] lg:block"
       />
 
@@ -39,11 +38,10 @@ export default function PsychotherapyHub() {
         <h2 className="text-card-title text-rose-soft lg:sr-only">
           {cooperation.title}
         </h2>
-        <div className="mt-2 space-y-4 text-card lg:mt-0 lg:space-y-[1.8vw] lg:text-[max(0.8125rem,1.38vw)] lg:leading-[1.43]">
-          {cooperation.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
+        <Paragraphs
+          items={cooperation.paragraphs}
+          className="mt-2 lg:mt-0 lg:space-y-[1.8vw] lg:text-[max(0.8125rem,1.38vw)] lg:leading-[1.43]"
+        />
         <p className="mt-3 text-card text-rose-soft lg:mt-0 lg:text-[max(0.8125rem,1.38vw)] lg:leading-[1.43]">
           {cooperation.note}
         </p>

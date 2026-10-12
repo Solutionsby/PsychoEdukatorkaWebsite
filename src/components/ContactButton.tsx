@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import type { PagePath } from '@/content/pages'
 import { cn } from '@/lib/cn'
+import { ArrowIcon } from './ui/ArrowIcon'
 
 const contactPath: PagePath = '/wspolpraca'
 
@@ -16,15 +17,6 @@ export const ContactButton = ({ className }: { className?: string }) => (
     )}
   >
     Skontaktuj się ze mną
-    <svg
-      aria-hidden
-      viewBox="0 0 16 10"
-      className="hidden w-[1.5vw] lg:block"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path d="M0 5h14M10 1l4 4-4 4" />
-    </svg>
+    <ArrowIcon className="hidden w-[1.5vw] lg:block" />
   </Link>
 )

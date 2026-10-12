@@ -1,11 +1,12 @@
-import type { HeroImage } from '@/content/hero'
+import type { ImageAsset } from '@/content/image'
 import { cn } from '@/lib/cn'
 import { ContactButton } from './ContactButton'
+import { Image } from './ui/Image'
 
 type ContactCardProps = {
   title: string
   text: string
-  image?: HeroImage // zdjęcie obok tekstu (np. Szkolenia)
+  image?: ImageAsset // zdjęcie obok tekstu (np. Szkolenia)
   imageAlt?: string
   imageClassName?: string // np. desktop: zdjęcie obok (absolute), na telefonie ukryte
   className?: string
@@ -44,12 +45,9 @@ export const ContactCard = ({
         {text}
       </p>
       {image && (
-        <img
-          src={image.src}
-          width={image.width}
-          height={image.height}
+        <Image
+          image={image}
           alt={imageAlt ?? ''}
-          loading="lazy"
           className={cn('h-auto w-2/5', imageClassName)}
         />
       )}

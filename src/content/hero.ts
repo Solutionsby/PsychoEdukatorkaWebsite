@@ -1,7 +1,7 @@
 // Typy hero; dane: hero każdej strony w jej pliku treści, zdjęcia w heroPhotos.ts.
-type HeroLink = { label: string; to: string }
+import type { ImageAsset } from './image'
 
-export type HeroImage = { src: string; width: number; height: number }
+type HeroLink = { label: string; to: string }
 
 /** Dostępne dekoracje; komponenty SVG przypisuje `HeroFigure`. */
 export type HeroDecor = 'kleks'
@@ -42,7 +42,7 @@ export type HeroData = {
   lineClassName?: string // klasy dla każdej linii (też odd:/even:)
   subheading?: string[] // desktop: linie pod nagłówkiem, rozdzielone kropką (np. tytuły zawodowe)
   subheadingClassName?: string // pozycja linii pod nagłówkiem
-  image?: HeroImage
+  image?: ImageAsset
   imageAlt?: string // domyślnie „Agata Hemmerling-Goc”
   imageClassName?: string // pozycja/rozmiar zdjęcia z kleksem (pojemnik na dole sceny)
   decor?: HeroDecor // kleks za zdjęciem

@@ -8,6 +8,8 @@ import balls3 from '@/assets/svg/training-balls-3.svg'
 import { ContactCard } from '@/components/ContactCard'
 import { LinkPanel } from '@/components/LinkPanel'
 import { TopicCard } from '@/components/TopicCard'
+import { DecorImage } from '@/components/ui/DecorImage'
+import { Paragraphs } from '@/components/ui/Paragraphs'
 import type { RouteHandle } from '@/content/hero'
 import { photos } from '@/content/heroPhotos'
 import {
@@ -18,6 +20,7 @@ import {
   trainingHero,
 } from '@/content/training'
 import { cn } from '@/lib/cn'
+import { alternateSide } from '@/lib/side'
 
 export const handle = { hero: trainingHero } satisfies RouteHandle
 
@@ -25,8 +28,7 @@ export const handle = { hero: trainingHero } satisfies RouteHandle
 // całej strony (fale wychodzą poza ekran): jasna fala „Dlaczego rezyliencja?” zachodzi
 // na dół hero, mist pod „Obszarami”, trzy białe pasy pod kartami 01–03 (między nimi
 // prześwituje niebo), różowa fala pod „Współpracą”. Kolejność warstw = kolejność w DOM.
-const decor =
-  'pointer-events-none absolute -z-10 hidden h-auto max-w-none lg:block'
+// Tła: DecorImage z -z-10 (pod treścią).
 // kuleczki przy kartach, w kolejności kart
 const balls = [
   { src: balls1, className: '-top-[7.48vw] left-[30.4vw] w-[9.2vw]' },
@@ -46,28 +48,21 @@ export default function Training() {
         aria-hidden
         className="absolute inset-x-0 top-[63.5vw] -z-10 hidden h-[67.7vw] bg-mist-deep lg:block"
       />
-      <img
+      <DecorImage
         src={resilienceWave}
-        alt=""
-        className={cn(decor, '-top-[14.17vw] -left-[13.23vw] w-[126.1vw]')}
+        className="-top-[14.17vw] -left-[13.23vw] -z-10 w-[126.1vw]"
       />
-      <img
+      <DecorImage
         src={areasWave}
-        alt=""
-        className={cn(decor, 'top-[6.56vw] -left-[9.5vw] w-[117.2vw]')}
+        className="top-[6.56vw] -left-[9.5vw] -z-10 w-[117.2vw]"
       />
-      <img
-        src={photos.armsCrossed.image.src}
-        width={photos.armsCrossed.image.width}
-        height={photos.armsCrossed.image.height}
-        alt=""
-        loading="lazy"
-        className={cn(decor, 'top-[13.44vw] left-[17.4vw] w-[14.58vw]')}
+      <DecorImage
+        src={photos.armsCrossed.image}
+        className="top-[13.44vw] left-[17.4vw] -z-10 w-[14.58vw]"
       />
-      <img
+      <DecorImage
         src={topicsWave}
-        alt=""
-        className={cn(decor, 'top-[39.69vw] -left-[22.34vw] w-[147.77vw]')}
+        className="top-[39.69vw] -left-[22.34vw] -z-10 w-[147.77vw]"
       />
       {/* biel nad „Współpracą”: w projekcie niebo prześwituje tylko z prawej (od ~1010 px),
           z lewej biała fala schodzi aż do różowej (dół kształtu chowa się pod różową falą) */}
@@ -113,11 +108,10 @@ export default function Training() {
           <h3 className="text-card-title tracking-wide text-rose-soft uppercase lg:hidden">
             {resilience.cardTitle}
           </h3>
-          <div className="mt-3 space-y-4 text-card lg:mt-0 lg:grid lg:grid-cols-[35.4vw_36.1vw] lg:space-y-0 lg:gap-x-[6.6vw] lg:text-[max(0.8125rem,1.46vw)] lg:leading-[1.42] lg:tracking-[0.05em]">
-            {resilience.paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
+          <Paragraphs
+            items={resilience.paragraphs}
+            className="mt-3 lg:mt-0 lg:grid lg:grid-cols-[35.4vw_36.1vw] lg:space-y-0 lg:gap-x-[6.6vw] lg:text-[max(0.8125rem,1.46vw)] lg:leading-[1.42] lg:tracking-[0.05em]"
+          />
         </div>
       </section>
 
@@ -141,15 +135,14 @@ export default function Training() {
             key={topic.number}
             className="lg:relative lg:nth-2:mt-[4.4vw] lg:nth-3:mt-[4.84vw]"
           >
-            <img
+            <DecorImage
               src={balls[index].src}
-              alt=""
               loading="lazy"
-              className={cn(decor, 'z-0', balls[index].className)}
+              className={cn('z-0', balls[index].className)}
             />
             <TopicCard
               topic={topic}
-              side={index % 2 ? 'right' : 'left'}
+              side={alternateSide(index)}
               className="lg:pl-[12.9vw]"
               headClassName="lg:mt-[1.1vw] lg:w-[35.5vw] lg:[&>h2]:mt-[1.3vw] lg:[&>h2]:max-w-none lg:[&>h2]:text-[2.3vw] lg:[&>h2]:tracking-[0.03em] lg:[&>h2]:whitespace-pre-line"
               listClassName="lg:space-y-[1.35vw]"

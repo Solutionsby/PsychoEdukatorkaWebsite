@@ -3,6 +3,7 @@ import { TopicCard } from '@/components/TopicCard'
 import { TopicNav } from '@/components/TopicNav'
 import type { RouteHandle } from '@/content/hero'
 import { adultsTopics, psychotherapyAdultsHero } from '@/content/psychotherapy'
+import { alternateSide } from '@/lib/side'
 
 export const handle = { hero: psychotherapyAdultsHero } satisfies RouteHandle
 
@@ -42,7 +43,7 @@ export default function PsychotherapyAdults() {
             >
               <TopicCard
                 topic={topic}
-                side={index % 2 ? 'right' : 'left'}
+                side={alternateSide(index)}
                 wide={index === 0}
                 headClassName="lg:w-[41.9vw]"
                 listClassName={index === 0 ? 'lg:gap-x-0' : undefined}

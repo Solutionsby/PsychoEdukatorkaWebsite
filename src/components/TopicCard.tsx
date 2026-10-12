@@ -1,10 +1,11 @@
 import { motion } from 'motion/react'
 import type { Topic } from '@/content/topics'
 import { cn } from '@/lib/cn'
+import type { Side } from '@/lib/side'
 
 type TopicCardProps = {
   topic: Topic
-  side: 'left' | 'right' // krawędź ekranu, do której przylega karta
+  side: Side
   wide?: boolean // desktop: lista w dwóch kolumnach pod tytułem (domyślnie: tytuł z lewej, lista z prawej)
   // desktop: nadpisania ze strony (karta, kolumna tytułu, lista, punkty, opisy)
   className?: string
@@ -17,7 +18,7 @@ type TopicCardProps = {
 const sides = {
   left: 'mr-edge rounded-r-card',
   right: 'ml-edge rounded-l-card',
-}
+} satisfies Record<Side, string>
 
 // Biała karta na białym tle: kształt rysuje tylko cień wewnętrzny (u góry), dół prawie niewidoczny.
 // Wejście: wjeżdża od swojej krawędzi, raz, gdy pojawi się na ekranie.

@@ -2,6 +2,9 @@ import { motion, type Variants } from 'motion/react'
 import bridgeImage from '@/assets/svg/psychoeducation-bridge.svg'
 import { LeadHeading } from '@/components/LeadHeading'
 import { LinkPanel } from '@/components/LinkPanel'
+import { Image } from '@/components/ui/Image'
+import { Wave } from '@/components/ui/Wave'
+import { Paragraphs } from '@/components/ui/Paragraphs'
 import type { RouteHandle } from '@/content/hero'
 import {
   benefits,
@@ -23,21 +26,17 @@ export const handle = { hero: psychoeducationHero } satisfies RouteHandle
 // na dół hero, zdjęcia w oknach w kształcie kleksa (HoleWindow), rząd ikon połączony
 // linią, „Metafory…” na fali mist. Fale i okna wychodzą poza swoje sekcje:
 // overflow-x-clip, isolate (warstwy -z-10 pod treścią, ale nad hero).
-const wave = 'pointer-events-none absolute left-0 -z-10 hidden w-full lg:block'
 const sectionHeading =
   'lg:text-[2.5vw] lg:tracking-[0.03em] lg:text-ink lg:before:mr-[0.3vw] lg:before:inline-block lg:before:h-[0.16vw] lg:before:w-[1.7vw] lg:before:bg-current lg:before:align-[0.3em]'
 
 export default function Psychoeducation() {
   return (
     <div className="text-ink lg:relative lg:isolate lg:overflow-x-clip">
-      <svg
-        aria-hidden
+      <Wave
         viewBox="0 0 1920 470"
-        preserveAspectRatio="none"
-        className={cn(wave, '-top-[6.8vw] h-[24.5vw] fill-mist-light')}
-      >
-        <path d="M0,130 C250,80 500,15 1000,0 C1350,-5 1650,95 1920,160 L1920,330 C1750,360 1450,380 1200,370 C950,360 700,300 450,330 C250,350 100,390 0,420 Z" />
-      </svg>
+        d="M0,130 C250,80 500,15 1000,0 C1350,-5 1650,95 1920,160 L1920,330 C1750,360 1450,380 1200,370 C950,360 700,300 450,330 C250,350 100,390 0,420 Z"
+        className="-top-[6.8vw] h-[24.5vw] fill-mist-light"
+      />
       <img
         src={bridgeImage}
         alt={bridge.alt}
@@ -61,11 +60,10 @@ export default function Psychoeducation() {
         >
           {intro.paragraphsTitle}
         </h2>
-        <div className="mt-6 space-y-4 px-10 text-card lg:mt-[2.6vw] lg:max-w-[57.8vw] lg:px-0 lg:pl-[9.9vw] lg:text-[max(0.8125rem,1.38vw)] lg:leading-[1.5]">
-          {intro.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
+        <Paragraphs
+          items={intro.paragraphs}
+          className="mt-6 px-10 lg:mt-[2.6vw] lg:max-w-[57.8vw] lg:px-0 lg:pl-[9.9vw] lg:text-[max(0.8125rem,1.38vw)] lg:leading-[1.5]"
+        />
         <HoleWindow
           photo={intro.photo}
           className="top-[14.6vw] left-[64.1vw] w-[24.8vw]"
@@ -82,12 +80,9 @@ export default function Psychoeducation() {
 
       {/* Agata z misiem: po prawej, lekko wchodzi na kartę powyżej (-mt-*, relative
           = rysowana nad kartą), stopami stoi na panelu poniżej */}
-      <img
-        src={practicePhoto.image.src}
-        width={practicePhoto.image.width}
-        height={practicePhoto.image.height}
+      <Image
+        image={practicePhoto.image}
         alt={practicePhoto.alt}
-        loading="lazy"
         className="relative -mt-6 mr-14 ml-auto block h-auto w-2/5 max-w-64 lg:hidden"
       />
 
@@ -124,12 +119,9 @@ const HoleWindow = ({
       aspectRatio: photo.ratio,
     }}
   >
-    <img
-      src={photo.image.src}
-      width={photo.image.width}
-      height={photo.image.height}
+    <Image
+      image={photo.image}
       alt={photo.alt}
-      loading="lazy"
       className={cn('absolute h-auto max-w-none', photo.imageClassName)}
     />
   </div>
@@ -188,14 +180,7 @@ const BenefitItem = ({ benefit }: { benefit: Benefit }) => (
       benefit.className,
     )}
   >
-    <img
-      src={benefit.icon.src}
-      width={benefit.icon.width}
-      height={benefit.icon.height}
-      alt=""
-      loading="lazy"
-      className="h-auto w-17 lg:w-full"
-    />
+    <Image image={benefit.icon} alt="" className="h-auto w-17 lg:w-full" />
     <span className="mt-3 w-36 text-card tracking-[0.15em] uppercase lg:mt-[1.3vw] lg:w-[10vw] lg:text-[max(0.75rem,0.91vw)] lg:leading-[1.35] lg:text-ink/60">
       {benefit.label}
     </span>
@@ -215,14 +200,11 @@ const StoryCard = ({ story, index }: { story: Story; index: number }) => (
     )}
   >
     {index === 0 && (
-      <svg
-        aria-hidden
+      <Wave
         viewBox="0 0 1920 720"
-        preserveAspectRatio="none"
-        className={cn(wave, 'top-0 h-[37.5vw] fill-mist')}
-      >
-        <path d="M0,0 C300,0 700,95 1100,90 C1450,85 1700,20 1920,0 L1920,530 C1800,620 1650,660 1500,650 C1300,640 1150,600 1000,620 C800,650 650,700 450,700 C250,700 100,600 0,490 Z" />
-      </svg>
+        d="M0,0 C300,0 700,95 1100,90 C1450,85 1700,20 1920,0 L1920,530 C1800,620 1650,660 1500,650 C1300,640 1150,600 1000,620 C800,650 650,700 450,700 C250,700 100,600 0,490 Z"
+        className="top-0 h-[37.5vw] fill-mist"
+      />
     )}
     <h2
       className={cn(
@@ -244,12 +226,9 @@ const StoryCard = ({ story, index }: { story: Story; index: number }) => (
       {story.text}
     </p>
     {story.image && (
-      <img
-        src={story.image.src}
-        width={story.image.width}
-        height={story.image.height}
+      <Image
+        image={story.image}
         alt={story.imageAlt ?? ''}
-        loading="lazy"
         className="mt-6 h-auto w-full lg:absolute lg:top-[7.3vw] lg:left-[7.3vw] lg:mt-0 lg:w-[33.9vw]"
       />
     )}

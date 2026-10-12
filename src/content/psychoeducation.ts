@@ -9,7 +9,8 @@ import icon5 from '@/assets/img/psychoeducation-icon-5.png?w=400&format=webp&as=
 import metaphors from '@/assets/img/psychoeducation-metaphors.png?format=webp&as=metadata'
 import hole1 from '@/assets/svg/psychoeducation-hole-1.svg'
 import hole2 from '@/assets/svg/psychoeducation-hole-2.svg'
-import type { HeroData, HeroImage } from './hero'
+import type { HeroData } from './hero'
+import type { ImageAsset } from './image'
 import type { PagePath } from './pages'
 import { photos } from './heroPhotos'
 import { typo } from '@/lib/typography'
@@ -18,7 +19,7 @@ import { typo } from '@/lib/typography'
 export type HolePhoto = {
   hole: string // adres SVG z kształtem okna (maska)
   ratio: string // proporcje okna = viewBox pliku, np. '478 / 518'
-  image: HeroImage
+  image: ImageAsset
   alt: string
   imageClassName: string // pozycja i rozmiar zdjęcia w oknie (w % okna)
 }
@@ -46,7 +47,7 @@ export const bridge = { alt: 'Między nauką a codziennością' }
 
 export type Benefit = {
   label: string
-  icon: HeroImage // plama z ikoną
+  icon: ImageAsset // plama z ikoną
   className: string // desktop: pozycja w rzędzie (left/top w vw)
 }
 
@@ -82,7 +83,7 @@ export const benefits: Benefit[] = typo([
 export type Story = {
   title: string
   text: string
-  image?: HeroImage // ilustracja pod tekstem (desktop: obok)
+  image?: ImageAsset // ilustracja pod tekstem (desktop: obok)
   imageAlt?: string
   photo?: HolePhoto // tylko desktop: zdjęcie w oknie obok tekstu
 }
@@ -109,7 +110,7 @@ export const stories: Story[] = typo([
 ])
 
 // Telefon: Agata z misiem między „Merytoryka…” a „Psychoedukacja w praktyce”.
-export const practicePhoto: { image: HeroImage; alt: string } = typo({
+export const practicePhoto: { image: ImageAsset; alt: string } = typo({
   image: agataTeddy,
   alt: 'Agata Hemmerling-Goc z pluszowym misiem',
 })
