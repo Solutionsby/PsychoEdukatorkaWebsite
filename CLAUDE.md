@@ -1,6 +1,6 @@
 # Psychoedukatorka
 
-Strona osobista psycholożki/psychoterapeutki (polski, statyczna, bez backendu). Pełny brief i mapa stron: `docs/brief.md`. Lista zadań (grafiki, treści do potwierdzenia): `docs/TODO.md`. Zrzuty designu (mobile): `docs/`.
+Strona osobista psycholożki/psychoterapeutki (polski, statyczna, bez backendu). Pełny brief i mapa stron: `docs/brief.md`. Instrukcja utrzymania (co gdzie zmieniać): `UTRZYMANIE.md` — aktualizować przy zmianach struktury. Lista zadań (grafiki, treści do potwierdzenia): `docs/TODO.md`. Zrzuty designu (mobile): `docs/`.
 
 ## Projekt
 
