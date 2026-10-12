@@ -1,10 +1,11 @@
 import type { ComponentType, SVGProps } from 'react'
 import Kleks from '@/assets/svg/hero-blob.svg?react'
-import type { HeroData, HeroDecor } from '@/content/hero'
+import type { HeroDecor } from '@/design/hero'
+import type { HeroData } from '@/lib/hero'
 import { cn } from '@/lib/cn'
 import { Image } from './ui/Image'
 
-// Nowa dekoracja: dopisz klucz do `HeroDecor` w content/hero.ts i komponent tutaj.
+// Nowa dekoracja: dopisz klucz do `HeroDecor` w design/hero.ts i komponent tutaj.
 const decors: Record<HeroDecor, ComponentType<SVGProps<SVGSVGElement>>> = {
   kleks: Kleks,
 }

@@ -1,10 +1,12 @@
 import { motion } from 'motion/react'
 import type { Topic } from '@/content/topics'
+import type { TopicLook } from '@/design/topics'
 import { cn } from '@/lib/cn'
 import type { Side } from '@/lib/side'
 
 type TopicCardProps = {
   topic: Topic
+  look: TopicLook // kolory i dekoracja karty (design/)
   side: Side
   wide?: boolean // desktop: lista w dwóch kolumnach pod tytułem (domyślnie: tytuł z lewej, lista z prawej)
   // desktop: nadpisania ze strony (karta, kolumna tytułu, lista, punkty, opisy)
@@ -26,6 +28,7 @@ const sides = {
 // Desktop: bez karty, tekst na tle strony; numer z kreską pod spodem.
 export const TopicCard = ({
   topic,
+  look,
   side,
   wide,
   className,
@@ -34,8 +37,8 @@ export const TopicCard = ({
   termClassName,
   textClassName,
 }: TopicCardProps) => {
-  const Decor = topic.decor
-  const placement = topic.decorPlacement ?? 'beside'
+  const Decor = look.decor
+  const placement = look.decorPlacement ?? 'beside'
 
   return (
     <motion.article
@@ -58,7 +61,7 @@ export const TopicCard = ({
           aria-hidden
           className={cn(
             'pointer-events-none absolute text-rose-soft',
-            topic.decorClassName,
+            look.decorClassName,
           )}
         />
       )}
@@ -69,7 +72,7 @@ export const TopicCard = ({
           className={cn(
             'w-fit border-b border-current text-number leading-none',
             'lg:border-b-0 lg:text-[4.46vw] lg:after:mt-[0.5vw] lg:after:block lg:after:h-[0.16vw] lg:after:w-[2.1vw] lg:after:bg-current',
-            topic.toneClassName,
+            look.toneClassName,
           )}
         >
           {topic.number}
@@ -77,7 +80,7 @@ export const TopicCard = ({
         <h2
           className={cn(
             'mt-3 w-2/3 text-card-title lg:mt-[0.8vw] lg:w-auto lg:max-w-[25vw] lg:text-[2.16vw] lg:leading-[1.45]',
-            topic.toneClassName,
+            look.toneClassName,
           )}
         >
           {topic.title}
@@ -86,7 +89,7 @@ export const TopicCard = ({
           <p
             className={cn(
               'hidden lg:mt-[1.4vw] lg:block lg:text-[max(0.75rem,1.3vw)] lg:tracking-[0.03em]',
-              topic.toneClassName,
+              look.toneClassName,
             )}
           >
             {topic.subtitle}
@@ -98,7 +101,7 @@ export const TopicCard = ({
             aria-hidden
             className={cn(
               'pointer-events-none mt-4 block h-auto w-full text-rose-soft',
-              topic.decorClassName,
+              look.decorClassName,
             )}
           />
         )}
@@ -123,7 +126,7 @@ export const TopicCard = ({
                 // szerokość z projektu: łamanie jak w XD
                 wide ? 'lg:max-w-[34.5vw]' : 'lg:max-w-[42vw]',
                 termClassName,
-                topic.bulletClassName,
+                look.bulletClassName,
               )}
             >
               {item.term}

@@ -1,7 +1,10 @@
-import type { RouteHandle } from '@/content/hero'
 import { contactHero, contactNote } from '@/content/cooperation'
+import { contactHeroLayout } from '@/design/cooperation'
+import { type RouteHandle, withLayout } from '@/lib/hero'
 
-export const handle = { hero: contactHero } satisfies RouteHandle
+export const handle = {
+  hero: withLayout(contactHero, contactHeroLayout),
+} satisfies RouteHandle
 
 // Dane kontaktowe są w karcie hero (contactHero.card.details, z content/contact.ts).
 // Desktop: cała treść w hero (notka też), ta sekcja ukryta.

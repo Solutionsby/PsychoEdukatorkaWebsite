@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'motion/react'
 import { useState } from 'react'
 import { useLocation } from 'react-router'
-import type { HeroData } from '@/content/hero'
+import type { HeroData } from '@/lib/hero'
 import { cn } from '@/lib/cn'
 import { HeroCard } from './HeroCard'
 import { HeroFigure } from './HeroFigure'

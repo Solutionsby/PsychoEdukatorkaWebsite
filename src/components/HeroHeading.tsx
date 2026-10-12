@@ -1,4 +1,4 @@
-import type { HeroData } from '@/content/hero'
+import type { HeroData } from '@/lib/hero'
 import { cn } from '@/lib/cn'
 
 type HeroHeadingProps = Pick<

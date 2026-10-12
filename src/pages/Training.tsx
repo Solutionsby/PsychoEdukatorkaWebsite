@@ -10,8 +10,6 @@ import { LinkPanel } from '@/components/LinkPanel'
 import { TopicCard } from '@/components/TopicCard'
 import { DecorImage } from '@/components/ui/DecorImage'
 import { Paragraphs } from '@/components/ui/Paragraphs'
-import type { RouteHandle } from '@/content/hero'
-import { photos } from '@/content/heroPhotos'
 import {
   resilience,
   trainingAreas,
@@ -19,10 +17,15 @@ import {
   trainingTopics,
   trainingHero,
 } from '@/content/training'
+import { trainingHeroLayout, trainingTopicLooks } from '@/design/training'
+import { photos } from '@/design/heroPhotos'
+import { type RouteHandle, withLayout } from '@/lib/hero'
 import { cn } from '@/lib/cn'
 import { alternateSide } from '@/lib/side'
 
-export const handle = { hero: trainingHero } satisfies RouteHandle
+export const handle = {
+  hero: withLayout(trainingHero, trainingHeroLayout),
+} satisfies RouteHandle
 
 // Desktop: tła z SVG pozycjonowane względem
 // całej strony (fale wychodzą poza ekran): jasna fala „Dlaczego rezyliencja?” zachodzi
@@ -142,6 +145,7 @@ export default function Training() {
             />
             <TopicCard
               topic={topic}
+              look={trainingTopicLooks[index]}
               side={alternateSide(index)}
               className="lg:pl-[12.9vw]"
               headClassName="lg:mt-[1.1vw] lg:w-[35.5vw] lg:[&>h2]:mt-[1.3vw] lg:[&>h2]:max-w-none lg:[&>h2]:text-[2.3vw] lg:[&>h2]:tracking-[0.03em] lg:[&>h2]:whitespace-pre-line"

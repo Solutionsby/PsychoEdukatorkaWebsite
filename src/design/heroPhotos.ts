@@ -3,7 +3,7 @@ import agataArmsCrossed from '@/assets/img/agata-arms-crossed.png?w=800&format=w
 import agataHome from '@/assets/img/agata-home.png?format=webp&as=metadata'
 import agataPsychoterapy from '@/assets/img/agata-lapels.png?w=800&format=webp&as=metadata'
 import agataDesk from '@/assets/img/agata-desk.png?w=800&format=webp&as=metadata'
-import type { HeroData } from './hero'
+import type { HeroLayout } from './hero'
 
 /**
  * Zdjęcia w hero: każde ustawione raz, żeby przy zmianie strony Agata stała w tym
@@ -53,5 +53,5 @@ export const photos = {
   },
 } satisfies Record<
   string,
-  Pick<HeroData, 'image' | 'imageClassName' | 'decorClassName'>
+  Pick<HeroLayout, 'image' | 'imageClassName' | 'decorClassName'>
 >

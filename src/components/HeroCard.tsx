@@ -1,4 +1,4 @@
-import type { HeroCardData } from '@/content/hero'
+import type { HeroCardData } from '@/lib/hero'
 import { cn } from '@/lib/cn'
 import {
   HeroCardActions,

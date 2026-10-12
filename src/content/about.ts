@@ -1,11 +1,8 @@
+// Treść strony O mnie; wygląd: design/about.ts.
 import deskPhoto from '@/assets/img/agata-desk.png?format=webp&as=metadata'
-import heroBlob from '@/assets/svg/about-hero-cloud.svg'
-import therapyBlob from '@/assets/svg/about-therapy-blob.svg'
-import trainingBlob from '@/assets/svg/about-training-blob.svg'
-import type { HeroData } from './hero'
+import type { HeroContent } from './hero'
 import type { ImageAsset } from './image'
 import type { PagePath } from './pages'
-import { photos } from './heroPhotos'
 import { typo } from '@/lib/typography'
 
 export type WorkStep = {
@@ -21,7 +18,6 @@ export type WorkArea = {
   subtitle: string
   text: string
   link: { label: string; to: PagePath }
-  blob: string // desktop: kształt karty (adres SVG)
 }
 
 /** Tytuły zawodowe: karta hero na Home, linia pod nagłówkiem O mnie (desktop). */
@@ -68,7 +64,6 @@ export const workAreas: WorkArea[] = typo([
     subtitle: 'Z troski o zdrowie psychiczne.',
     text: 'Prowadzę konsultacje psychologiczne oraz psychoterapię indywidualną dla dzieci, młodzieży i ich opiekunów, a także dla osób dorosłych.',
     link: { label: 'Zobacz, jak wygląda psychoterapia', to: '/psychoterapia' },
-    blob: therapyBlob,
   },
   {
     title: 'Szkolenia i warsztaty',
@@ -78,32 +73,15 @@ export const workAreas: WorkArea[] = typo([
       label: 'Poznaj szkolenia i możliwości współpracy',
       to: '/szkolenia',
     },
-    blob: trainingBlob,
   },
 ])
 
-export const aboutHero: HeroData = typo({
-  // desktop: hero wyższe (1248px), bo fala „Jak pracuję?” zachodzi na jego dół
-  className: 'lg:h-[65vw]',
+export const aboutHero: HeroContent = typo({
   heading: ['Agata', 'Hemmerling-Goc'],
-  headingClassName:
-    'top-35 items-start pl-6 normal-case lg:top-[12.1vw] lg:flex-row lg:gap-[0.3em] lg:pl-[11.2vw] lg:tracking-normal',
-  lineClassName: 'lg:text-[1.6vw] lg:leading-[1.2]',
   subheading: credentials,
-  subheadingClassName: 'lg:top-[14.4vw] lg:left-[11.2vw] lg:w-[38vw]',
-  ...photos.home,
-  // zdjęcie w tym samym miejscu co na Home (hero wyższe o 168px), bez kleksa
-  imageClassName: `${photos.home.imageClassName} lg:bottom-[8.2vw]`,
-  decorClassName: `${photos.home.decorClassName} lg:hidden`,
-  decor: 'kleks',
-
   card: {
-    className:
-      '-mb-6 lg:top-[21.2vw] lg:left-[2.7vw] lg:h-[34.5vw] lg:w-[47.1vw] lg:pt-[4.6vw] lg:pr-[6vw] lg:pl-[5.6vw]',
-    blob: heroBlob,
     // przycisk tylko na desktopie (na telefonie „Jak pracuję?” jest tuż pod hero)
     cta: { label: 'Jak pracuję?', to: '#jak-pracuje' },
-    actionsClassName: 'max-lg:hidden lg:mt-[3.5vw] lg:pl-[5.9vw]',
     items: [
       {
         title: 'Praktyka kliniczna',

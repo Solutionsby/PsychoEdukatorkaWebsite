@@ -2,15 +2,18 @@ import waveLight from '@/assets/svg/wave-light.svg'
 import { LinkPanel } from '@/components/LinkPanel'
 import { Image } from '@/components/ui/Image'
 import { Paragraphs } from '@/components/ui/Paragraphs'
-import type { RouteHandle } from '@/content/hero'
-import { photos } from '@/content/heroPhotos'
 import {
   cooperation,
   supportAreas,
   psychotherapyHubHero,
 } from '@/content/psychotherapy'
+import { psychotherapyHubHeroLayout } from '@/design/psychotherapy'
+import { photos } from '@/design/heroPhotos'
+import { type RouteHandle, withLayout } from '@/lib/hero'
 
-export const handle = { hero: psychotherapyHubHero } satisfies RouteHandle
+export const handle = {
+  hero: withLayout(psychotherapyHubHero, psychotherapyHubHeroLayout),
+} satisfies RouteHandle
 
 // Desktop: jasna fala zachodzi na dół hero (-mt), zdjęcie Agaty stoi
 // na stopce po lewej, tekst i karty „Obszary wsparcia” po prawej.

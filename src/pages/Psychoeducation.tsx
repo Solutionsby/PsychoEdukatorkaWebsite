@@ -5,7 +5,6 @@ import { LinkPanel } from '@/components/LinkPanel'
 import { Image } from '@/components/ui/Image'
 import { Wave } from '@/components/ui/Wave'
 import { Paragraphs } from '@/components/ui/Paragraphs'
-import type { RouteHandle } from '@/content/hero'
 import {
   benefits,
   bridge,
@@ -18,9 +17,19 @@ import {
   type Story,
   psychoeducationHero,
 } from '@/content/psychoeducation'
+import {
+  benefitPositions,
+  introPhotoFrame,
+  psychoeducationHeroLayout,
+  storyPhotoFrame,
+  type HoleFrame,
+} from '@/design/psychoeducation'
+import { type RouteHandle, withLayout } from '@/lib/hero'
 import { cn } from '@/lib/cn'
 
-export const handle = { hero: psychoeducationHero } satisfies RouteHandle
+export const handle = {
+  hero: withLayout(psychoeducationHero, psychoeducationHeroLayout),
+} satisfies RouteHandle
 
 // Desktop: jasny pas „Między nauką…” zachodzi
 // na dół hero, zdjęcia w oknach w kształcie kleksa (HoleWindow), rząd ikon połączony
@@ -66,6 +75,7 @@ export default function Psychoeducation() {
         />
         <HoleWindow
           photo={intro.photo}
+          frame={introPhotoFrame}
           className="top-[14.6vw] left-[64.1vw] w-[24.8vw]"
         />
       </section>
@@ -104,9 +114,11 @@ export default function Psychoeducation() {
 // TODO: zdjęcie nieba (wspólne tło „przebić”; bg-fixed = jedno niebo widziane przez okna)
 const HoleWindow = ({
   photo,
+  frame,
   className,
 }: {
   photo: HolePhoto
+  frame: HoleFrame
   className: string
 }) => (
   <div
@@ -115,14 +127,14 @@ const HoleWindow = ({
       className,
     )}
     style={{
-      maskImage: `url("${photo.hole}")`,
-      aspectRatio: photo.ratio,
+      maskImage: `url("${frame.hole}")`,
+      aspectRatio: frame.ratio,
     }}
   >
     <Image
       image={photo.image}
       alt={photo.alt}
-      className={cn('absolute h-auto max-w-none', photo.imageClassName)}
+      className={cn('absolute h-auto max-w-none', frame.imageClassName)}
     />
   </div>
 )
@@ -143,7 +155,7 @@ const item: Variants = {
   },
 }
 
-// Desktop: rząd ikon (pozycje z danych), za nimi przerywana linia.
+// Desktop: rząd ikon (pozycje: benefitPositions w design/), za nimi przerywana linia.
 const BenefitList = () => (
   <motion.ul
     aria-label="Co daje psychoedukacja"
@@ -165,19 +177,29 @@ const BenefitList = () => (
         strokeDasharray="10"
       />
     </svg>
-    {benefits.map((benefit) => (
-      <BenefitItem key={benefit.label} benefit={benefit} />
+    {benefits.map((benefit, index) => (
+      <BenefitItem
+        key={benefit.label}
+        benefit={benefit}
+        className={benefitPositions[index]}
+      />
     ))}
   </motion.ul>
 )
 
 // Ostatnia pozycja przy nieparzystej liczbie: na środku, przez obie kolumny.
-const BenefitItem = ({ benefit }: { benefit: Benefit }) => (
+const BenefitItem = ({
+  benefit,
+  className,
+}: {
+  benefit: Benefit
+  className?: string // desktop: pozycja w rzędzie
+}) => (
   <motion.li
     variants={item}
     className={cn(
       'flex flex-col items-center text-center last:odd:col-span-2 lg:absolute lg:mt-[1.3vw] lg:w-[7.8vw]',
-      benefit.className,
+      className,
     )}
   >
     <Image image={benefit.icon} alt="" className="h-auto w-17 lg:w-full" />
@@ -235,6 +257,7 @@ const StoryCard = ({ story, index }: { story: Story; index: number }) => (
     {story.photo && (
       <HoleWindow
         photo={story.photo}
+        frame={storyPhotoFrame}
         className="top-[1.8vw] left-[53.2vw] w-[41.6vw]"
       />
     )}

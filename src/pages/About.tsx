@@ -11,14 +11,17 @@ import {
   type WorkArea,
   type WorkStep,
 } from '@/content/about'
-import type { RouteHandle } from '@/content/hero'
+import { aboutHeroLayout, workAreaBlobs } from '@/design/about'
+import { type RouteHandle, withLayout } from '@/lib/hero'
 import { HabitsCircle } from '@/components/HabitsCircle'
 import { DecorImage } from '@/components/ui/DecorImage'
 import { Image } from '@/components/ui/Image'
 import { Paragraphs } from '@/components/ui/Paragraphs'
 import { cn } from '@/lib/cn'
 
-export const handle = { hero: aboutHero } satisfies RouteHandle
+export const handle = {
+  hero: withLayout(aboutHero, aboutHeroLayout),
+} satisfies RouteHandle
 
 // Desktop: tła (fale, chmurki, linie) to DecorImage (<img>)
 // z SVG w stałych kolorach: wychodzą poza ekran (overflow-x-clip), a isolate trzyma je
@@ -62,8 +65,12 @@ export default function About() {
           Poznaj obszary mojej pracy
         </h2>
         <ul className="mt-6 space-y-6 lg:mt-[2.1vw] lg:flex lg:items-start lg:space-y-0">
-          {workAreas.map((area) => (
-            <WorkAreaCard key={area.title} area={area} />
+          {workAreas.map((area, index) => (
+            <WorkAreaCard
+              key={area.title}
+              area={area}
+              blob={workAreaBlobs[index]}
+            />
           ))}
         </ul>
       </section>
@@ -141,10 +148,10 @@ const WorkStepCard = ({ step, index }: { step: WorkStep; index: number }) => (
 )
 
 // Desktop: dwie karty obok siebie na kształtach z SVG, pozycje z projektu.
-const WorkAreaCard = ({ area }: { area: WorkArea }) => (
+const WorkAreaCard = ({ area, blob }: { area: WorkArea; blob: string }) => (
   <li className="group mr-edge rounded-r-card bg-rose-light py-8 pr-8 pl-10 inset-shadow-card lg:relative lg:m-0 lg:rounded-none lg:bg-transparent lg:inset-shadow-none lg:odd:ml-[6.77vw] lg:odd:min-h-[20.6vw] lg:odd:w-[36.6vw] lg:odd:pt-[2.5vw] lg:odd:pr-[0.6vw] lg:odd:pl-[2.6vw] lg:even:mt-[1.15vw] lg:even:ml-[9.32vw] lg:even:min-h-[23.9vw] lg:even:w-[42vw] lg:even:pt-[1.25vw] lg:even:pr-0 lg:even:pl-[4.9vw]">
     <DecorImage
-      src={area.blob}
+      src={blob}
       className="-z-10 lg:left-[-5.57vw] lg:group-odd:top-[-11.25vw] lg:group-odd:w-[46.25vw] lg:group-even:top-[-13.3vw] lg:group-even:w-[50.4vw]"
     />
     <h3 className="text-card-title text-rose-soft lg:text-[2.27vw] lg:leading-[1.2] lg:group-odd:text-white">

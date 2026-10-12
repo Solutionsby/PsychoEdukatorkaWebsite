@@ -1,6 +1,6 @@
 import { MotionConfig } from 'motion/react'
 import { Outlet, useMatches } from 'react-router'
-import type { RouteHandle } from '@/content/hero'
+import type { RouteHandle } from '@/lib/hero'
 import { Footer } from './Footer'
 import { MainHero } from './MainHero'
 import { Menu } from './Menu'
