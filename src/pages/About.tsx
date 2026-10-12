@@ -13,6 +13,7 @@ import {
 } from '@/content/about'
 import { aboutHeroLayout, workAreaBlobs } from '@/design/about'
 import { type RouteHandle, withLayout } from '@/lib/hero'
+import { matchOrder } from '@/lib/order'
 import { HabitsCircle } from '@/components/HabitsCircle'
 import { DecorImage } from '@/components/ui/DecorImage'
 import { Image } from '@/components/ui/Image'
@@ -22,6 +23,9 @@ import { cn } from '@/lib/cn'
 export const handle = {
   hero: withLayout(aboutHero, aboutHeroLayout),
 } satisfies RouteHandle
+
+// wygląd w kolejności treści (sprawdzane przy buildzie)
+const areaBlobs = matchOrder(workAreas, workAreaBlobs, 'workAreaBlobs')
 
 // Desktop: tła (fale, chmurki, linie) to DecorImage (<img>)
 // z SVG w stałych kolorach: wychodzą poza ekran (overflow-x-clip), a isolate trzyma je
@@ -69,7 +73,7 @@ export default function About() {
             <WorkAreaCard
               key={area.title}
               area={area}
-              blob={workAreaBlobs[index]}
+              blob={areaBlobs[index]}
             />
           ))}
         </ul>

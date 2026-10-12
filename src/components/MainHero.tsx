@@ -1,4 +1,5 @@
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence } from 'motion/react'
+import * as m from 'motion/react-m'
 import { useState } from 'react'
 import { useLocation } from 'react-router'
 import type { HeroData } from '@/lib/hero'
@@ -37,7 +38,7 @@ export const MainHero = ({ hero }: { hero: HeroData }) => {
       {/* zmienna treść: scena (zdjęcie, kleks, nagłówek, wszystko absolute)
           + karta w normalnym przepływie, więc hero rośnie razem z jej treścią */}
       <AnimatePresence mode="wait" initial={false}>
-        <motion.div
+        <m.div
           key={pathname}
           className={cn(
             'relative flex min-h-svh flex-col pb-6 lg:h-full lg:min-h-0 lg:pb-0',
@@ -82,7 +83,7 @@ export const MainHero = ({ hero }: { hero: HeroData }) => {
           </div>
 
           {hero.card && <HeroCard card={hero.card} />}
-        </motion.div>
+        </m.div>
       </AnimatePresence>
     </section>
   )

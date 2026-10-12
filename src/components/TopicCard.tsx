@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import * as m from 'motion/react-m'
 import type { Topic } from '@/content/topics'
 import type { TopicLook } from '@/design/topics'
 import { cn } from '@/lib/cn'
@@ -41,7 +41,7 @@ export const TopicCard = ({
   const placement = look.decorPlacement ?? 'beside'
 
   return (
-    <motion.article
+    <m.article
       id={topic.id}
       // scroll-mt: przy skoku do #id karta nie chowa się pod menu (fixed, h-20)
       className={cn(
@@ -145,6 +145,6 @@ export const TopicCard = ({
           </div>
         ))}
       </dl>
-    </motion.article>
+    </m.article>
   )
 }

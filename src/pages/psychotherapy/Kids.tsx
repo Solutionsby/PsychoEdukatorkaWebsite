@@ -12,11 +12,15 @@ import {
   psychotherapyKidsHeroLayout,
 } from '@/design/psychotherapy'
 import { type RouteHandle, withLayout } from '@/lib/hero'
+import { matchOrder } from '@/lib/order'
 import { alternateSide } from '@/lib/side'
 
 export const handle = {
   hero: withLayout(psychotherapyKidsHero, psychotherapyKidsHeroLayout),
 } satisfies RouteHandle
+
+// wygląd w kolejności treści (sprawdzane przy buildzie)
+const topicLooks = matchOrder(kidsTopics, kidsTopicLooks, 'kidsTopicLooks')
 
 // Desktop: jasny pas z nawigacją 01–04 (TopicNav),
 // karty bez tła (TopicCard), „Rodzice i opiekunowie” na różowej fali (Wave).
@@ -42,7 +46,7 @@ export default function PsychotherapyKids() {
           >
             <TopicCard
               topic={topic}
-              look={kidsTopicLooks[index]}
+              look={topicLooks[index]}
               side={alternateSide(index)}
               wide={index === 0}
             />

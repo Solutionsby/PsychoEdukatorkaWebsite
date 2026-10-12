@@ -20,12 +20,20 @@ import {
 import { trainingHeroLayout, trainingTopicLooks } from '@/design/training'
 import { photos } from '@/design/heroPhotos'
 import { type RouteHandle, withLayout } from '@/lib/hero'
+import { matchOrder } from '@/lib/order'
 import { cn } from '@/lib/cn'
 import { alternateSide } from '@/lib/side'
 
 export const handle = {
   hero: withLayout(trainingHero, trainingHeroLayout),
 } satisfies RouteHandle
+
+// wygląd w kolejności treści (sprawdzane przy buildzie)
+const topicLooks = matchOrder(
+  trainingTopics,
+  trainingTopicLooks,
+  'trainingTopicLooks',
+)
 
 // Desktop: tła z SVG pozycjonowane względem
 // całej strony (fale wychodzą poza ekran): jasna fala „Dlaczego rezyliencja?” zachodzi
@@ -145,7 +153,7 @@ export default function Training() {
             />
             <TopicCard
               topic={topic}
-              look={trainingTopicLooks[index]}
+              look={topicLooks[index]}
               side={alternateSide(index)}
               className="lg:pl-[12.9vw]"
               headClassName="lg:mt-[1.1vw] lg:w-[35.5vw] lg:[&>h2]:mt-[1.3vw] lg:[&>h2]:max-w-none lg:[&>h2]:text-[2.3vw] lg:[&>h2]:tracking-[0.03em] lg:[&>h2]:whitespace-pre-line"

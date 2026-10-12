@@ -1,4 +1,5 @@
-import { motion, type Variants } from 'motion/react'
+import type { Variants } from 'motion/react'
+import * as m from 'motion/react-m'
 import bridgeImage from '@/assets/svg/psychoeducation-bridge.svg'
 import { LeadHeading } from '@/components/LeadHeading'
 import { LinkPanel } from '@/components/LinkPanel'
@@ -25,11 +26,15 @@ import {
   type HoleFrame,
 } from '@/design/psychoeducation'
 import { type RouteHandle, withLayout } from '@/lib/hero'
+import { matchOrder } from '@/lib/order'
 import { cn } from '@/lib/cn'
 
 export const handle = {
   hero: withLayout(psychoeducationHero, psychoeducationHeroLayout),
 } satisfies RouteHandle
+
+// wygląd w kolejności treści (sprawdzane przy buildzie)
+const positions = matchOrder(benefits, benefitPositions, 'benefitPositions')
 
 // Desktop: jasny pas „Między nauką…” zachodzi
 // na dół hero, zdjęcia w oknach w kształcie kleksa (HoleWindow), rząd ikon połączony
@@ -157,7 +162,7 @@ const item: Variants = {
 
 // Desktop: rząd ikon (pozycje: benefitPositions w design/), za nimi przerywana linia.
 const BenefitList = () => (
-  <motion.ul
+  <m.ul
     aria-label="Co daje psychoedukacja"
     className="mx-auto grid max-w-176 grid-cols-2 gap-x-4 gap-y-8 px-4 py-12 lg:relative lg:mt-0 lg:block lg:h-[20.8vw] lg:max-w-none lg:p-0"
     initial="hidden"
@@ -181,10 +186,10 @@ const BenefitList = () => (
       <BenefitItem
         key={benefit.label}
         benefit={benefit}
-        className={benefitPositions[index]}
+        className={positions[index]}
       />
     ))}
-  </motion.ul>
+  </m.ul>
 )
 
 // Ostatnia pozycja przy nieparzystej liczbie: na środku, przez obie kolumny.
@@ -195,7 +200,7 @@ const BenefitItem = ({
   benefit: Benefit
   className?: string // desktop: pozycja w rzędzie
 }) => (
-  <motion.li
+  <m.li
     variants={item}
     className={cn(
       'flex flex-col items-center text-center last:odd:col-span-2 lg:absolute lg:mt-[1.3vw] lg:w-[7.8vw]',
@@ -206,7 +211,7 @@ const BenefitItem = ({
     <span className="mt-3 w-36 text-card tracking-[0.15em] uppercase lg:mt-[1.3vw] lg:w-[10vw] lg:text-[max(0.75rem,0.91vw)] lg:leading-[1.35] lg:text-ink/60">
       {benefit.label}
     </span>
-  </motion.li>
+  </m.li>
 )
 
 // Telefon: karty na zmianę jak w O mnie (pierwsza przy lewej krawędzi, druga przy prawej).

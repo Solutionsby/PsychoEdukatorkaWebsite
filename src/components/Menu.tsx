@@ -1,5 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog'
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence } from 'motion/react'
+import * as m from 'motion/react-m'
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router'
 import MenuTlo from '@/assets/svg/menu-wave.svg?react'
@@ -68,7 +69,7 @@ export const Menu = () => {
         <AnimatePresence>
           {open && (
             <Dialog.Content forceMount asChild aria-describedby={undefined}>
-              <motion.nav
+              <m.nav
                 aria-label="Menu"
                 className="fixed inset-x-4 top-4 z-10 rounded-[30px] bg-white/97 pt-20 pb-8 outline-none lg:hidden"
                 initial={{ y: '-110%' }}
@@ -93,7 +94,7 @@ export const Menu = () => {
                     </li>
                   ))}
                 </ul>
-              </motion.nav>
+              </m.nav>
             </Dialog.Content>
           )}
         </AnimatePresence>

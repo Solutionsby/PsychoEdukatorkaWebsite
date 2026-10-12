@@ -1,7 +1,7 @@
 // Treść stron Psychoterapii (hub, dzieci, dorośli); wygląd: design/psychotherapy.ts.
 import type { PagePath } from './pages'
 import type { Topic } from './topics'
-import armchairPhoto from '@/assets/img/agata-armchair.png?w=800&format=webp&as=metadata'
+import armchairPhoto from '@/assets/img/agata-armchair.png?w=1000&format=webp&as=metadata'
 import type { HeroContent } from './hero'
 import { typo } from '@/lib/typography'
 

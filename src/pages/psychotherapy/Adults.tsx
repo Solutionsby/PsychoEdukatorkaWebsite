@@ -7,11 +7,19 @@ import {
   psychotherapyAdultsHeroLayout,
 } from '@/design/psychotherapy'
 import { type RouteHandle, withLayout } from '@/lib/hero'
+import { matchOrder } from '@/lib/order'
 import { alternateSide } from '@/lib/side'
 
 export const handle = {
   hero: withLayout(psychotherapyAdultsHero, psychotherapyAdultsHeroLayout),
 } satisfies RouteHandle
+
+// wygląd w kolejności treści (sprawdzane przy buildzie)
+const topicLooks = matchOrder(
+  adultsTopics,
+  adultsTopicLooks,
+  'adultsTopicLooks',
+)
 
 // Desktop: układ jak Dzieci (TopicNav + TopicCard),
 // trzy obszary, kolumna tytułu szersza (lista od x=994), lista 01 w dwóch równych kolumnach.
@@ -49,7 +57,7 @@ export default function PsychotherapyAdults() {
             >
               <TopicCard
                 topic={topic}
-                look={adultsTopicLooks[index]}
+                look={topicLooks[index]}
                 side={alternateSide(index)}
                 wide={index === 0}
                 headClassName="lg:w-[41.9vw]"
