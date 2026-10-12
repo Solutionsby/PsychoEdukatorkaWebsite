@@ -1,10 +1,12 @@
 @import 'tailwindcss';
-@import '@fontsource-variable/playfair-display';
+/* Playfair Display Regular (400): cała strona poza logo; tylko znaki łacińskie z polskimi */
+@import '@fontsource/playfair-display/latin-400.css';
+@import '@fontsource/playfair-display/latin-ext-400.css';
 @import '@fontsource/sacramento';
 
 /* Tokeny z designu (Adobe): kolory, odstępy, fonty — do uzupełnienia. */
 @theme {
-  --font-serif: 'Playfair Display Variable', ui-serif, Georgia, serif;
+  --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
   --font-script: 'Sacramento', cursive;
 
   --color-mist: #bed0d2; /* tło hero */
