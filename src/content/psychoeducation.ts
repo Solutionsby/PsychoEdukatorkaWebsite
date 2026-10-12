@@ -140,12 +140,12 @@ export const psychoeducationHero: HeroData = typo({
     titleClassName: 'lg:hidden',
     subtitle: 'jest jednym z najważniejszych filarów mojej pracy',
     subtitleClassName:
-      'lg:text-[max(0.875rem,1.4vw)] lg:leading-[1.5] lg:tracking-[0.12em] lg:after:content-["."]',
+      'lg:text-[max(0.8125rem,1.4vw)] lg:leading-[1.5] lg:tracking-[0.12em] lg:after:content-["."]',
     paragraphs: [
       'Postrzegam ją jako most między nauką a codziennością — narzędzie, które nie tylko wyjaśnia teoretyczne zagadnienia, ale przede wszystkim realnie wspiera w życiu. Zależy mi na tym, aby wiedza psychologiczna była rzetelna i oparta na badaniach, a jednocześnie bliska, zrozumiała i użyteczna.',
     ],
     paragraphsClassName:
-      'lg:max-w-[47.5vw] lg:space-y-0 lg:text-[max(0.875rem,1.38vw)] lg:leading-[1.5] lg:text-ink',
+      'lg:max-w-[47.5vw] lg:space-y-0 lg:text-[max(0.8125rem,1.38vw)] lg:leading-[1.5] lg:text-ink',
     sections: [{ title: `${intro.subtitle}.`, text: intro.lead }],
   },
 })

@@ -43,7 +43,8 @@ export function Layout({ children }: { children: ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      {/* desktop: krótka strona (np. Home na 1024×768) – stopka dochodzi do dołu ekranu */}
+      <body className="lg:flex lg:min-h-svh lg:flex-col">
         {children}
         <ScrollRestoration />
         <Scripts />

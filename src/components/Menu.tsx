@@ -44,7 +44,7 @@ export const Menu = () => {
                 to={link.to}
                 className={({ isActive }) =>
                   cn(
-                    'text-[max(0.875rem,1.35vw)] tracking-wide text-ink-soft',
+                    'text-[max(0.8125rem,1.35vw)] tracking-wide text-ink-soft',
                     link.pill
                       ? 'rounded-full border border-current px-[1.9vw] py-[0.05vw]'
                       : 'relative after:absolute after:top-full after:left-0 after:mt-[0.3vw] after:h-[0.26vw] after:w-[2.2vw] after:bg-ink after:opacity-0',

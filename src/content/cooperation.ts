@@ -26,7 +26,7 @@ export const contactHero: HeroData = typo({
       'max-lg:hidden lg:mb-[0.6vw] lg:text-[2.6vw] lg:leading-[1.2] lg:tracking-[0.03em]',
     paragraphs: [contactNote],
     paragraphsClassName:
-      'max-lg:hidden lg:mb-[2.1vw] lg:max-w-[41vw] lg:text-[max(0.875rem,1.38vw)] lg:leading-[1.5] lg:text-ink',
+      'max-lg:hidden lg:mb-[2.1vw] lg:max-w-[41vw] lg:text-[max(0.8125rem,1.38vw)] lg:leading-[1.5] lg:text-ink',
     details: [
       [
         {

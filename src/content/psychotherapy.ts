@@ -253,7 +253,7 @@ export const psychotherapyHubHero: HeroData = typo({
       'normal-case tracking-widest lg:flex lg:items-center lg:gap-[0.5vw] lg:text-[2.5vw] lg:leading-[1.2] lg:tracking-[0.03em] lg:before:block lg:before:h-[0.2vw] lg:before:w-[2.1vw] lg:before:bg-current',
     // desktop: akapity bez odstępów, 2. i 3. w jednym ciągu, ostatni po pustej linii
     paragraphsClassName:
-      'lg:mt-[0.45vw] lg:space-y-0 lg:text-[max(0.875rem,1.38vw)] lg:leading-[1.35] lg:text-ink lg:[&>p:last-child]:mt-[1.9vw] lg:[&>p:nth-child(2)]:inline lg:[&>p:nth-child(3)]:inline lg:[&>p:nth-child(3)]:before:content-["_"]',
+      'lg:mt-[0.45vw] lg:space-y-0 lg:text-[max(0.8125rem,1.38vw)] lg:leading-[1.35] lg:text-ink lg:[&>p:last-child]:mt-[1.9vw] lg:[&>p:nth-child(2)]:inline lg:[&>p:nth-child(3)]:inline lg:[&>p:nth-child(3)]:before:content-["_"]',
     paragraphs: [
       'Prowadzę konsultacje psychologiczne oraz psychoterapię indywidualną dla dzieci, młodzieży i ich opiekunów, a także dla osób dorosłych.',
       'W swojej pracy łączę podejście poznawczo-behawioralne (CBT) z metodami tzw. trzeciej fali, tak aby jak najlepiej odpowiadać na indywidualne potrzeby osób, z którymi współpracuję.',
@@ -281,7 +281,7 @@ export const psychotherapyKidsHero: HeroData = typo({
     titleClassName:
       'max-lg:hidden lg:mb-[1.3vw] lg:text-[2.5vw] lg:leading-[1.2] lg:tracking-[0.03em]',
     paragraphsClassName:
-      'lg:space-y-0 lg:text-[max(0.875rem,1.38vw)] lg:leading-[1.5] lg:text-ink',
+      'lg:space-y-0 lg:text-[max(0.8125rem,1.38vw)] lg:leading-[1.5] lg:text-ink',
     paragraphs: [
       'Wspieram dzieci i młodzież w lepszym rozumieniu ich świata wewnętrznego, bezpiecznym przechodzeniu przez wyzwania rozwojowe oraz budowaniu umiejętności, które wzmacniają odporność i elastyczność psychologiczną.',
       'W pracy ważna jest dla mnie relacja oparta na szacunku i uważności. Korzystam z kreatywnych form pracy, które pomagają zaciekawić i zaangażować moich małych i większych pacjentów.',
@@ -306,7 +306,7 @@ export const psychotherapyAdultsHero: HeroData = typo({
     titleClassName:
       'max-lg:hidden lg:mb-[1.3vw] lg:text-[2.5vw] lg:leading-[1.2] lg:tracking-[0.03em]',
     paragraphsClassName:
-      'lg:space-y-0 lg:text-[max(0.875rem,1.38vw)] lg:leading-[1.5] lg:text-ink',
+      'lg:space-y-0 lg:text-[max(0.8125rem,1.38vw)] lg:leading-[1.5] lg:text-ink',
     paragraphs: [
       'Wspieram osoby dorosłe w procesie zdrowienia oraz radzenia sobie z trudnościami dnia codziennego. Pomagam rozwijać umiejętności, które pozwalają budować bardziej satysfakcjonujące życie — w zgodzie z własnymi wartościami i potrzebami.',
     ],

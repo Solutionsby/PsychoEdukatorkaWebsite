@@ -11,7 +11,7 @@ export const ContactButton = ({ className }: { className?: string }) => (
     className={cn(
       'block rounded-r-full bg-rose-light py-2 pl-18 text-card-title tracking-wide text-rose-soft uppercase inset-shadow-card',
       // desktop: różowa pigułka ze strzałką (jak przycisk w karcie hero)
-      'lg:inline-flex lg:items-center lg:gap-[1.67vw] lg:rounded-full lg:bg-rose lg:py-[0.35vw] lg:pr-[0.6vw] lg:pl-[1vw] lg:text-[max(0.875rem,1.16vw)] lg:tracking-normal lg:text-white lg:normal-case lg:inset-shadow-none',
+      'lg:inline-flex lg:items-center lg:gap-[1.67vw] lg:rounded-full lg:bg-rose lg:py-[0.35vw] lg:pr-[0.6vw] lg:pl-[1vw] lg:text-[max(0.8125rem,1.16vw)] lg:tracking-normal lg:text-white lg:normal-case lg:inset-shadow-none',
       className,
     )}
   >

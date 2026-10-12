@@ -40,7 +40,7 @@ export const ContactCard = ({
       {title}
     </h2>
     <div className="mt-6 flex items-end gap-4 px-10 lg:mt-[0.8vw] lg:block lg:px-0">
-      <p className="flex-1 text-card lg:max-w-[52vw] lg:text-[max(0.875rem,1.4vw)] lg:leading-[1.5]">
+      <p className="flex-1 text-card lg:max-w-[52vw] lg:text-[max(0.8125rem,1.4vw)] lg:leading-[1.5]">
         {text}
       </p>
       {image && (

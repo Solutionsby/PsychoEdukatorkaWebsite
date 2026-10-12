@@ -7,7 +7,8 @@ export const HeroCard = ({ card }: { card: HeroCardData }) => {
   return (
     <div
       className={cn(
-        'relative z-30 -mt-16 ml-4 rounded-l-[4.5rem] bg-white py-6 pr-6 pl-12 text-ink inset-shadow-card',
+        // tablet: karta na całą szerokość (zakrywa dół zdjęcia), tekst najwyżej ~40rem
+        'relative z-30 -mt-16 ml-4 rounded-l-[4.5rem] bg-white py-6 pr-[max(1.5rem,100%-44rem)] pl-12 text-ink inset-shadow-card',
         // desktop: półprzezroczysty blob na scenie; pozycja i rozmiar z card.className
         'lg:absolute lg:m-0 lg:flex lg:flex-col lg:justify-start lg:rounded-[50%] lg:bg-white/50 lg:pt-[5.1vw] lg:pr-[1.5vw] lg:pb-0 lg:pl-[3.25vw] lg:inset-shadow-none',
         card.blob && 'lg:rounded-none lg:bg-transparent',
@@ -46,7 +47,7 @@ export const HeroCard = ({ card }: { card: HeroCardData }) => {
         ))}
 
       {card.lines && (
-        <p className="text-sm leading-relaxed opacity-80 lg:text-[max(0.875rem,1.15vw)] lg:leading-[1.8]">
+        <p className="text-sm leading-relaxed opacity-80 lg:text-[max(0.8125rem,1.15vw)] lg:leading-[1.8]">
           {card.lines.map((line) => (
             // desktop: linie w jednym ciągu, rozdzielone kropką
             <span
@@ -77,10 +78,10 @@ export const HeroCard = ({ card }: { card: HeroCardData }) => {
         <div className="hidden lg:mt-[2.55vw] lg:block">
           {card.sections.map((section) => (
             <section key={section.title}>
-              <h3 className="text-[max(0.875rem,1.4vw)] leading-[1.5] tracking-[0.12em] uppercase">
+              <h3 className="text-[max(0.8125rem,1.4vw)] leading-[1.5] tracking-[0.12em] uppercase">
                 {section.title}
               </h3>
-              <p className="text-[max(0.875rem,1.38vw)] leading-[1.5]">
+              <p className="text-[max(0.8125rem,1.38vw)] leading-[1.5]">
                 {section.text}
               </p>
             </section>
@@ -89,7 +90,7 @@ export const HeroCard = ({ card }: { card: HeroCardData }) => {
       )}
 
       {card.details && (
-        <address className="space-y-4 text-card not-italic lg:space-y-[2.1vw] lg:text-[max(0.875rem,1.38vw)] lg:leading-[1.5]">
+        <address className="space-y-4 text-card not-italic lg:space-y-[2.1vw] lg:text-[max(0.8125rem,1.38vw)] lg:leading-[1.5]">
           {card.details.map((group) => (
             <div key={group[0].label}>
               {group.map((detail) => {
@@ -121,7 +122,7 @@ export const HeroCard = ({ card }: { card: HeroCardData }) => {
       )}
 
       {card.items && (
-        <dl className="space-y-4 text-sm leading-relaxed lg:space-y-[1.2vw] lg:text-[max(0.875rem,1.27vw)] lg:leading-[1.33]">
+        <dl className="space-y-4 text-sm leading-relaxed lg:space-y-[1.2vw] lg:text-[max(0.8125rem,1.27vw)] lg:leading-[1.33]">
           {card.items.map((item) => (
             <div key={item.title}>
               {/* desktop: kreska zamiast kropki, tytuł w kolorze tekstu */}
@@ -144,7 +145,7 @@ export const HeroCard = ({ card }: { card: HeroCardData }) => {
           {card.cta && (
             <Link
               to={card.cta.to}
-              className="flex items-center gap-6 rounded-full bg-rose px-3 py-1 text-sm text-white lg:gap-[5.2vw] lg:py-[0.35vw] lg:pr-[0.5vw] lg:pl-[1vw] lg:text-[max(0.875rem,1.15vw)]"
+              className="flex items-center gap-6 rounded-full bg-rose px-3 py-1 text-sm text-white lg:gap-[5.2vw] lg:py-[0.35vw] lg:pr-[0.5vw] lg:pl-[1vw] lg:text-[max(0.8125rem,1.15vw)]"
             >
               {card.cta.label}
               <svg
@@ -162,7 +163,7 @@ export const HeroCard = ({ card }: { card: HeroCardData }) => {
           {card.link && (
             <Link
               to={card.link.to}
-              className="text-sm underline underline-offset-4 lg:text-[max(0.875rem,1.15vw)]"
+              className="text-sm underline underline-offset-4 lg:text-[max(0.8125rem,1.15vw)]"
             >
               {card.link.label}
             </Link>

@@ -78,11 +78,14 @@ export default function Training() {
       >
         <path d="M0,0 L1920,0 L1920,131 C1700,140 1350,160 1010,169 L1010,270 L0,270 Z" />
       </svg>
-      <img
-        src={contactWave}
-        alt=""
-        className={cn(decor, 'top-[118.4vw] -left-[15.89vw] w-[135.35vw]')}
-      />
+      {/* pojemnik ucina falę na dole strony (inaczej wystaje pod stopką i wydłuża stronę) */}
+      <div className="pointer-events-none absolute inset-x-0 top-[118.4vw] bottom-0 -z-10 hidden overflow-hidden lg:block">
+        <img
+          src={contactWave}
+          alt=""
+          className="absolute top-0 -left-[15.89vw] h-auto w-[135.35vw] max-w-none"
+        />
+      </div>
       {/* przerywane linie między kartami „Obszarów” */}
       <svg
         aria-hidden
@@ -110,7 +113,7 @@ export default function Training() {
           <h3 className="text-card-title tracking-wide text-rose-soft uppercase lg:hidden">
             {resilience.cardTitle}
           </h3>
-          <div className="mt-3 space-y-4 text-card lg:mt-0 lg:grid lg:grid-cols-[35.4vw_36.1vw] lg:space-y-0 lg:gap-x-[6.6vw] lg:text-[max(0.875rem,1.46vw)] lg:leading-[1.42] lg:tracking-[0.05em]">
+          <div className="mt-3 space-y-4 text-card lg:mt-0 lg:grid lg:grid-cols-[35.4vw_36.1vw] lg:space-y-0 lg:gap-x-[6.6vw] lg:text-[max(0.8125rem,1.46vw)] lg:leading-[1.42] lg:tracking-[0.05em]">
             {resilience.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}

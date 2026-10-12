@@ -61,7 +61,7 @@ export default function Psychoeducation() {
         >
           {intro.paragraphsTitle}
         </h2>
-        <div className="mt-6 space-y-4 px-10 text-card lg:mt-[2.6vw] lg:max-w-[57.8vw] lg:px-0 lg:pl-[9.9vw] lg:text-[max(0.875rem,1.38vw)] lg:leading-[1.5]">
+        <div className="mt-6 space-y-4 px-10 text-card lg:mt-[2.6vw] lg:max-w-[57.8vw] lg:px-0 lg:pl-[9.9vw] lg:text-[max(0.8125rem,1.38vw)] lg:leading-[1.5]">
           {intro.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -88,7 +88,7 @@ export default function Psychoeducation() {
         height={practicePhoto.image.height}
         alt={practicePhoto.alt}
         loading="lazy"
-        className="relative -mt-6 mr-14 ml-auto block h-auto w-2/5 lg:hidden"
+        className="relative -mt-6 mr-14 ml-auto block h-auto w-2/5 max-w-64 lg:hidden"
       />
 
       <LinkPanel
@@ -155,7 +155,7 @@ const item: Variants = {
 const BenefitList = () => (
   <motion.ul
     aria-label="Co daje psychoedukacja"
-    className="grid grid-cols-2 gap-x-4 gap-y-8 px-edge py-12 lg:relative lg:mt-0 lg:block lg:h-[20.8vw] lg:p-0"
+    className="mx-auto grid max-w-176 grid-cols-2 gap-x-4 gap-y-8 px-4 py-12 lg:relative lg:mt-0 lg:block lg:h-[20.8vw] lg:max-w-none lg:p-0"
     initial="hidden"
     whileInView="show"
     viewport={{ once: true, amount: 0.3 }}
@@ -235,7 +235,7 @@ const StoryCard = ({ story, index }: { story: Story; index: number }) => (
     </h2>
     <p
       className={cn(
-        'mt-6 text-card lg:text-[max(0.875rem,1.38vw)] lg:leading-[1.5]',
+        'mt-6 text-card lg:text-[max(0.8125rem,1.38vw)] lg:leading-[1.5]',
         index === 0
           ? 'lg:mt-[1.4vw] lg:max-w-[44vw]'
           : 'lg:mt-[2.4vw] lg:max-w-[39.5vw]',

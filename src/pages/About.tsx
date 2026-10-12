@@ -31,7 +31,7 @@ export default function About() {
       <section
         id="jak-pracuje"
         // scroll-mt: przy skoku z przycisku w hero nagłówek nie chowa się pod menu
-        className="mr-edge scroll-mt-20 lg:relative lg:mr-0 lg:scroll-mt-[9.5vw]"
+        className="mr-4 scroll-mt-20 lg:relative lg:mr-0 lg:scroll-mt-[9.5vw]"
       >
         <img
           src={waveLight}
@@ -41,7 +41,7 @@ export default function About() {
             'top-[-10.8vw] left-[-12.1vw] -z-20 w-[126.1vw]',
           )}
         />
-        <h2 className="rounded-tr-card bg-mist px-14 pt-10 pb-6 text-section lg:mt-[-0.57vw] lg:ml-[11.4vw] lg:w-fit lg:rounded-none lg:bg-transparent lg:p-0 lg:text-[3.1vw] lg:leading-[1.2] lg:before:block lg:before:h-[0.2vw] lg:before:w-[2vw] lg:before:bg-current">
+        <h2 className="max-w-176 rounded-tr-card bg-mist px-14 pt-10 pb-6 text-section lg:mt-[-0.57vw] lg:ml-[11.4vw] lg:w-fit lg:max-w-none lg:rounded-none lg:bg-transparent lg:p-0 lg:text-[3.1vw] lg:leading-[1.2] lg:before:block lg:before:h-[0.2vw] lg:before:w-[2vw] lg:before:bg-current">
           Jak pracuję?
         </h2>
         <ol className="space-y-8 lg:mt-[3.4vw] lg:space-y-0">
@@ -51,7 +51,7 @@ export default function About() {
         </ol>
       </section>
 
-      <section className="mr-5 rounded-r-card bg-mist py-10 lg:relative lg:mt-[12.5vw] lg:mr-0 lg:rounded-none lg:bg-transparent lg:pt-0 lg:pb-[1.6vw]">
+      <section className="mr-5 rounded-r-card bg-mist py-10 md:mr-edge lg:relative lg:mt-[12.5vw] lg:mr-0 lg:rounded-none lg:bg-transparent lg:pt-0 lg:pb-[1.6vw]">
         {/* linia nad nagłówkiem (z dołkiem nad nim) i rozgałęzienie do kart */}
         <img
           src={areasLine}
@@ -77,13 +77,14 @@ export default function About() {
 }
 
 // Telefon: karty na zmianę, z tym samym odstępem (`edge` w index.css) od przeciwnej krawędzi:
-// nieparzyste przylegają do lewej (zaokrąglenie z prawej, odstęp = mr-edge sekcji),
-// parzyste do prawej (zaokrąglenie z lewej; -mr-edge znosi margines sekcji, ml-edge odstęp).
+// nieparzyste przylegają do lewej (zaokrąglenie z prawej, odstęp = mr-4 sekcji),
+// parzyste do prawej (zaokrąglenie z lewej; -mr-4 znosi margines sekcji, ml-edge odstęp).
+// Tablet: karty najwyżej 44rem (max-w-176 / ml-edge), na zmianę przy lewej i prawej.
 // Pierwsza zamyka panel „Jak pracuję?”: gradient mist → białe widać w jej zaokrąglonych rogach.
 // Desktop: tekst bez karty, każdy krok z własnym tłem: 01 chmurka + schemat, 02 fala mist,
 // 03 zdjęcie obok.
 const WorkStepCard = ({ step, index }: { step: WorkStep; index: number }) => (
-  <li className="group first:bg-linear-to-b first:from-mist first:to-white first:to-70% even:-mr-edge even:ml-edge lg:relative lg:m-0 lg:pl-[14.2vw] lg:first:bg-none lg:even:mx-0 lg:nth-2:mt-[8.4vw] lg:nth-3:mt-[12.5vw]">
+  <li className="group first:bg-linear-to-b first:from-mist first:to-white first:to-70% odd:max-w-176 even:-mr-4 even:ml-edge lg:relative lg:m-0 lg:max-w-none! lg:pl-[14.2vw] lg:first:bg-none lg:even:mx-0 lg:nth-2:mt-[8.4vw] lg:nth-3:mt-[12.5vw]">
     {index === 0 && (
       <img
         src={stepBlob}
@@ -111,7 +112,7 @@ const WorkStepCard = ({ step, index }: { step: WorkStep; index: number }) => (
       </h3>
       <div
         className={cn(
-          'mt-3 space-y-4 text-card lg:mt-[1.4vw] lg:space-y-[2.1vw] lg:text-[max(0.875rem,1.27vw)] lg:leading-[1.6]',
+          'mt-3 space-y-4 text-card lg:mt-[1.4vw] lg:space-y-[2.1vw] lg:text-[max(0.8125rem,1.27vw)] lg:leading-[1.6]',
           // szerokość tekstu z projektu: 02 na całą szerokość, 01 i 03 obok grafiki
           index === 1 ? 'lg:max-w-[76vw]' : 'lg:max-w-[33.2vw]',
         )}
@@ -156,7 +157,7 @@ const WorkStepCard = ({ step, index }: { step: WorkStep; index: number }) => (
 
 // Desktop: dwie karty obok siebie na kształtach z SVG, pozycje z projektu.
 const WorkAreaCard = ({ area }: { area: WorkArea }) => (
-  <li className="group mr-4 rounded-r-card bg-rose-light py-8 pr-8 pl-10 inset-shadow-card lg:relative lg:m-0 lg:rounded-none lg:bg-transparent lg:inset-shadow-none lg:odd:ml-[6.77vw] lg:odd:min-h-[20.6vw] lg:odd:w-[36.6vw] lg:odd:pt-[2.5vw] lg:odd:pr-[0.6vw] lg:odd:pl-[2.6vw] lg:even:mt-[1.15vw] lg:even:ml-[9.32vw] lg:even:min-h-[23.9vw] lg:even:w-[42vw] lg:even:pt-[1.25vw] lg:even:pr-0 lg:even:pl-[4.9vw]">
+  <li className="group mr-edge rounded-r-card bg-rose-light py-8 pr-8 pl-10 inset-shadow-card lg:relative lg:m-0 lg:rounded-none lg:bg-transparent lg:inset-shadow-none lg:odd:ml-[6.77vw] lg:odd:min-h-[20.6vw] lg:odd:w-[36.6vw] lg:odd:pt-[2.5vw] lg:odd:pr-[0.6vw] lg:odd:pl-[2.6vw] lg:even:mt-[1.15vw] lg:even:ml-[9.32vw] lg:even:min-h-[23.9vw] lg:even:w-[42vw] lg:even:pt-[1.25vw] lg:even:pr-0 lg:even:pl-[4.9vw]">
     <img
       src={area.blob}
       alt=""
@@ -171,7 +172,7 @@ const WorkAreaCard = ({ area }: { area: WorkArea }) => (
     <p className="text-card text-rose-soft lg:text-[1.85vw] lg:leading-[1.2] lg:group-odd:text-white">
       {area.subtitle}
     </p>
-    <p className="mt-3 text-card lg:mt-[2vw] lg:text-[max(0.875rem,1.27vw)] lg:leading-[1.65]">
+    <p className="mt-3 text-card lg:mt-[2vw] lg:text-[max(0.8125rem,1.27vw)] lg:leading-[1.65]">
       {area.text}
     </p>
     <Link

@@ -126,7 +126,7 @@ export const trainingHero: HeroData = typo({
       'Prowadzę szkolenia, warsztaty oraz prelekcje dla różnorodnych grup odbiorców — od placówek oświatowych i instytucji publicznych po sektor biznesowy. W swojej pracy łączę wiedzę naukową z doświadczeniem klinicznym oraz wieloletnią praktyką w działaniach profilaktycznych. Zależy mi na tym, aby każde spotkanie było dla uczestników okazją do zatrzymania się i chwili refleksji, a jednocześnie dostarczało konkretnych narzędzi, które realnie wspierają w codziennej pracy i życiu osobistym.',
     ],
     paragraphsClassName:
-      'lg:max-w-[37vw] lg:text-[max(0.875rem,1.25vw)] lg:leading-[1.67] lg:tracking-[0.05em] lg:text-ink',
+      'lg:max-w-[37vw] lg:text-[max(0.8125rem,1.25vw)] lg:leading-[1.67] lg:tracking-[0.05em] lg:text-ink',
     // tylko desktop: na telefonie sekcja jest tuż pod kartą
     link: { label: 'Dlaczego rezyliencja?', to: '#dlaczego-rezyliencja' },
     actionsClassName:

@@ -65,7 +65,7 @@ export const MainHero = ({ hero }: { hero: HeroData }) => {
             {hero.subheading && (
               <p
                 className={cn(
-                  'absolute hidden text-[max(0.875rem,1.15vw)] leading-[1.8] text-ink opacity-80 lg:block',
+                  'absolute hidden text-[max(0.8125rem,1.15vw)] leading-[1.8] text-ink opacity-80 lg:block',
                   hero.subheadingClassName,
                 )}
               >

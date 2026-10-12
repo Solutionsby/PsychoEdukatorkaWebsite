@@ -8,7 +8,7 @@ export const Footer = () => {
   const accentLinks = links.filter((link) => link.accent) // np. BLOG, po prawej
 
   return (
-    <footer className="text-sm">
+    <footer className="text-sm lg:grow lg:bg-mist-deep">
       {/* desktop: jeden pas, trzy kolumny: logo, dane kontaktowe, linki */}
       <div className="bg-mist-deep px-8 pt-8 pb-5 text-white lg:flex lg:h-[13vw] lg:items-center lg:py-0 lg:pr-[4vw] lg:pl-[4.5vw]">
         {/* TODO: logo SVG od grafika zamiast tekstu */}

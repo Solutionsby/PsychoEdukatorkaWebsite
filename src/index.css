@@ -32,8 +32,10 @@
   --text-hero: clamp(1.5rem, 7.5vw, 2.5rem); /* ~29px przy 390px */
   --text-hero--line-height: 1.2;
 
-  /* odstęp kart od krawędzi ekranu: mr-edge, -mr-edge, ml-edge */
-  --spacing-edge: 1rem;
+  /* odstęp kart od krawędzi ekranu: mr-edge, -mr-edge, ml-edge.
+     Tablet: karta najwyżej 44rem, przy swojej krawędzi (% = szerokość rodzica, więc
+     karta zagnieżdżona w takim bloku dostaje 1rem jak na telefonie); od lg: 1rem. */
+  --spacing-edge: max(1rem, 100% - 44rem);
 
   --radius-card: clamp(4.0625rem, 17.33vw, 6rem); /* 65px */
   --inset-shadow-card: inset 0 3px 6px #00000029;
@@ -73,5 +75,11 @@
 @layer base {
   html {
     font-family: var(--font-serif);
+  }
+
+  :root {
+    @variant lg {
+      --spacing-edge: 1rem;
+    }
   }
 }
