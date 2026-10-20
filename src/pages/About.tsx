@@ -55,7 +55,7 @@ export default function About() {
         </ol>
       </section>
 
-      <section className="mr-5 rounded-r-card bg-mist py-10 md:mr-edge lg:relative lg:mt-[12.5vw] lg:mr-0 lg:rounded-none lg:bg-transparent lg:pt-0 lg:pb-[1.6vw]">
+      <section className="mr-5 rounded-r-card bg-mist py-10 md:mr-edge lg:relative lg:mt-[12.5vw] lg:mr-0 lg:rounded-none lg:bg-transparent lg:pt-0 lg:pb-[3vw]">
         {/* linia nad nagłówkiem (z dołkiem nad nim) i rozgałęzienie do kart */}
         <DecorImage
           src={areasLine}
@@ -153,10 +153,10 @@ const WorkStepCard = ({ step, index }: { step: WorkStep; index: number }) => (
 
 // Desktop: dwie karty obok siebie na kształtach z SVG, pozycje z projektu.
 const WorkAreaCard = ({ area, blob }: { area: WorkArea; blob: string }) => (
-  <li className="group mr-edge rounded-r-card bg-rose-light py-8 pr-8 pl-10 inset-shadow-card lg:relative lg:m-0 lg:rounded-none lg:bg-transparent lg:inset-shadow-none lg:odd:ml-[6.77vw] lg:odd:min-h-[20.6vw] lg:odd:w-[36.6vw] lg:odd:pt-[2.5vw] lg:odd:pr-[0.6vw] lg:odd:pl-[2.6vw] lg:even:mt-[1.15vw] lg:even:ml-[9.32vw] lg:even:min-h-[23.9vw] lg:even:w-[42vw] lg:even:pt-[1.25vw] lg:even:pr-0 lg:even:pl-[4.9vw]">
+  <li className="group mr-edge rounded-r-card bg-rose-light py-8 pr-8 pl-10 inset-shadow-card lg:relative lg:m-0 lg:rounded-none lg:bg-transparent lg:inset-shadow-none lg:odd:ml-[6.77vw] lg:odd:min-h-[20.6vw] lg:odd:w-[36.6vw] lg:odd:pt-[2.5vw] lg:odd:pr-[0.6vw] lg:odd:pl-[2.6vw] lg:even:mt-[1.15vw] lg:even:ml-[9.32vw] lg:even:min-h-[23.9vw] lg:even:w-[42vw] lg:even:pt-[1.25vw] lg:even:pr-[3vw] lg:even:pl-[4.9vw]">
     <DecorImage
       src={blob}
-      className="-z-10 lg:left-[-5.57vw] lg:group-odd:top-[-11.25vw] lg:group-odd:w-[46.25vw] lg:group-even:top-[-13.3vw] lg:group-even:w-[50.4vw]"
+      className="-z-10 lg:left-[-5.57vw] lg:group-odd:top-[-11.25vw] lg:group-odd:w-[46.25vw] lg:group-even:top-[-15vw] lg:group-even:w-[55vw]"
     />
     <h3 className="text-card-title text-rose-soft lg:text-[2.27vw] lg:leading-[1.2] lg:group-odd:text-white">
       {area.title}

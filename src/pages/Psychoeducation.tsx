@@ -203,7 +203,7 @@ const BenefitItem = ({
   <m.li
     variants={item}
     className={cn(
-      'flex flex-col items-center text-center last:odd:col-span-2 lg:absolute lg:mt-[1.3vw] lg:w-[7.8vw]',
+      'flex flex-col items-center text-center last:nth-of-type-[odd]:col-span-2 lg:absolute lg:mt-[1.3vw] lg:w-[7.8vw]',
       className,
     )}
   >

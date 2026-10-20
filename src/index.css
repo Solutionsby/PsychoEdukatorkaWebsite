@@ -51,16 +51,8 @@
     }
   }
 
-  /* koło nawyków (O mnie): kreski płyną wzdłuż ścieżki (okres = suma dasharray 9 6.5),
-     kropki rozbłyskują po kolei (6 kropek × 1 s opóźnienia = jeden obieg) */
-  --animate-dash-flow: dash-flow 1.2s linear infinite;
+  /* koło nawyków (O mnie): kropki rozbłyskują po kolei (6 kropek × 1 s opóźnienia = jeden obieg) */
   --animate-dot-pulse: dot-pulse 6s ease-in-out infinite;
-
-  @keyframes dash-flow {
-    to {
-      stroke-dashoffset: -15.5;
-    }
-  }
 
   @keyframes dot-pulse {
     0%,

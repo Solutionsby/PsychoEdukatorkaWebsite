@@ -46,7 +46,11 @@ export default function PsychotherapyHub() {
           className="mt-2 lg:mt-0 lg:space-y-[1.8vw] lg:text-[max(0.8125rem,1.38vw)] lg:leading-[1.43]"
         />
         <p className="mt-3 text-card text-rose-soft lg:mt-0 lg:text-[max(0.8125rem,1.38vw)] lg:leading-[1.43]">
-          {cooperation.note}
+          {cooperation.notes.map((line) => (
+            <span key={line} className="block">
+              {line}
+            </span>
+          ))}
         </p>
       </section>
 

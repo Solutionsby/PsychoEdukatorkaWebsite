@@ -8,7 +8,7 @@ export const homeHero: HeroContent = typo({
   card: {
     title: 'Agata Hemmerling-Goc',
     lines: credentials,
-    cta: { label: 'Poznaj Agatę', to: '/o-mnie' },
+    cta: { label: 'O mnie', to: '/o-mnie' },
     link: { label: 'Psychoterapia', to: '/psychoterapia' },
   },
 })

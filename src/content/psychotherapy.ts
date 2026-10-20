@@ -11,7 +11,10 @@ export const cooperation = typo({
     'Współpracę rozpoczynamy od 1 do 3 spotkań konsultacyjnych. To czas na poznanie się oraz przyjrzenie się zgłaszanym trudnościom. Wspólnie określamy możliwe kierunki pracy i wybieramy formę wsparcia najlepiej dopasowaną do potrzeb.',
     'W przypadku psychoterapii dzieci i młodzieży pierwsze spotkanie odbywa się wyłącznie z opiekunami.',
   ],
-  note: 'Sesje trwają 50 minut, a ich koszt wynosi 250 zł.',
+  notes: [
+    'Sesje psychoterapii indywidualnej trwają 50 minut, a ich koszt wynosi 250 zł.',
+    'Konsultacje psychologiczne trwają 50 minut, a ich koszt wynosi 300 zł.',
+  ],
 })
 
 export const supportAreas = typo({
@@ -69,7 +72,9 @@ export const kidsTopics: Topic[] = typo([
         term: 'Sytuacje trudne (strata, rozwód, choroba)',
         text: 'pomoc w przeżywaniu i radzeniu sobie z wymagającymi doświadczeniami',
       },
-      { term: 'Adaptacja do nowych etapów (przedszkole, szkoła, dojrzewanie)' },
+      { term: 'Adaptacja do nowych etapów (przedszkole, szkoła, dojrzewanie)',
+        text: 'wsparcie w przechodzeniu przez zmiany',
+       },
       {
         term: 'Trudności okresu dorastania',
         text: 'towarzyszenie w procesie kształtowania tożsamości i budowania relacji rówieśniczych',
@@ -102,7 +107,7 @@ export const kidsTopics: Topic[] = typo([
     items: [
       {
         term: 'Neuroróżnorodność',
-        text: 'rozwijanie umiejętności samoregulacji oraz budowanie strategii',
+        text: 'rozwijanie umiejętności samoregulacji oraz budowanie strategii wspierających codzienne funkcjonowanie',
       },
       {
         term: 'Wzmacnianie zasobów',

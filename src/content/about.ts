@@ -23,7 +23,7 @@ export type WorkArea = {
 /** Tytuły zawodowe: karta hero na Home, linia pod nagłówkiem O mnie (desktop). */
 export const credentials = typo([
   'psycholożka',
-  'certyfikowana psychoterapeutka poznawczo-behawioralna (Nr certyfikatu PTTPB: 1819)',
+  'certyfikowana psychoterapeutka poznawczo-behawioralna (nr certyfikatu PTTPB: 1819)',
   'psychodietetyczka',
 ])
 
@@ -33,7 +33,7 @@ export const workSteps: WorkStep[] = typo([
     title: 'Całościowe spojrzenie na zdrowie psychiczne',
     paragraphs: [
       'Bliskie jest mi całościowe spojrzenie na zdrowie psychiczne, dlatego w swojej pracy kieruję się zasadami praktyki opartej na dowodach naukowych (evidence-based practice), wzbogacając je o elementy medycyny stylu życia.',
-      'Zwracam uwagę na znaczenie codziennych nawyków — snu, odżywiania, ruchu, kontaktu z naturą, relacji czy sposobów radzenia sobie ze stresem — dla naszego dobrostanu psychicznego.',
+      'Zwracam uwagę na to, jak codzienne wybory i nawyki związane ze snem, odżywianiem, ruchem, kontaktem z naturą, relacjami i radzeniem sobie ze stresem wpływają na nasze samopoczucie i zdrowie psychiczne.',
     ],
     tags: ['Relacje', 'Sen', 'Odżywianie', 'Ruch', 'Natura', 'Stres'],
   },
@@ -62,7 +62,7 @@ export const workAreas: WorkArea[] = typo([
   {
     title: 'Psychoterapia',
     subtitle: 'Z troski o zdrowie psychiczne.',
-    text: 'Prowadzę konsultacje psychologiczne oraz psychoterapię indywidualną dla dzieci, młodzieży i ich opiekunów, a także dla osób dorosłych.',
+    text: 'Konsultacje psychologiczne i psychoterapia dla dzieci, młodzieży, rodziców oraz osób dorosłych',
     link: { label: 'Zobacz, jak wygląda psychoterapia', to: '/psychoterapia' },
   },
   {

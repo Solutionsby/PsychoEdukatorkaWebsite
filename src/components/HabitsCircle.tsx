@@ -2,8 +2,8 @@ import { cn } from '@/lib/cn'
 
 // Koło nawyków z „Jak pracuję?” (O mnie, desktop), rozłożone z SVG z projektu:
 // przerywana ścieżka (z przerwami przy etykietach), kropki i etykiety jako tekst.
-// Animacja: kreski płyną zgodnie z ruchem wskazówek zegara, kropki rozbłyskują po kolei
-// w tym samym kierunku (keyframes w index.css; motion-safe = bez ruchu przy reduced motion).
+// Animacja: kropki rozbłyskują po kolei, zgodnie z ruchem wskazówek zegara
+// (keyframes w index.css; motion-safe = bez ruchu przy reduced motion).
 
 // Ścieżka z pliku, rysowana zgodnie z ruchem wskazówek zegara (od prawego dołu).
 const ring =
@@ -51,7 +51,6 @@ export const HabitsCircle = ({ className }: { className?: string }) => (
       strokeOpacity={0.73}
       strokeWidth={2.3}
       strokeDasharray="9 6.5"
-      className="motion-safe:animate-dash-flow"
     />
     {points.map((point, index) => (
       <circle
