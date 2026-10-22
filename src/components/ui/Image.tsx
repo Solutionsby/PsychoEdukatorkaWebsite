@@ -10,6 +10,7 @@ type ImageProps = Omit<ComponentProps<'img'>, 'src' | 'width' | 'height'> & {
 export const Image = ({ image, loading = 'lazy', ...props }: ImageProps) => (
   <img
     src={image.src}
+    srcSet={image.srcSet}
     width={image.width}
     height={image.height}
     loading={loading}

@@ -25,15 +25,14 @@ export const MainHero = ({ hero }: { hero: HeroData }) => {
       )}
     >
       {/* łuk z niebem: stały, nie animuje się przy zmianie strony */}
-      {/* desktop: otwór 534 px od x=1174, y=171 */}
+      {/* telefon: dół łuku za kartą (bottom-12), nie wystaje pod nią;
+          desktop: otwór 534 px od x=1174, y=171 */}
       <div
         className={cn(
-          'absolute top-20 right-8 bottom-0 w-[60%] overflow-hidden rounded-t-full shadow-[inset_-20px_20px_20px_rgba(0,0,0,0.16)] lg:top-[8.9vw] lg:right-auto lg:left-[61.15vw] lg:w-[27.8vw] lg:shadow-[inset_-1.04vw_1.04vw_1.04vw_rgba(0,0,0,0.16)]',
+          'absolute top-20 right-8 bottom-12 w-[60%] overflow-hidden rounded-t-full bg-sky shadow-[inset_-20px_20px_20px_rgba(0,0,0,0.16)] lg:top-[8.9vw] lg:right-auto lg:left-[61.15vw] lg:w-[27.8vw] lg:shadow-[inset_-1.04vw_1.04vw_1.04vw_rgba(0,0,0,0.16)]',
           hero.arcClassName,
         )}
-      >
-        {/* TODO: zdjęcie nieba */}
-      </div>
+      />
 
       {/* zmienna treść: scena (zdjęcie, kleks, nagłówek, wszystko absolute)
           + karta w normalnym przepływie, więc hero rośnie razem z jej treścią */}
@@ -50,11 +49,17 @@ export const MainHero = ({ hero }: { hero: HeroData }) => {
           transition={{ duration: 0.4 }}
         >
           {/* desktop: scena na całe hero, karta (blob) leży na niej absolute */}
-          <div className="relative min-h-148 flex-1 lg:absolute lg:inset-0 lg:min-h-0">
+          <div
+            className={cn(
+              'relative min-h-148 flex-1 lg:absolute lg:inset-0 lg:min-h-0',
+              hero.sceneClassName,
+            )}
+          >
             <HeroFigure
               image={hero.image}
               imageAlt={hero.imageAlt}
               imageClassName={hero.imageClassName}
+              imageMobileOnly={hero.imageMobileOnly}
               decor={hero.decor}
               decorClassName={hero.decorClassName}
             />

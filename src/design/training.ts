@@ -28,7 +28,7 @@ export const trainingHeroLayout: HeroLayout = {
   lineClassName:
     'tracking-[0.1em] lg:ml-[10vw] lg:text-[6.35vw] lg:leading-none lg:tracking-[0.255em]',
   ...photos.glasses,
-  imageClassName: `${photos.glasses.imageClassName} lg:hidden`,
+  imageMobileOnly: true,
   decor: 'kleks',
   card: {
     // telefon: karta dotyka panelu „Dlaczego rezyliencja?”

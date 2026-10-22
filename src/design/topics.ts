@@ -9,4 +9,7 @@ export type TopicLook = {
   // 'between': w przepływie między tytułem a listą, odsuwa listę w dół; pozycja: ml-*, -mt-*, w-*.
   decorPlacement?: 'beside' | 'between'
   decorClassName?: string // pozycja i rozmiar dekoracji
+  // telefon i tablet (do lg): osobna dekoracja nałożona na kartę (absolute), np. gdy desktop ma inną
+  mobileDecor?: ComponentType<SVGProps<SVGSVGElement>>
+  mobileDecorClassName?: string // pozycja i rozmiar: top-*, left-*, w-*
 }

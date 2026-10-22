@@ -5,6 +5,7 @@ import contactWave from '@/assets/svg/training-wave-contact.svg'
 import balls1 from '@/assets/svg/training-balls-1.svg'
 import balls2 from '@/assets/svg/training-balls-2.svg'
 import balls3 from '@/assets/svg/training-balls-3.svg'
+import blazerPhoto from '@/assets/img/agata-blazer.png?w=800&format=webp&as=metadata'
 import { ContactCard } from '@/components/ContactCard'
 import { LinkPanel } from '@/components/LinkPanel'
 import { TopicCard } from '@/components/TopicCard'
@@ -18,7 +19,6 @@ import {
   trainingHero,
 } from '@/content/training'
 import { trainingHeroLayout, trainingTopicLooks } from '@/design/training'
-import { photos } from '@/design/heroPhotos'
 import { type RouteHandle, withLayout } from '@/lib/hero'
 import { matchOrder } from '@/lib/order'
 import { cn } from '@/lib/cn'
@@ -54,10 +54,10 @@ export default function Training() {
     // flow-root: ujemny margines pierwszej sekcji nie przesuwa całego pojemnika (i teł);
     // clip-path: tła ucięte na dole strony (różowa fala nie wchodzi na stopkę), u góry nie (fala na hero)
     <div className="overflow-x-clip text-ink lg:relative lg:isolate lg:flow-root lg:[clip-path:inset(-30vw_0_0_0)]">
-      {/* TODO: niebo (wspólne tło „przebić”); na razie jednolity kolor pod białymi pasami */}
+      {/* niebo pod białymi pasami */}
       <div
         aria-hidden
-        className="absolute inset-x-0 top-[63.5vw] -z-10 hidden h-[67.7vw] bg-mist-deep lg:block"
+        className="absolute inset-x-0 top-[63.5vw] -z-10 hidden h-[67.7vw] bg-sky lg:block"
       />
       <DecorImage
         src={resilienceWave}
@@ -67,9 +67,10 @@ export default function Training() {
         src={areasWave}
         className="top-[6.56vw] -left-[9.5vw] -z-10 w-[117.2vw]"
       />
+      {/* Agata obok „Obszarów”: dół zdjęcia chowa się za białą falą pod kartami (topicsWave niżej w DOM) */}
       <DecorImage
-        src={photos.armsCrossed.image}
-        className="top-[13.44vw] left-[17.4vw] -z-10 w-[14.58vw]"
+        src={blazerPhoto}
+        className="top-[16.7vw] left-[18vw] -z-10 w-[14.3vw]"
       />
       <DecorImage
         src={topicsWave}

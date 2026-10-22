@@ -34,8 +34,7 @@ const areaBlobs = matchOrder(workAreas, workAreaBlobs, 'workAreaBlobs')
 export default function About() {
   return (
     <div className="text-ink lg:isolate lg:overflow-x-clip">
-      {/* tło: mist pod nagłówkiem, na pierwszej karcie przechodzi w białe
-          TODO: tło z chmurami (O MNIE - TŁO) */}
+      {/* tło: mist pod nagłówkiem, na pierwszej karcie przechodzi w białe */}
       <section
         id="jak-pracuje"
         // scroll-mt: przy skoku z przycisku w hero nagłówek nie chowa się pod menu
@@ -139,6 +138,13 @@ const WorkStepCard = ({ step, index }: { step: WorkStep; index: number }) => (
         max-w-none: preflight Tailwinda ogranicza img do 100% rodzica.
         desktop: przy prawej krawędzi obok tekstu, dół wycięty łukiem (clip-path),
         lewa krawędź rozmyta (mask) */}
+    {/* desktop: okno z niebem za zdjęciem (elipsa, góra chowa się pod falą mist) */}
+    {step.image && (
+      <div
+        aria-hidden
+        className="absolute top-[-12.7vw] left-[47.5vw] -z-40 hidden h-[33.3vw] w-[54.6vw] rounded-[50%] bg-sky lg:block"
+      />
+    )}
     {step.image && (
       <div className="mt-10 -mr-edge overflow-hidden lg:absolute lg:-top-[1vw] lg:right-0 lg:mt-0 lg:mr-0 lg:w-[47.9vw] lg:overflow-visible">
         <Image
@@ -157,6 +163,12 @@ const WorkAreaCard = ({ area, blob }: { area: WorkArea; blob: string }) => (
     <DecorImage
       src={blob}
       className="-z-10 lg:left-[-5.57vw] lg:group-odd:top-[-11.25vw] lg:group-odd:w-[46.25vw] lg:group-even:top-[-15vw] lg:group-even:w-[55vw]"
+    />
+    {/* desktop, Szkolenia: niebo w tym samym kształcie, przesunięte w górę i w prawo */}
+    <div
+      aria-hidden
+      className="absolute top-[-16vw] left-[-4.4vw] -z-20 hidden aspect-[1050.9/1018.4] w-[55vw] bg-sky mask-size-[100%_100%] mask-no-repeat lg:group-even:block"
+      style={{ maskImage: `url("${blob}")` }}
     />
     <h3 className="text-card-title text-rose-soft lg:text-[2.27vw] lg:leading-[1.2] lg:group-odd:text-white">
       {area.title}

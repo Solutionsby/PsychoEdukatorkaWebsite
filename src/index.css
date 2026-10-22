@@ -66,9 +66,48 @@
   }
 }
 
+/* Niebo we wszystkich „przebiciach” (łuk hero, okna Psychoedukacji, pasy między kartami),
+   przygaszone warstwą mist. Desktop: fixed = jedno niebo pod całą stroną, widziane przez otwory;
+   telefon: każde miejsce osobno (iOS ignoruje fixed).
+   Pliki z design-sources/sky-source.jpg (WebP 50%: niebo jest miękkie), bo imagetools nie działa
+   w url() w CSS: telefon sky-mobile.webp (1000 px, ~27 KB), desktop sky.webp (1600 px, ~175 KB);
+   przeglądarka pobiera tylko ten, który obowiązuje na danym ekranie. */
+@utility bg-sky {
+  background:
+    linear-gradient(
+      color-mix(in srgb, var(--color-mist) 30%, transparent),
+      color-mix(in srgb, var(--color-mist) 30%, transparent)
+    ),
+    url('./assets/img/sky-mobile.webp') center bottom / cover;
+
+  /* kadr na ekran: błękit u góry, duża chmura w dolnej części (jak w łuku na grafice og) */
+  @variant lg {
+    background-image:
+      linear-gradient(
+        color-mix(in srgb, var(--color-mist) 30%, transparent),
+        color-mix(in srgb, var(--color-mist) 30%, transparent)
+      ),
+      url('./assets/img/sky.webp');
+    background-attachment: fixed;
+    background-position: center 55%;
+  }
+}
+
 @layer base {
   html {
     font-family: var(--font-serif);
+  }
+
+  /* telefon i tablet: niebo zamiast białego tła pod całą stroną (projekt mobilny).
+     Warstwa fixed zamiast background-attachment: fixed, bo iOS go ignoruje. Desktop: białe tło. */
+  body::before {
+    @variant max-lg {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      @apply bg-sky;
+    }
   }
 
   :root {

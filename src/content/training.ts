@@ -12,7 +12,7 @@ export const resilience = typo({
   cardTitle: 'Rezyliencja',
   paragraphs: [
     'Rezyliencja to nasza wewnętrzna zdolność do radzenia sobie z przeciwnościami i odzyskiwania równowagi po trudnych doświadczeniach.',
-    'Warto ją pielęgnować — nie tylko po to, by przetrwać trudny czas, ale także po to, by czerpać z życia większą satysfakcję. Dbanie o zdrowie psychiczne zaczyna się od mądrej, uważnej profilaktyki.',
+    'Warto ją pielęgnować – nie tylko po to, by przetrwać trudny czas, ale także po to, by czerpać z życia większą satysfakcję. Dbanie o zdrowie psychiczne zaczyna się od mądrej, uważnej profilaktyki.',
   ],
 })
 
@@ -93,7 +93,7 @@ export const trainingAreas = typo({
 
 export const trainingContact = typo({
   title: 'Współpraca',
-  text: 'Powyższe tematy stanowią punkt wyjścia. Każde szkolenie przygotowuję w oparciu o realne potrzeby danej placówki lub organizacji. Ceny szkoleń ustalane są indywidualnie — zależą od formy spotkania, liczby uczestników oraz terminu realizacji. Zapraszam do kontaktu, abyśmy mogli wspólnie zaplanować działania najlepiej dopasowane do Państwa potrzeb.',
+  text: 'Powyższe tematy stanowią punkt wyjścia. Każde szkolenie przygotowuję w oparciu o realne potrzeby danej placówki lub organizacji. Ceny szkoleń ustalane są indywidualnie – zależą od formy spotkania, liczby uczestników oraz terminu realizacji. Zapraszam do kontaktu, abyśmy mogli wspólnie zaplanować działania najlepiej dopasowane do Państwa potrzeb.',
   // TODO: image: zdjęcie Agaty w kraciastej koszuli (desktop: obok tekstu, na telefonie ukryte)
 })
 
@@ -102,7 +102,7 @@ export const trainingHero: HeroContent = typo({
   card: {
     title: 'Z miłości do rezyliencji.',
     paragraphs: [
-      'Prowadzę szkolenia, warsztaty oraz prelekcje dla różnorodnych grup odbiorców — od placówek oświatowych i instytucji publicznych po sektor biznesowy. W swojej pracy łączę wiedzę naukową z doświadczeniem klinicznym oraz wieloletnią praktyką w działaniach profilaktycznych. Zależy mi na tym, aby każde spotkanie było dla uczestników okazją do zatrzymania się i chwili refleksji, a jednocześnie dostarczało konkretnych narzędzi, które realnie wspierają w codziennej pracy i życiu osobistym.',
+      'Prowadzę szkolenia, warsztaty oraz prelekcje dla różnorodnych grup odbiorców – od placówek oświatowych i instytucji publicznych po sektor biznesowy. W swojej pracy łączę wiedzę naukową z doświadczeniem klinicznym oraz wieloletnią praktyką w działaniach profilaktycznych. Zależy mi na tym, aby każde spotkanie było dla uczestników okazją do zatrzymania się i chwili refleksji, a jednocześnie dostarczało konkretnych narzędzi, które realnie wspierają w codziennej pracy i życiu osobistym.',
     ],
     // tylko desktop: na telefonie sekcja jest tuż pod kartą
     link: { label: 'Dlaczego rezyliencja?', to: '#dlaczego-rezyliencja' },

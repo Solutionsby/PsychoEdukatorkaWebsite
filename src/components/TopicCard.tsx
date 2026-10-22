@@ -38,6 +38,7 @@ export const TopicCard = ({
   textClassName,
 }: TopicCardProps) => {
   const Decor = look.decor
+  const MobileDecor = look.mobileDecor
   const placement = look.decorPlacement ?? 'beside'
 
   return (
@@ -62,6 +63,15 @@ export const TopicCard = ({
           className={cn(
             'pointer-events-none absolute text-rose-soft',
             look.decorClassName,
+          )}
+        />
+      )}
+      {MobileDecor && (
+        <MobileDecor
+          aria-hidden
+          className={cn(
+            'pointer-events-none absolute h-auto lg:hidden',
+            look.mobileDecorClassName,
           )}
         />
       )}

@@ -68,7 +68,7 @@ export const workAreas: WorkArea[] = typo([
   {
     title: 'Szkolenia i warsztaty',
     subtitle: 'Z miłości do rezyliencji.',
-    text: 'Prowadzę szkolenia, warsztaty oraz prelekcje dla różnorodnych grup odbiorców — od placówek oświatowych i instytucji publicznych po sektor biznesowy. W swojej pracy łączę wiedzę naukową z doświadczeniem klinicznym oraz wieloletnią praktyką w działaniach profilaktycznych.',
+    text: 'Prowadzę szkolenia, warsztaty oraz prelekcje dla różnorodnych grup odbiorców – od placówek oświatowych i instytucji publicznych po sektor biznesowy. W swojej pracy łączę wiedzę naukową z doświadczeniem klinicznym oraz wieloletnią praktyką w działaniach profilaktycznych.',
     link: {
       label: 'Poznaj szkolenia i możliwości współpracy',
       to: '/szkolenia',

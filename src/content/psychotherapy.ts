@@ -88,7 +88,7 @@ export const kidsTopics: Topic[] = typo([
     items: [
       {
         term: 'Dysregulacja emocji',
-        text: 'nauka rozumienia, nazywania i konstruktywnego wyrażania uczuć oraz radzenia sobie z impulsywnymi reakcjami',
+        text: 'nauka rozumienia, nazywania i konstruktywnego wyrażania uczuć oraz radzenia sobie z własnym pobudzeniem',
       },
       {
         term: 'Samouszkodzenia',
@@ -107,7 +107,7 @@ export const kidsTopics: Topic[] = typo([
     items: [
       {
         term: 'Neuroróżnorodność',
-        text: 'rozwijanie umiejętności samoregulacji oraz budowanie strategii wspierających codzienne funkcjonowanie',
+        text: 'Rozwijanie umiejętności radzenia sobie z silnymi emocjami, wyrażania ich w sposób zgodny z własnymi wartościami oraz regulowania poziomu pobudzenia.',
       },
       {
         term: 'Wzmacnianie zasobów',
@@ -126,7 +126,7 @@ export const parents = typo({
   // desktop: zdjęcie na fotelu obok tekstu
   image: armchairPhoto,
   imageAlt: 'Agata Hemmerling-Goc na fotelu z notesem',
-  text: 'Wsparcie rodziców traktuję jako ważny element pracy z dzieckiem. To przestrzeń, w której można na chwilę się zatrzymać, przyjrzeć trudnym sytuacjom i lepiej zrozumieć, co stoi za zachowaniem dziecka. Podczas konsultacji wspólnie szukamy sposobów reagowania, które są wspierające i adekwatne do potrzeb oraz etapu rozwoju dziecka. To również miejsce, w którym można zadbać o siebie w roli rodzica — z większą łagodnością i zrozumieniem.',
+  text: 'Wsparcie rodziców traktuję jako ważny element pracy z dzieckiem. To przestrzeń, w której można na chwilę się zatrzymać, przyjrzeć trudnym sytuacjom i lepiej zrozumieć, co stoi za zachowaniem dziecka. Podczas konsultacji wspólnie szukamy sposobów reagowania, które są wspierające i adekwatne do potrzeb oraz etapu rozwoju dziecka. To również miejsce, w którym można zadbać o siebie w roli rodzica – z większą łagodnością i zrozumieniem.',
 })
 
 // Dorośli
@@ -146,7 +146,7 @@ export const adultsTopics: Topic[] = typo([
       },
       {
         term: 'Trudności w regulacji emocji',
-        text: 'rozwijanie umiejętności radzenia sobie z silnymi emocjami, redukcji napięcia oraz zastępowaniu impulsywnych reakcji',
+        text: 'Rozwijanie umiejętności radzenia sobie z silnymi emocjami, wyrażania ich w sposób zgodny z własnymi wartościami oraz regulowania poziomu pobudzenia.',
       },
       {
         term: 'Zaburzenia nastroju',
@@ -185,7 +185,7 @@ export const adultsTopics: Topic[] = typo([
     items: [
       {
         term: 'Neuroróżnorodność',
-        text: 'wspieranie samoregulacji i codziennego funkcjonowania',
+        text: 'rozwijanie umiejętności samoregulacji oraz budowanie strategii wspierających codzienne funkcjonowanie',
       },
       {
         term: 'Wzmacnianie zasobów',
@@ -227,7 +227,7 @@ export const psychotherapyAdultsHero: HeroContent = typo({
   card: {
     title: 'Dorośli', // tylko desktop
     paragraphs: [
-      'Wspieram osoby dorosłe w procesie zdrowienia oraz radzenia sobie z trudnościami dnia codziennego. Pomagam rozwijać umiejętności, które pozwalają budować bardziej satysfakcjonujące życie — w zgodzie z własnymi wartościami i potrzebami.',
+      'Wspieram osoby dorosłe w procesie zdrowienia oraz radzenia sobie z trudnościami dnia codziennego. Pomagam rozwijać umiejętności, które pozwalają budować bardziej satysfakcjonujące życie – w zgodzie z własnymi wartościami i potrzebami.',
     ],
   },
 })

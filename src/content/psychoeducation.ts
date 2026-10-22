@@ -22,7 +22,7 @@ export type HolePhoto = {
 export const intro = typo({
   title: 'Psychoedukacja',
   subtitle: 'to dla mnie coś więcej niż przekazywanie informacji',
-  lead: 'Traktuję ją jako formę towarzyszenia — spokojnego wyjaśniania, nazywania i oswajania tego, co bywa trudne, nieuchwytne lub przytłaczające. To także wspólne przyglądanie się mechanizmom, które stoją za naszymi emocjami, myślami i reakcjami.',
+  lead: 'Traktuję ją jako formę towarzyszenia – spokojnego wyjaśniania, nazywania i oswajania tego, co bywa trudne, nieuchwytne lub przytłaczające. To także wspólne przyglądanie się mechanizmom, które stoją za naszymi emocjami, myślami i reakcjami.',
   paragraphsTitle: 'Zrozumienie jest pierwszym krokiem do zmiany.', // tylko desktop
   paragraphs: [
     'Zrozumienie tych procesów często staje się pierwszym krokiem do zmiany. Pomaga uporządkować doświadczenia, zmniejsza napięcie, nadaje im sens i pozwala spojrzeć na siebie z większą wyrozumiałością i życzliwością. Choć wiedza nie daje gotowych odpowiedzi na wszystkie pytania, może przywracać poczucie sprawstwa i wspierać podejmowanie decyzji bliższych naszym wartościom, potrzebom i życiowym celom. Bywa również źródłem inspiracji i sposobem na poszerzanie perspektywy.',
@@ -113,7 +113,7 @@ export const psychoeducationHero: HeroContent = typo({
     title: 'Psychoedukacja', // telefon; desktop: tytułem jest nagłówek hero
     subtitle: 'jest jednym z najważniejszych filarów mojej pracy',
     paragraphs: [
-      'Postrzegam ją jako most między nauką a codziennością — narzędzie, które nie tylko wyjaśnia teoretyczne zagadnienia, ale przede wszystkim realnie wspiera w życiu. Zależy mi na tym, aby wiedza psychologiczna była rzetelna i oparta na badaniach, a jednocześnie bliska, zrozumiała i użyteczna.',
+      'Postrzegam ją jako most między nauką a codziennością – narzędzie, które nie tylko wyjaśnia teoretyczne zagadnienia, ale przede wszystkim realnie wspiera w życiu. Zależy mi na tym, aby wiedza psychologiczna była rzetelna i oparta na badaniach, a jednocześnie bliska, zrozumiała i użyteczna.',
     ],
     sections: [{ title: `${intro.subtitle}.`, text: intro.lead }],
   },

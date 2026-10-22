@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180.808" height="128.928" viewBox="0 0 180.808 128.928">
+  <defs>
+    <filter id="psychotherapy-balls-4-mobile-shadow-1" x="145.087" y="0" width="35.721" height="35.721" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="psychotherapy-balls-4-mobile-shadow-2" x="0" y="98.164" width="30.764" height="30.764" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="translate(-177.597 -2137.572)">
+    <g transform="matrix(1, 0, 0, 1, 177.6, 2137.57)" filter="url(#psychotherapy-balls-4-mobile-shadow-1)">
+      <circle cx="8.861" cy="8.861" r="8.861" transform="translate(154.09 6)" fill="#be98a2" opacity="0.535"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 177.6, 2137.57)" filter="url(#psychotherapy-balls-4-mobile-shadow-2)">
+      <circle cx="6.382" cy="6.382" r="6.382" transform="translate(9 104.16)" fill="#be98a2" opacity="0.535"/>
+    </g>
+    <path d="M6596.717,3541.4s46.7,3.094,64.428-7.8,20.422-17.2,6.47-35.774,64.32-49.782,64.32-49.782" transform="translate(-6397.355 -1291.843)" fill="none" stroke="#be98a2" stroke-width="1" stroke-dasharray="5" opacity="0.535"/>
+  </g>
+</svg>

@@ -16,11 +16,13 @@ export type HeroCardLayout = {
 export type HeroLayout = {
   className?: string // klasy całej sekcji hero (np. zaokrąglenie tła)
   arcClassName?: string // klasy łuku (np. desktop: krótszy niż hero)
+  sceneClassName?: string // scena ze zdjęciem i nagłówkiem (np. telefon: niższa, min-h-*)
   headingClassName?: string // klasy dla <h1> (pozycja, układ)
   lineClassName?: string // klasy dla każdej linii (też odd:/even:)
   subheadingClassName?: string // pozycja linii pod nagłówkiem
   image?: ImageAsset // zdjęcie Agaty: z `photos` (design/heroPhotos.ts)
   imageClassName?: string // pozycja/rozmiar zdjęcia z kleksem (pojemnik na dole sceny)
+  imageMobileOnly?: boolean // zdjęcie tylko do lg: ukryte na desktopie i tam niepobierane
   decor?: HeroDecor // kleks za zdjęciem
   decorClassName?: string // pozycja/rozmiar kleksa w % zdjęcia
   card?: HeroCardLayout

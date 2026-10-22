@@ -5,7 +5,7 @@ import { typo } from '@/lib/typography'
 
 // Telefon: pod hero; desktop: w karcie hero, nad danymi kontaktowymi.
 export const contactNote = typo(
-  'Ze względu na specyfikę mojej pracy nie zawsze mogę odebrać telefon. W takiej sytuacji zachęcam do pozostawienia wiadomości SMS lub e-mail — zawsze odpowiadam na każdą z nich.',
+  'Ze względu na specyfikę mojej pracy nie zawsze mogę odebrać telefon. W takiej sytuacji zachęcam do pozostawienia wiadomości SMS lub e-mail – zawsze odpowiadam na każdą z nich.',
 )
 
 export const contactHero: HeroContent = typo({

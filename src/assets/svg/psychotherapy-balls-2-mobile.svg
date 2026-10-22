@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="350.122" height="100.409" viewBox="0 0 350.122 100.409">
+  <defs>
+    <filter id="psychotherapy-balls-2-mobile-shadow" x="317.706" y="0" width="32.417" height="32.417" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="translate(-29.086 -1423.628)">
+    <path d="M6179.453,2467.7s.967,26.406,43.39,37.207c41.873,10.66,88.911,11.2,161.064-8.393s127.551-69.978,127.551-69.978" transform="translate(-6149.868 -988.696)" fill="none" stroke="#bf8591" stroke-linejoin="round" stroke-width="1" stroke-dasharray="5" opacity="0.454"/>
+    <g transform="matrix(1, 0, 0, 1, 29.09, 1423.63)" filter="url(#psychotherapy-balls-2-mobile-shadow)">
+      <ellipse cx="7.208" cy="7.208" rx="7.208" ry="7.208" transform="translate(326.71 6)" fill="#bf8591" opacity="0.454"/>
+    </g>
+  </g>
+</svg>

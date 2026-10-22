@@ -24,7 +24,7 @@ const topicLooks = matchOrder(kidsTopics, kidsTopicLooks, 'kidsTopicLooks')
 
 // Desktop: jasny pas z nawigacją 01–04 (TopicNav),
 // karty bez tła (TopicCard), „Rodzice i opiekunowie” na różowej fali (Wave).
-// TODO: pasy z niebem między kartami (czekają na zdjęcie nieba)
+// TODO: pasy z niebem między kartami (SkyShape, jak Dorośli): czekają na projekt
 
 export default function PsychotherapyKids() {
   return (

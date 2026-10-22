@@ -11,7 +11,9 @@ export const homeHeroLayout: HeroLayout = {
     'lg:even:ml-[10vw] lg:even:text-[6.35vw] lg:even:tracking-[0.265em]',
     'lg:last:ml-[61.9vw] lg:last:text-[3.02vw] lg:last:tracking-[0.15em]',
   ].join(' '),
-  headingClassName: 'top-35 lg:top-[11.04vw] lg:items-start',
+  // telefon: hero niższe (scena 34rem zamiast 37rem), nagłówek wyżej, żeby zdjęcie go nie zasłoniło
+  sceneClassName: 'min-h-136 lg:min-h-0',
+  headingClassName: 'top-28 lg:top-[11.04vw] lg:items-start',
   ...photos.home,
   decor: 'kleks',
   card: {

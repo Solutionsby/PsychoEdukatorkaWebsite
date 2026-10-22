@@ -39,7 +39,7 @@ export const psychoeducationHeroLayout: HeroLayout = {
     'text-[8.5vw] tracking-[0.2em] -mr-[0.2em] lg:mr-0 lg:ml-[10vw] lg:text-[6.35vw] lg:leading-none lg:tracking-[0.265em]',
   ...photos.armsCrossed,
   // desktop: bez zdjęcia i kleksa (zdjęcia są niżej, w oknach)
-  imageClassName: `${photos.armsCrossed.imageClassName} lg:hidden`,
+  imageMobileOnly: true,
   decor: 'kleks',
   card: {
     // telefon: karta dotyka panelu pod hero; desktop: sam tekst

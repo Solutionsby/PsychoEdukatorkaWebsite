@@ -116,7 +116,6 @@ export default function Psychoeducation() {
 }
 
 // Desktop: okno w kształcie kleksa (maska z SVG): za zdjęciem niebo.
-// TODO: zdjęcie nieba (wspólne tło „przebić”; bg-fixed = jedno niebo widziane przez okna)
 const HoleWindow = ({
   photo,
   frame,
@@ -128,7 +127,7 @@ const HoleWindow = ({
 }) => (
   <div
     className={cn(
-      'absolute -z-10 hidden overflow-hidden bg-mist-deep [mask-size:100%_100%] [mask-repeat:no-repeat] lg:block',
+      'absolute -z-10 hidden overflow-hidden bg-sky [mask-size:100%_100%] [mask-repeat:no-repeat] lg:block',
       className,
     )}
     style={{

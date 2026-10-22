@@ -1,7 +1,8 @@
 import type { PagePath } from './pages.ts'
 
 export type Seo = {
-  title: string
+  name: string // krótka nazwa strony: ścieżka nawigacji w wynikach Google (BreadcrumbList)
+  title: string // do ok. 60 znaków
   description: string // ok. 150 znaków: tyle pokazuje Google
 }
 
@@ -11,49 +12,64 @@ export const siteUrl = 'https://psycho-edukatorka.pl'
 export const pageUrl = (path: string) =>
   siteUrl + (path === '/' ? '/' : `${path}/`)
 
+/** Podgląd linku (Facebook, Messenger, LinkedIn): public/og-image.jpg, z design-sources/og-image-source.jpg. Nieużywany: czeka na poprawioną grafikę (literówka „psychodedukatorka”). */
+export const ogImage = {
+  url: `${siteUrl}/og-image.jpg`,
+  width: 1200,
+  height: 630,
+  alt: 'Agata Hemmerling-Goc – psychoterapia, psychoedukacja, szkolenia',
+}
+
 export const notFoundTitle = 'Nie znaleziono strony | Psychoedukatorka'
 
-// Tytuł i opis każdej strony. Brak wpisu dla strony z pages.ts = błąd typów.
-// Opisy to szkice do akceptacji przez Agatę.
+// Nazwa, tytuł i opis każdej strony (zaakceptowane). Brak wpisu dla strony z pages.ts = błąd typów.
 export const seo: Record<PagePath, Seo> = {
   '/': {
-    title: 'Agata Hemmerling-Goc – psychoterapia, psychoedukacja, szkolenia',
+    name: 'Strona główna',
+    title: 'Agata Hemmerling-Goc – psychoterapeutka CBT, psychoedukacja',
     description:
-      'Psycholożka, certyfikowana psychoterapeutka poznawczo-behawioralna i psychodietetyczka. Psychoterapia, psychoedukacja i szkolenia dla psychoterapeutów.',
+      'Psycholożka, certyfikowana psychoterapeutka poznawczo-behawioralna i psychodietetyczka z Gdańska. Psychoterapia, psychoedukacja i szkolenia z rezyliencji.',
   },
   '/o-mnie': {
-    title: 'O mnie | Agata Hemmerling-Goc',
+    name: 'O mnie',
+    title: 'O mnie – Agata Hemmerling-Goc, psychoterapeutka CBT',
     description:
-      'Praktyka kliniczna, psychoedukacja i szkolenia. Poznaj doświadczenie i kwalifikacje Agaty Hemmerling-Goc, psychoterapeutki poznawczo-behawioralnej.',
+      'Całościowe spojrzenie na zdrowie psychiczne, praktyka oparta na dowodach i medycyna stylu życia. Doświadczenie kliniczne, psychoedukacja i współprace.',
   },
   '/psychoedukacja': {
+    name: 'Psychoedukacja',
     title: 'Psychoedukacja | Agata Hemmerling-Goc',
     description:
-      'Psychoedukacja: rzetelna wiedza o zdrowiu psychicznym, emocjach i terapii poznawczo-behawioralnej, przekazana przystępnie.',
+      'Psychoedukacja jako most między nauką a codziennością: rzetelna wiedza o emocjach, myślach i reakcjach, przekazana przez metafory i własne narzędzia.',
   },
   '/psychoterapia': {
-    title: 'Psychoterapia poznawczo-behawioralna | Agata Hemmerling-Goc',
+    name: 'Psychoterapia',
+    title: 'Psychoterapia CBT w Gdańsku | Agata Hemmerling-Goc',
     description:
-      'Psychoterapia poznawczo-behawioralna dla dzieci, młodzieży i dorosłych. Sprawdź, jak wygląda terapia i wybierz ofertę dla siebie.',
+      'Psychoterapia CBT i konsultacje psychologiczne dla dzieci, młodzieży, rodziców i dorosłych w Gdańsku. Praca oparta na dowodach naukowych i superwizji.',
   },
   '/psychoterapia/dzieci-i-mlodziez': {
-    title: 'Psychoterapia dzieci i młodzieży | Agata Hemmerling-Goc',
+    name: 'Dzieci i młodzież',
+    title: 'Psychoterapia dzieci i młodzieży w Gdańsku | A. Hemmerling-Goc',
     description:
-      'Psychoterapia poznawczo-behawioralna dzieci i młodzieży oraz wsparcie dla rodziców i opiekunów.',
+      'Psychoterapia poznawczo-behawioralna dzieci i nastolatków: lęk, nastrój, regulacja emocji, kryzysy, neuroróżnorodność. Wsparcie dla rodziców.',
   },
   '/psychoterapia/dorosli': {
-    title: 'Psychoterapia dorosłych | Agata Hemmerling-Goc',
+    name: 'Dorośli',
+    title: 'Psychoterapia dorosłych w Gdańsku | Agata Hemmerling-Goc',
     description:
-      'Psychoterapia poznawczo-behawioralna dla dorosłych: pomoc w lęku, obniżonym nastroju, stresie i trudnościach w relacjach.',
+      'Psychoterapia poznawczo-behawioralna dorosłych: zaburzenia nastroju i lękowe, OCD, trauma, zaburzenia odżywiania, kryzysy życiowe, psychodietetyka.',
   },
   '/szkolenia': {
-    title: 'Szkolenia dla psychoterapeutów | Agata Hemmerling-Goc',
+    name: 'Szkolenia',
+    title: 'Szkolenia i warsztaty z rezyliencji | Agata Hemmerling-Goc',
     description:
-      'Szkolenia dla psychoterapeutów i psychologów: praktyczne umiejętności pracy w nurcie poznawczo-behawioralnym.',
+      'Szkolenia, warsztaty i prelekcje o rezyliencji dla kadry pedagogicznej, uczniów, rodziców i organizacji. Program dopasowany do potrzeb placówki.',
   },
   '/wspolpraca': {
-    title: 'Współpraca i kontakt | Agata Hemmerling-Goc',
+    name: 'Współpraca',
+    title: 'Kontakt i współpraca | Agata Hemmerling-Goc',
     description:
-      'Umów się na konsultację lub zaproś do współpracy przy szkoleniach i projektach psychoedukacyjnych. Dane kontaktowe.',
+      'Telefon, e-mail i adres gabinetu: Centrum Zdrowia Psychicznego Psycho Academy, ul. Okrąg 21/23, Gdańsk. Konsultacje, psychoterapia i szkolenia.',
   },
 }

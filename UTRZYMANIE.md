@@ -80,7 +80,7 @@ Dobrze wiedzieć:
 
 ### Tytuł i opis strony w Google
 
-`content/seo.ts`: `title` (karta przeglądarki, wynik w Google) i `description` (ok. 150 znaków). Każda strona z `pages.ts` musi tu mieć wpis, inaczej build zgłosi błąd typów.
+`content/seo.ts`: `name` (krótka nazwa strony w ścieżce nawigacji w Google, np. „Dorośli”), `title` (karta przeglądarki, wynik w Google, do ok. 60 znaków) i `description` (ok. 150 znaków). Dane dla Google o Agacie (zawód, gabinet, mapa, Instagram, LinkedIn) budują się same z `content/contact.ts` (`officeAddress`, `mapUrl`, `profiles`) w `lib/structuredData.ts`. Każda strona z `pages.ts` musi tu mieć wpis, inaczej build zgłosi błąd typów.
 
 ### Punkt na liście w karcie (np. nowy obszar terapii)
 
@@ -179,7 +179,7 @@ Częste błędy:
 
 ## Publikacja
 
-`npm run build` tworzy gotową, statyczną stronę w `build/client/`: każda podstrona jako `<adres>/index.html`, do tego `404.html`, `sitemap.xml`, `robots.txt`. Na hosting wgrywa się zawartość tego folderu (hosting jeszcze niewybrany: Netlify / Cloudflare Pages / Vercel — każdy obsłuży go bez dodatkowej konfiguracji serwera).
+`npm run build` tworzy gotową, statyczną stronę w `build/client/`: każda podstrona jako `<adres>/index.html`, do tego `404.html`, `sitemap.xml`, `robots.txt`. Na hosting wgrywa się całą zawartość tego folderu, razem z ukrytym plikiem `.htaccess` (z `public/.htaccess`; w FTP włącz pokazywanie ukrytych plików). `.htaccess` działa na serwerze Apache (typowy hosting współdzielony): przekierowuje na `https://psycho-edukatorka.pl` (bez www), podpina `404.html`, kompresuje tekst i ustawia cache (`assets/` rok, bo nazwy plików zmieniają się z treścią; HTML zawsze świeży). Na innym serwerze (nginx, Netlify itp.) te same reguły ustawia się w jego konfiguracji.
 
 ## Gdzie szukać więcej
 
