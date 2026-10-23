@@ -41,7 +41,7 @@ export const photos = {
   jacket: {
     image: { ...agataJacket, srcSet: agataJacketSet },
     imageClassName:
-      'left-[15%] w-[50%] min-[480px]:w-[min(50%,max(11.75rem,calc((100svh_-_31.875rem)/1.376)))] -translate-y-[30%]',
+      'left-[15%] w-[50%] min-[480px]:w-[min(50%,max(11.75rem,calc((100svh_-_31.875rem)/1.376)))] -translate-y-[20%] lg:-translate-y-[30%]',
   },
   // dłonie na klapach (Psychoterapia); wysoka karta pod spodem, więc limit tylko z svh
   lapels: {
@@ -58,11 +58,11 @@ export const photos = {
     decorClassName: '-top-[27%] -left-[12%] w-[88%]',
   },
   // przy biurku (Dzieci): szersze niż ekran, nadmiar ucina sekcja hero;
-  // podniesione, żeby biurko stało na karcie (dolne 64px sceny jest pod kartą)
+  // podniesione tak, że dolna krawędź biurka chowa się pod kartą (dolne 64px sceny jest pod kartą)
   desk: {
     image: agataDesk,
     imageClassName:
-      '-left-[5%] w-[120%] min-[480px]:w-[min(120%,max(28rem,calc((100svh_-_31.875rem)/0.7)))] -translate-y-[27%]',
+      '-left-[5%] w-[120%] min-[480px]:w-[min(120%,max(28rem,calc((100svh_-_31.875rem)/0.7)))] -translate-y-[18%]',
   },
 } satisfies Record<
   string,
